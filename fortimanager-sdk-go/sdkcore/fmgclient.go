@@ -158,6 +158,12 @@ func getEnvSession() (session string) {
 }
 
 func setEnvSession(session string) {
+	fmgTestacc := os.Getenv("FORTIOS_FMG_TESTACC")
+
+	if fmgTestacc == "" {
+		return
+	}
+
 	now := time.Now()
 
 	os.Setenv("FORTIOS_FMG_SESSION", session)
