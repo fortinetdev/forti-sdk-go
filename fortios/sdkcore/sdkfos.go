@@ -3455,3 +3455,39 @@ func (c *FortiSDKClient) ReadSystemAutomationDestination(mkey string) (mapTmp ma
 }
 
 
+// UpdateSystemNdProxy API operation for FortiOS updates the specified Nd Proxy.
+// Returns the index value of the Nd Proxy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - nd-proxy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemNdProxy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/nd-proxy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemNdProxy API operation for FortiOS deletes the specified Nd Proxy.
+// Returns error for service API and SDK errors.
+// See the system - nd-proxy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemNdProxy(mkey string) (err error) {
+
+	//No unset API for system - nd-proxy
+	return
+}
+
+// ReadSystemNdProxy API operation for FortiOS gets the Nd Proxy
+// with the specified index value.
+// Returns the requested Nd Proxy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - nd-proxy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemNdProxy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/nd-proxy"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
