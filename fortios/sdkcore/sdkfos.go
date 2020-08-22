@@ -13840,3 +13840,58 @@ func (c *FortiSDKClient) ReadReportTheme(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateReportLayout API operation for FortiOS creates a new Layout.
+// Returns the index value of the Layout and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - layout chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateReportLayout(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/report/layout"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateReportLayout API operation for FortiOS updates the specified Layout.
+// Returns the index value of the Layout and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - layout chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateReportLayout(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/report/layout"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteReportLayout API operation for FortiOS deletes the specified Layout.
+// Returns error for service API and SDK errors.
+// See the report - layout chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteReportLayout(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/report/layout"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadReportLayout API operation for FortiOS gets the Layout
+// with the specified index value.
+// Returns the requested Layout value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - layout chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadReportLayout(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/report/layout"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
