@@ -12526,3 +12526,57 @@ func (c *FortiSDKClient) ReadUserTacacs(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateUserLdap API operation for FortiOS creates a new Ldap.
+// Returns the index value of the Ldap and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - ldap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserLdap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/ldap"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserLdap API operation for FortiOS updates the specified Ldap.
+// Returns the index value of the Ldap and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - ldap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserLdap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/ldap"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserLdap API operation for FortiOS deletes the specified Ldap.
+// Returns error for service API and SDK errors.
+// See the user - ldap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserLdap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/ldap"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserLdap API operation for FortiOS gets the Ldap
+// with the specified index value.
+// Returns the requested Ldap value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - ldap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserLdap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/ldap"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
