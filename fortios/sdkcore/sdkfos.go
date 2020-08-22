@@ -6028,3 +6028,57 @@ func (c *FortiSDKClient) ReadFirewallIppool6(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateFirewallLdbMonitor API operation for FortiOS creates a new Ldb Monitor.
+// Returns the index value of the Ldb Monitor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ldb-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallLdbMonitor(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/ldb-monitor"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallLdbMonitor API operation for FortiOS updates the specified Ldb Monitor.
+// Returns the index value of the Ldb Monitor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ldb-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallLdbMonitor(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/ldb-monitor"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallLdbMonitor API operation for FortiOS deletes the specified Ldb Monitor.
+// Returns error for service API and SDK errors.
+// See the firewall - ldb-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallLdbMonitor(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/ldb-monitor"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallLdbMonitor API operation for FortiOS gets the Ldb Monitor
+// with the specified index value.
+// Returns the requested Ldb Monitor value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ldb-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallLdbMonitor(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/ldb-monitor"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
