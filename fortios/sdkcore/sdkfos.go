@@ -12994,3 +12994,57 @@ func (c *FortiSDKClient) ReadUserSetting(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateUserPeer API operation for FortiOS creates a new Peer.
+// Returns the index value of the Peer and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserPeer(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/peer"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserPeer API operation for FortiOS updates the specified Peer.
+// Returns the index value of the Peer and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserPeer(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/peer"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserPeer API operation for FortiOS deletes the specified Peer.
+// Returns error for service API and SDK errors.
+// See the user - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserPeer(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/peer"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserPeer API operation for FortiOS gets the Peer
+// with the specified index value.
+// Returns the requested Peer value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserPeer(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/peer"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
