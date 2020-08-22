@@ -7072,3 +7072,57 @@ func (c *FortiSDKClient) ReadFirewallPolicy6(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateFirewallLocalInPolicy6 API operation for FortiOS creates a new Local In Policy6.
+// Returns the index value of the Local In Policy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - local-in-policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallLocalInPolicy6(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/local-in-policy6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallLocalInPolicy6 API operation for FortiOS updates the specified Local In Policy6.
+// Returns the index value of the Local In Policy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - local-in-policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallLocalInPolicy6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/local-in-policy6"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallLocalInPolicy6 API operation for FortiOS deletes the specified Local In Policy6.
+// Returns error for service API and SDK errors.
+// See the firewall - local-in-policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallLocalInPolicy6(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/local-in-policy6"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallLocalInPolicy6 API operation for FortiOS gets the Local In Policy6
+// with the specified index value.
+// Returns the requested Local In Policy6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - local-in-policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallLocalInPolicy6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/local-in-policy6"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
