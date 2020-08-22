@@ -2410,3 +2410,57 @@ func (c *FortiSDKClient) ReadSystemVirtualWanLink(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateSystemLldpNetworkPolicy API operation for FortiOS creates a new Network Policy.
+// Returns the index value of the Network Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.lldp - network-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemLldpNetworkPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.lldp/network-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemLldpNetworkPolicy API operation for FortiOS updates the specified Network Policy.
+// Returns the index value of the Network Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.lldp - network-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemLldpNetworkPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.lldp/network-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemLldpNetworkPolicy API operation for FortiOS deletes the specified Network Policy.
+// Returns error for service API and SDK errors.
+// See the system.lldp - network-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemLldpNetworkPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.lldp/network-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemLldpNetworkPolicy API operation for FortiOS gets the Network Policy
+// with the specified index value.
+// Returns the requested Network Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.lldp - network-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemLldpNetworkPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.lldp/network-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
