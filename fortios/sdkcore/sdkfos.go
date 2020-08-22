@@ -12796,3 +12796,57 @@ func (c *FortiSDKClient) ReadUserFsso(mkey string) (mapTmp map[string]interface{
 	return
 }
 
+// CreateUserAdgrp API operation for FortiOS creates a new Adgrp.
+// Returns the index value of the Adgrp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - adgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserAdgrp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/adgrp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserAdgrp API operation for FortiOS updates the specified Adgrp.
+// Returns the index value of the Adgrp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - adgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserAdgrp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/adgrp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserAdgrp API operation for FortiOS deletes the specified Adgrp.
+// Returns error for service API and SDK errors.
+// See the user - adgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserAdgrp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/adgrp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserAdgrp API operation for FortiOS gets the Adgrp
+// with the specified index value.
+// Returns the requested Adgrp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - adgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserAdgrp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/adgrp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
