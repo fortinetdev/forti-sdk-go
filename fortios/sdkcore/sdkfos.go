@@ -10762,3 +10762,58 @@ func (c *FortiSDKClient) ReadLogThreatWeight(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateLogCustomField API operation for FortiOS creates a new Custom Field.
+// Returns the index value of the Custom Field and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log - custom-field chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateLogCustomField(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/log/custom-field"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateLogCustomField API operation for FortiOS updates the specified Custom Field.
+// Returns the index value of the Custom Field and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log - custom-field chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogCustomField(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log/custom-field"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogCustomField API operation for FortiOS deletes the specified Custom Field.
+// Returns error for service API and SDK errors.
+// See the log - custom-field chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogCustomField(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/log/custom-field"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadLogCustomField API operation for FortiOS gets the Custom Field
+// with the specified index value.
+// Returns the requested Custom Field value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log - custom-field chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogCustomField(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log/custom-field"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
