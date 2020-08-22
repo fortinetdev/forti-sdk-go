@@ -2969,3 +2969,39 @@ func (c *FortiSDKClient) ReadSystemAutoInstall(mkey string) (mapTmp map[string]i
 }
 
 
+// UpdateSystemConsole API operation for FortiOS updates the specified Console.
+// Returns the index value of the Console and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - console chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemConsole(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/console"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemConsole API operation for FortiOS deletes the specified Console.
+// Returns error for service API and SDK errors.
+// See the system - console chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemConsole(mkey string) (err error) {
+
+	//No unset API for system - console
+	return
+}
+
+// ReadSystemConsole API operation for FortiOS gets the Console
+// with the specified index value.
+// Returns the requested Console value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - console chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemConsole(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/console"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
