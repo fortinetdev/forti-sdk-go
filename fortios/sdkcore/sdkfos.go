@@ -9628,3 +9628,58 @@ func (c *FortiSDKClient) ReadWebProxyWisp(mkey string) (mapTmp map[string]interf
 	return
 }
 
+// CreateWebProxyUrlMatch API operation for FortiOS creates a new Url Match.
+// Returns the index value of the Url Match and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - url-match chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWebProxyUrlMatch(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/web-proxy/url-match"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWebProxyUrlMatch API operation for FortiOS updates the specified Url Match.
+// Returns the index value of the Url Match and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - url-match chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebProxyUrlMatch(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/web-proxy/url-match"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebProxyUrlMatch API operation for FortiOS deletes the specified Url Match.
+// Returns error for service API and SDK errors.
+// See the web-proxy - url-match chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebProxyUrlMatch(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/web-proxy/url-match"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWebProxyUrlMatch API operation for FortiOS gets the Url Match
+// with the specified index value.
+// Returns the requested Url Match value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - url-match chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebProxyUrlMatch(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/web-proxy/url-match"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
