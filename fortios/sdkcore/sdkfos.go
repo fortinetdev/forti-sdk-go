@@ -4894,3 +4894,57 @@ func (c *FortiSDKClient) ReadExtenderControllerExtender(mkey string) (mapTmp map
 	return
 }
 
+// CreateFirewallAddress API operation for FortiOS creates a new Address.
+// Returns the index value of the Address and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallAddress(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/address"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallAddress API operation for FortiOS updates the specified Address.
+// Returns the index value of the Address and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallAddress(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/address"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallAddress API operation for FortiOS deletes the specified Address.
+// Returns error for service API and SDK errors.
+// See the firewall - address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallAddress(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/address"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallAddress API operation for FortiOS gets the Address
+// with the specified index value.
+// Returns the requested Address value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallAddress(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/address"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
