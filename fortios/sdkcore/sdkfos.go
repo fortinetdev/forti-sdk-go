@@ -13048,3 +13048,58 @@ func (c *FortiSDKClient) ReadUserPeer(mkey string) (mapTmp map[string]interface{
 	return
 }
 
+// CreateUserPeergrp API operation for FortiOS creates a new Peergrp.
+// Returns the index value of the Peergrp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - peergrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserPeergrp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/peergrp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserPeergrp API operation for FortiOS updates the specified Peergrp.
+// Returns the index value of the Peergrp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - peergrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserPeergrp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/peergrp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserPeergrp API operation for FortiOS deletes the specified Peergrp.
+// Returns error for service API and SDK errors.
+// See the user - peergrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserPeergrp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/peergrp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserPeergrp API operation for FortiOS gets the Peergrp
+// with the specified index value.
+// Returns the requested Peergrp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - peergrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserPeergrp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/peergrp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
