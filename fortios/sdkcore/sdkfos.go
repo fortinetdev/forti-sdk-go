@@ -8728,3 +8728,57 @@ func (c *FortiSDKClient) ReadWebfilterFtgdLocalCat(mkey string) (mapTmp map[stri
 	return
 }
 
+// CreateWebfilterContent API operation for FortiOS creates a new Content.
+// Returns the index value of the Content and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - content chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWebfilterContent(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/webfilter/content"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWebfilterContent API operation for FortiOS updates the specified Content.
+// Returns the index value of the Content and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - content chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebfilterContent(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/webfilter/content"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebfilterContent API operation for FortiOS deletes the specified Content.
+// Returns error for service API and SDK errors.
+// See the webfilter - content chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebfilterContent(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/webfilter/content"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWebfilterContent API operation for FortiOS gets the Content
+// with the specified index value.
+// Returns the requested Content value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - content chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebfilterContent(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/webfilter/content"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
