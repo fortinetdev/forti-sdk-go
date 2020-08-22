@@ -13463,3 +13463,39 @@ func (c *FortiSDKClient) ReadDnsfilterProfile(mkey string) (mapTmp map[string]in
 }
 
 
+// UpdateAntivirusSettings API operation for FortiOS updates the specified Settings.
+// Returns the index value of the Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the antivirus - settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateAntivirusSettings(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/antivirus/settings"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteAntivirusSettings API operation for FortiOS deletes the specified Settings.
+// Returns error for service API and SDK errors.
+// See the antivirus - settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteAntivirusSettings(mkey string) (err error) {
+
+	//No unset API for antivirus - settings
+	return
+}
+
+// ReadAntivirusSettings API operation for FortiOS gets the Settings
+// with the specified index value.
+// Returns the requested Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the antivirus - settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadAntivirusSettings(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/antivirus/settings"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
