@@ -10438,3 +10438,57 @@ func (c *FortiSDKClient) ReadSpamfilterBword(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateSpamfilterBwl API operation for FortiOS creates a new Bwl.
+// Returns the index value of the Bwl and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - bwl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSpamfilterBwl(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/spamfilter/bwl"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSpamfilterBwl API operation for FortiOS updates the specified Bwl.
+// Returns the index value of the Bwl and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - bwl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSpamfilterBwl(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/spamfilter/bwl"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSpamfilterBwl API operation for FortiOS deletes the specified Bwl.
+// Returns error for service API and SDK errors.
+// See the spamfilter - bwl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSpamfilterBwl(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/spamfilter/bwl"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSpamfilterBwl API operation for FortiOS gets the Bwl
+// with the specified index value.
+// Returns the requested Bwl value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - bwl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSpamfilterBwl(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/spamfilter/bwl"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
