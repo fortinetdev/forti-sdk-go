@@ -13192,3 +13192,57 @@ func (c *FortiSDKClient) ReadUserGroup(mkey string) (mapTmp map[string]interface
 	return
 }
 
+// CreateUserDevice API operation for FortiOS creates a new Device.
+// Returns the index value of the Device and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserDevice(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/device"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserDevice API operation for FortiOS updates the specified Device.
+// Returns the index value of the Device and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserDevice(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/device"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserDevice API operation for FortiOS deletes the specified Device.
+// Returns error for service API and SDK errors.
+// See the user - device chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserDevice(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/device"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserDevice API operation for FortiOS gets the Device
+// with the specified index value.
+// Returns the requested Device value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserDevice(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/device"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
