@@ -3491,3 +3491,39 @@ func (c *FortiSDKClient) ReadSystemNdProxy(mkey string) (mapTmp map[string]inter
 }
 
 
+// UpdateWirelessControllerInterController API operation for FortiOS updates the specified Inter Controller.
+// Returns the index value of the Inter Controller and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - inter-controller chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerInterController(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/inter-controller"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerInterController API operation for FortiOS deletes the specified Inter Controller.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - inter-controller chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerInterController(mkey string) (err error) {
+
+	//No unset API for wireless-controller - inter-controller
+	return
+}
+
+// ReadWirelessControllerInterController API operation for FortiOS gets the Inter Controller
+// with the specified index value.
+// Returns the requested Inter Controller value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - inter-controller chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerInterController(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/inter-controller"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
