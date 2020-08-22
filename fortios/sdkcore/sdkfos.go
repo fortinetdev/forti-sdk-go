@@ -13246,3 +13246,57 @@ func (c *FortiSDKClient) ReadUserDevice(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateUserDeviceAccessList API operation for FortiOS creates a new Device Access List.
+// Returns the index value of the Device Access List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device-access-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserDeviceAccessList(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/device-access-list"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserDeviceAccessList API operation for FortiOS updates the specified Device Access List.
+// Returns the index value of the Device Access List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device-access-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserDeviceAccessList(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/device-access-list"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserDeviceAccessList API operation for FortiOS deletes the specified Device Access List.
+// Returns error for service API and SDK errors.
+// See the user - device-access-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserDeviceAccessList(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/device-access-list"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserDeviceAccessList API operation for FortiOS gets the Device Access List
+// with the specified index value.
+// Returns the requested Device Access List value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device-access-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserDeviceAccessList(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/device-access-list"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
