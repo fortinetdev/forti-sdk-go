@@ -12364,3 +12364,57 @@ func (c *FortiSDKClient) ReadIcapProfile(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateSshFilterProfile API operation for FortiOS creates a new Profile.
+// Returns the index value of the Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ssh-filter - profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSshFilterProfile(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/ssh-filter/profile"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSshFilterProfile API operation for FortiOS updates the specified Profile.
+// Returns the index value of the Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ssh-filter - profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSshFilterProfile(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/ssh-filter/profile"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSshFilterProfile API operation for FortiOS deletes the specified Profile.
+// Returns error for service API and SDK errors.
+// See the ssh-filter - profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSshFilterProfile(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/ssh-filter/profile"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSshFilterProfile API operation for FortiOS gets the Profile
+// with the specified index value.
+// Returns the requested Profile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ssh-filter - profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSshFilterProfile(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/ssh-filter/profile"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
