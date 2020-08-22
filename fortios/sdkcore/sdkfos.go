@@ -10132,3 +10132,57 @@ func (c *FortiSDKClient) ReadApplicationGroup(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateDlpFilepattern API operation for FortiOS creates a new Filepattern.
+// Returns the index value of the Filepattern and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dlp - filepattern chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateDlpFilepattern(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/dlp/filepattern"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateDlpFilepattern API operation for FortiOS updates the specified Filepattern.
+// Returns the index value of the Filepattern and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dlp - filepattern chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateDlpFilepattern(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/dlp/filepattern"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteDlpFilepattern API operation for FortiOS deletes the specified Filepattern.
+// Returns error for service API and SDK errors.
+// See the dlp - filepattern chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteDlpFilepattern(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/dlp/filepattern"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadDlpFilepattern API operation for FortiOS gets the Filepattern
+// with the specified index value.
+// Returns the requested Filepattern value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dlp - filepattern chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadDlpFilepattern(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/dlp/filepattern"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
