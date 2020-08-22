@@ -12688,3 +12688,57 @@ func (c *FortiSDKClient) ReadUserDomainController(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateUserPop3 API operation for FortiOS creates a new Pop3.
+// Returns the index value of the Pop3 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - pop3 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserPop3(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/pop3"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserPop3 API operation for FortiOS updates the specified Pop3.
+// Returns the index value of the Pop3 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - pop3 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserPop3(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/pop3"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserPop3 API operation for FortiOS deletes the specified Pop3.
+// Returns error for service API and SDK errors.
+// See the user - pop3 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserPop3(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/pop3"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserPop3 API operation for FortiOS gets the Pop3
+// with the specified index value.
+// Returns the requested Pop3 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - pop3 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserPop3(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/pop3"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
