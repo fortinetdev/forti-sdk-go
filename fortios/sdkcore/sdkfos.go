@@ -4661,3 +4661,39 @@ func (c *FortiSDKClient) ReadSwitchControllerVirtualPortPool(mkey string) (mapTm
 }
 
 
+// UpdateSwitchControllerStpSettings API operation for FortiOS updates the specified Stp Settings.
+// Returns the index value of the Stp Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - stp-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerStpSettings(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/stp-settings"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerStpSettings API operation for FortiOS deletes the specified Stp Settings.
+// Returns error for service API and SDK errors.
+// See the switch-controller - stp-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerStpSettings(mkey string) (err error) {
+
+	//No unset API for switch-controller - stp-settings
+	return
+}
+
+// ReadSwitchControllerStpSettings API operation for FortiOS gets the Stp Settings
+// with the specified index value.
+// Returns the requested Stp Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - stp-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerStpSettings(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/stp-settings"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
