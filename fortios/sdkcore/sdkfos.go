@@ -7990,3 +7990,57 @@ func (c *FortiSDKClient) ReadVpnSslWebRealm(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateVpnSslWebHostCheckSoftware API operation for FortiOS creates a new Host Check Software.
+// Returns the index value of the Host Check Software and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - host-check-software chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnSslWebHostCheckSoftware(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnSslWebHostCheckSoftware API operation for FortiOS updates the specified Host Check Software.
+// Returns the index value of the Host Check Software and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - host-check-software chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnSslWebHostCheckSoftware(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnSslWebHostCheckSoftware API operation for FortiOS deletes the specified Host Check Software.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - host-check-software chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnSslWebHostCheckSoftware(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnSslWebHostCheckSoftware API operation for FortiOS gets the Host Check Software
+// with the specified index value.
+// Returns the requested Host Check Software value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - host-check-software chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnSslWebHostCheckSoftware(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ssl.web/host-check-software"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
