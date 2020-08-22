@@ -3562,3 +3562,57 @@ func (c *FortiSDKClient) ReadWirelessControllerGlobal(mkey string) (mapTmp map[s
 	return
 }
 
+// CreateWirelessControllerHotspot20AnqpVenueName API operation for FortiOS creates a new Anqp Venue Name.
+// Returns the index value of the Anqp Venue Name and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-venue-name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpVenueName(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20AnqpVenueName API operation for FortiOS updates the specified Anqp Venue Name.
+// Returns the index value of the Anqp Venue Name and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-venue-name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpVenueName(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20AnqpVenueName API operation for FortiOS deletes the specified Anqp Venue Name.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-venue-name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20AnqpVenueName(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20AnqpVenueName API operation for FortiOS gets the Anqp Venue Name
+// with the specified index value.
+// Returns the requested Anqp Venue Name value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-venue-name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpVenueName(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-venue-name"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
