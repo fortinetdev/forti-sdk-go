@@ -1816,3 +1816,58 @@ func (c *FortiSDKClient) ReadSystemIpv6Tunnel(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateSystemExternalResource API operation for FortiOS creates a new External Resource.
+// Returns the index value of the External Resource and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - external-resource chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemExternalResource(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/external-resource"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemExternalResource API operation for FortiOS updates the specified External Resource.
+// Returns the index value of the External Resource and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - external-resource chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemExternalResource(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/external-resource"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemExternalResource API operation for FortiOS deletes the specified External Resource.
+// Returns error for service API and SDK errors.
+// See the system - external-resource chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemExternalResource(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/external-resource"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemExternalResource API operation for FortiOS gets the External Resource
+// with the specified index value.
+// Returns the requested External Resource value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - external-resource chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemExternalResource(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/external-resource"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
