@@ -9953,3 +9953,39 @@ func (c *FortiSDKClient) ReadWanoptCacheService(mkey string) (mapTmp map[string]
 }
 
 
+// UpdateWanoptRemoteStorage API operation for FortiOS updates the specified Remote Storage.
+// Returns the index value of the Remote Storage and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - remote-storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWanoptRemoteStorage(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wanopt/remote-storage"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWanoptRemoteStorage API operation for FortiOS deletes the specified Remote Storage.
+// Returns error for service API and SDK errors.
+// See the wanopt - remote-storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWanoptRemoteStorage(mkey string) (err error) {
+
+	//No unset API for wanopt - remote-storage
+	return
+}
+
+// ReadWanoptRemoteStorage API operation for FortiOS gets the Remote Storage
+// with the specified index value.
+// Returns the requested Remote Storage value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - remote-storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWanoptRemoteStorage(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wanopt/remote-storage"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
