@@ -9754,3 +9754,57 @@ func (c *FortiSDKClient) ReadWanoptSettings(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateWanoptPeer API operation for FortiOS creates a new Peer.
+// Returns the index value of the Peer and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWanoptPeer(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wanopt/peer"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWanoptPeer API operation for FortiOS updates the specified Peer.
+// Returns the index value of the Peer and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWanoptPeer(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wanopt/peer"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWanoptPeer API operation for FortiOS deletes the specified Peer.
+// Returns error for service API and SDK errors.
+// See the wanopt - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWanoptPeer(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wanopt/peer"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWanoptPeer API operation for FortiOS gets the Peer
+// with the specified index value.
+// Returns the requested Peer value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - peer chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWanoptPeer(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wanopt/peer"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
