@@ -6767,3 +6767,38 @@ func (c *FortiSDKClient) ReadFirewallIdentityBasedRoute(mkey string) (mapTmp map
 }
 
 
+// UpdateFirewallAuthPortal API operation for FortiOS updates the specified Auth Portal.
+// Returns the index value of the Auth Portal and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - auth-portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallAuthPortal(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/auth-portal"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallAuthPortal API operation for FortiOS deletes the specified Auth Portal.
+// Returns error for service API and SDK errors.
+// See the firewall - auth-portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallAuthPortal(mkey string) (err error) {
+
+	//No unset API for firewall - auth-portal
+	return
+}
+
+// ReadFirewallAuthPortal API operation for FortiOS gets the Auth Portal
+// with the specified index value.
+// Returns the requested Auth Portal value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - auth-portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallAuthPortal(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/auth-portal"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
