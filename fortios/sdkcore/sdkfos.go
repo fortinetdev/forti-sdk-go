@@ -5056,3 +5056,57 @@ func (c *FortiSDKClient) ReadFirewallAddress6Template(mkey string) (mapTmp map[s
 	return
 }
 
+// CreateFirewallAddress6 API operation for FortiOS creates a new Address6.
+// Returns the index value of the Address6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - address6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallAddress6(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/address6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallAddress6 API operation for FortiOS updates the specified Address6.
+// Returns the index value of the Address6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - address6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallAddress6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/address6"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallAddress6 API operation for FortiOS deletes the specified Address6.
+// Returns error for service API and SDK errors.
+// See the firewall - address6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallAddress6(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/address6"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallAddress6 API operation for FortiOS gets the Address6
+// with the specified index value.
+// Returns the requested Address6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - address6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallAddress6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/address6"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
