@@ -12005,3 +12005,39 @@ func (c *FortiSDKClient) ReadLogFortianalyzer2Setting(mkey string) (mapTmp map[s
 }
 
 
+// UpdateLogFortianalyzer2OverrideSetting API operation for FortiOS updates the specified Override Setting.
+// Returns the index value of the Override Setting and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.fortianalyzer2 - override-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogFortianalyzer2OverrideSetting(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log.fortianalyzer2/override-setting"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogFortianalyzer2OverrideSetting API operation for FortiOS deletes the specified Override Setting.
+// Returns error for service API and SDK errors.
+// See the log.fortianalyzer2 - override-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogFortianalyzer2OverrideSetting(mkey string) (err error) {
+
+	//No unset API for log.fortianalyzer2 - override-setting
+	return
+}
+
+// ReadLogFortianalyzer2OverrideSetting API operation for FortiOS gets the Override Setting
+// with the specified index value.
+// Returns the requested Override Setting value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.fortianalyzer2 - override-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogFortianalyzer2OverrideSetting(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log.fortianalyzer2/override-setting"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
