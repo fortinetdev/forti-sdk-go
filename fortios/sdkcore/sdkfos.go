@@ -8044,3 +8044,57 @@ func (c *FortiSDKClient) ReadVpnSslWebHostCheckSoftware(mkey string) (mapTmp map
 	return
 }
 
+// CreateVpnSslWebPortal API operation for FortiOS creates a new Portal.
+// Returns the index value of the Portal and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnSslWebPortal(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ssl.web/portal"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnSslWebPortal API operation for FortiOS updates the specified Portal.
+// Returns the index value of the Portal and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnSslWebPortal(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ssl.web/portal"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnSslWebPortal API operation for FortiOS deletes the specified Portal.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnSslWebPortal(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ssl.web/portal"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnSslWebPortal API operation for FortiOS gets the Portal
+// with the specified index value.
+// Returns the requested Portal value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - portal chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnSslWebPortal(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ssl.web/portal"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
