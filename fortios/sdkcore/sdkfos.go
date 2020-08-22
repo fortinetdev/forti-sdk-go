@@ -8098,3 +8098,57 @@ func (c *FortiSDKClient) ReadVpnSslWebPortal(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateVpnSslWebUserGroupBookmark API operation for FortiOS creates a new User Group Bookmark.
+// Returns the index value of the User Group Bookmark and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-group-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnSslWebUserGroupBookmark(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnSslWebUserGroupBookmark API operation for FortiOS updates the specified User Group Bookmark.
+// Returns the index value of the User Group Bookmark and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-group-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnSslWebUserGroupBookmark(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnSslWebUserGroupBookmark API operation for FortiOS deletes the specified User Group Bookmark.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-group-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnSslWebUserGroupBookmark(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnSslWebUserGroupBookmark API operation for FortiOS gets the User Group Bookmark
+// with the specified index value.
+// Returns the requested User Group Bookmark value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-group-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnSslWebUserGroupBookmark(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-group-bookmark"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
