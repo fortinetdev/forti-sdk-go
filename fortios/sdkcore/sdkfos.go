@@ -9053,3 +9053,38 @@ func (c *FortiSDKClient) ReadWebfilterProfile(mkey string) (mapTmp map[string]in
 }
 
 
+// UpdateWebfilterFortiguard API operation for FortiOS updates the specified Fortiguard.
+// Returns the index value of the Fortiguard and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - fortiguard chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebfilterFortiguard(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/webfilter/fortiguard"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebfilterFortiguard API operation for FortiOS deletes the specified Fortiguard.
+// Returns error for service API and SDK errors.
+// See the webfilter - fortiguard chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebfilterFortiguard(mkey string) (err error) {
+
+	//No unset API for webfilter - fortiguard
+	return
+}
+
+// ReadWebfilterFortiguard API operation for FortiOS gets the Fortiguard
+// with the specified index value.
+// Returns the requested Fortiguard value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - fortiguard chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebfilterFortiguard(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/webfilter/fortiguard"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
