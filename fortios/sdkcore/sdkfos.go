@@ -10691,3 +10691,39 @@ func (c *FortiSDKClient) ReadSpamfilterFortishield(mkey string) (mapTmp map[stri
 }
 
 
+// UpdateSpamfilterOptions API operation for FortiOS updates the specified Options.
+// Returns the index value of the Options and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - options chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSpamfilterOptions(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/spamfilter/options"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSpamfilterOptions API operation for FortiOS deletes the specified Options.
+// Returns error for service API and SDK errors.
+// See the spamfilter - options chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSpamfilterOptions(mkey string) (err error) {
+
+	//No unset API for spamfilter - options
+	return
+}
+
+// ReadSpamfilterOptions API operation for FortiOS gets the Options
+// with the specified index value.
+// Returns the requested Options value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - options chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSpamfilterOptions(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/spamfilter/options"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
