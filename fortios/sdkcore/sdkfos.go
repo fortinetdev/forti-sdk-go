@@ -14218,3 +14218,58 @@ func (c *FortiSDKClient) ReadEndpointControlProfile(mkey string) (mapTmp map[str
 	return
 }
 
+// CreateEndpointControlForticlientRegistrationSync API operation for FortiOS creates a new Forticlient Registration Sync.
+// Returns the index value of the Forticlient Registration Sync and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-registration-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateEndpointControlForticlientRegistrationSync(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateEndpointControlForticlientRegistrationSync API operation for FortiOS updates the specified Forticlient Registration Sync.
+// Returns the index value of the Forticlient Registration Sync and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-registration-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateEndpointControlForticlientRegistrationSync(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteEndpointControlForticlientRegistrationSync API operation for FortiOS deletes the specified Forticlient Registration Sync.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-registration-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteEndpointControlForticlientRegistrationSync(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadEndpointControlForticlientRegistrationSync API operation for FortiOS gets the Forticlient Registration Sync
+// with the specified index value.
+// Returns the requested Forticlient Registration Sync value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-registration-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadEndpointControlForticlientRegistrationSync(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-registration-sync"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
