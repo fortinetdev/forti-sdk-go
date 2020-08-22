@@ -2699,3 +2699,38 @@ func (c *FortiSDKClient) ReadSystemProxyArp(mkey string) (mapTmp map[string]inte
 }
 
 
+// UpdateSystemFipsCc API operation for FortiOS updates the specified Fips Cc.
+// Returns the index value of the Fips Cc and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - fips-cc chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemFipsCc(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/fips-cc"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemFipsCc API operation for FortiOS deletes the specified Fips Cc.
+// Returns error for service API and SDK errors.
+// See the system - fips-cc chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemFipsCc(mkey string) (err error) {
+
+	//No unset API for system - fips-cc
+	return
+}
+
+// ReadSystemFipsCc API operation for FortiOS gets the Fips Cc
+// with the specified index value.
+// Returns the requested Fips Cc value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - fips-cc chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemFipsCc(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/fips-cc"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
