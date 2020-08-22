@@ -5704,3 +5704,57 @@ func (c *FortiSDKClient) ReadFirewallShaperPerIpShaper(mkey string) (mapTmp map[
 	return
 }
 
+// CreateFirewallProxyAddress API operation for FortiOS creates a new Proxy Address.
+// Returns the index value of the Proxy Address and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallProxyAddress(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/proxy-address"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallProxyAddress API operation for FortiOS updates the specified Proxy Address.
+// Returns the index value of the Proxy Address and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallProxyAddress(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/proxy-address"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallProxyAddress API operation for FortiOS deletes the specified Proxy Address.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallProxyAddress(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/proxy-address"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallProxyAddress API operation for FortiOS gets the Proxy Address
+// with the specified index value.
+// Returns the requested Proxy Address value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-address chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallProxyAddress(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/proxy-address"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
