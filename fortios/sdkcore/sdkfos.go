@@ -575,3 +575,38 @@ func (c *FortiSDKClient) ReadSystemHa(mkey string) (mapTmp map[string]interface{
 }
 
 
+// UpdateSystemHaMonitor API operation for FortiOS updates the specified Ha Monitor.
+// Returns the index value of the Ha Monitor and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ha-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemHaMonitor(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ha-monitor"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemHaMonitor API operation for FortiOS deletes the specified Ha Monitor.
+// Returns error for service API and SDK errors.
+// See the system - ha-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemHaMonitor(mkey string) (err error) {
+
+	//No unset API for system - ha-monitor
+	return
+}
+
+// ReadSystemHaMonitor API operation for FortiOS gets the Ha Monitor
+// with the specified index value.
+// Returns the requested Ha Monitor value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ha-monitor chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemHaMonitor(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ha-monitor"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
