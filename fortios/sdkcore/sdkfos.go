@@ -9862,3 +9862,58 @@ func (c *FortiSDKClient) ReadWanoptAuthGroup(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateWanoptContentDeliveryNetworkRule API operation for FortiOS creates a new Content Delivery Network Rule.
+// Returns the index value of the Content Delivery Network Rule and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - content-delivery-network-rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWanoptContentDeliveryNetworkRule(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWanoptContentDeliveryNetworkRule API operation for FortiOS updates the specified Content Delivery Network Rule.
+// Returns the index value of the Content Delivery Network Rule and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - content-delivery-network-rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWanoptContentDeliveryNetworkRule(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWanoptContentDeliveryNetworkRule API operation for FortiOS deletes the specified Content Delivery Network Rule.
+// Returns error for service API and SDK errors.
+// See the wanopt - content-delivery-network-rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWanoptContentDeliveryNetworkRule(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWanoptContentDeliveryNetworkRule API operation for FortiOS gets the Content Delivery Network Rule
+// with the specified index value.
+// Returns the requested Content Delivery Network Rule value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - content-delivery-network-rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWanoptContentDeliveryNetworkRule(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wanopt/content-delivery-network-rule"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
