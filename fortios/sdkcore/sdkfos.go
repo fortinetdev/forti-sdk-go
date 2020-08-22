@@ -14723,3 +14723,38 @@ func (c *FortiSDKClient) ReadRouterRip(mkey string) (mapTmp map[string]interface
 }
 
 
+// UpdateRouterRipng API operation for FortiOS updates the specified Ripng.
+// Returns the index value of the Ripng and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - ripng chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterRipng(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/ripng"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterRipng API operation for FortiOS deletes the specified Ripng.
+// Returns error for service API and SDK errors.
+// See the router - ripng chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterRipng(mkey string) (err error) {
+
+	//No unset API for router - ripng
+	return
+}
+
+// ReadRouterRipng API operation for FortiOS gets the Ripng
+// with the specified index value.
+// Returns the requested Ripng value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - ripng chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterRipng(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/ripng"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
