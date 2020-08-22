@@ -6244,3 +6244,57 @@ func (c *FortiSDKClient) ReadFirewallVip6(mkey string) (mapTmp map[string]interf
 	return
 }
 
+// CreateFirewallVip64 API operation for FortiOS creates a new Vip64.
+// Returns the index value of the Vip64 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - vip64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallVip64(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/vip64"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallVip64 API operation for FortiOS updates the specified Vip64.
+// Returns the index value of the Vip64 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - vip64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallVip64(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/vip64"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallVip64 API operation for FortiOS deletes the specified Vip64.
+// Returns error for service API and SDK errors.
+// See the firewall - vip64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallVip64(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/vip64"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallVip64 API operation for FortiOS gets the Vip64
+// with the specified index value.
+// Returns the requested Vip64 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - vip64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallVip64(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/vip64"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
