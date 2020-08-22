@@ -1456,3 +1456,58 @@ func (c *FortiSDKClient) ReadSystemAlias(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateSystemAutoScript API operation for FortiOS creates a new Auto Script.
+// Returns the index value of the Auto Script and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - auto-script chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAutoScript(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/auto-script"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAutoScript API operation for FortiOS updates the specified Auto Script.
+// Returns the index value of the Auto Script and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - auto-script chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutoScript(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/auto-script"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutoScript API operation for FortiOS deletes the specified Auto Script.
+// Returns error for service API and SDK errors.
+// See the system - auto-script chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutoScript(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/auto-script"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAutoScript API operation for FortiOS gets the Auto Script
+// with the specified index value.
+// Returns the requested Auto Script value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - auto-script chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutoScript(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/auto-script"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
