@@ -9808,3 +9808,57 @@ func (c *FortiSDKClient) ReadWanoptPeer(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateWanoptAuthGroup API operation for FortiOS creates a new Auth Group.
+// Returns the index value of the Auth Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - auth-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWanoptAuthGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wanopt/auth-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWanoptAuthGroup API operation for FortiOS updates the specified Auth Group.
+// Returns the index value of the Auth Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - auth-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWanoptAuthGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wanopt/auth-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWanoptAuthGroup API operation for FortiOS deletes the specified Auth Group.
+// Returns error for service API and SDK errors.
+// See the wanopt - auth-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWanoptAuthGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wanopt/auth-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWanoptAuthGroup API operation for FortiOS gets the Auth Group
+// with the specified index value.
+// Returns the requested Auth Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - auth-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWanoptAuthGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wanopt/auth-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
