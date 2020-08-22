@@ -3886,3 +3886,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpOperatorName(mkey st
 	return
 }
 
+// CreateWirelessControllerHotspot20H2QpWanMetric API operation for FortiOS creates a new H2Qp Wan Metric.
+// Returns the index value of the H2Qp Wan Metric and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - h2qp-wan-metric chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20H2QpWanMetric(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20H2QpWanMetric API operation for FortiOS updates the specified H2Qp Wan Metric.
+// Returns the index value of the H2Qp Wan Metric and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - h2qp-wan-metric chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20H2QpWanMetric(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20H2QpWanMetric API operation for FortiOS deletes the specified H2Qp Wan Metric.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - h2qp-wan-metric chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20H2QpWanMetric(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20H2QpWanMetric API operation for FortiOS gets the H2Qp Wan Metric
+// with the specified index value.
+// Returns the requested H2Qp Wan Metric value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - h2qp-wan-metric chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpWanMetric(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/h2qp-wan-metric"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
