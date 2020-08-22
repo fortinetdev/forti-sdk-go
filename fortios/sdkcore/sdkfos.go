@@ -3005,3 +3005,38 @@ func (c *FortiSDKClient) ReadSystemConsole(mkey string) (mapTmp map[string]inter
 }
 
 
+// UpdateSystemNtp API operation for FortiOS updates the specified Ntp.
+// Returns the index value of the Ntp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ntp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemNtp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ntp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemNtp API operation for FortiOS deletes the specified Ntp.
+// Returns error for service API and SDK errors.
+// See the system - ntp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemNtp(mkey string) (err error) {
+
+	//No unset API for system - ntp
+	return
+}
+
+// ReadSystemNtp API operation for FortiOS gets the Ntp
+// with the specified index value.
+// Returns the requested Ntp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ntp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemNtp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ntp"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
