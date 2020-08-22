@@ -1511,3 +1511,39 @@ func (c *FortiSDKClient) ReadSystemAutoScript(mkey string) (mapTmp map[string]in
 }
 
 
+// UpdateSystemManagementTunnel API operation for FortiOS updates the specified Management Tunnel.
+// Returns the index value of the Management Tunnel and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - management-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemManagementTunnel(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/management-tunnel"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemManagementTunnel API operation for FortiOS deletes the specified Management Tunnel.
+// Returns error for service API and SDK errors.
+// See the system - management-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemManagementTunnel(mkey string) (err error) {
+
+	//No unset API for system - management-tunnel
+	return
+}
+
+// ReadSystemManagementTunnel API operation for FortiOS gets the Management Tunnel
+// with the specified index value.
+// Returns the requested Management Tunnel value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - management-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemManagementTunnel(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/management-tunnel"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
