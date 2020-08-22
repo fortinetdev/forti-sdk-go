@@ -4444,3 +4444,57 @@ func (c *FortiSDKClient) ReadSwitchControllerQosIpDscpMap(mkey string) (mapTmp m
 	return
 }
 
+// CreateSwitchControllerQosQueuePolicy API operation for FortiOS creates a new Queue Policy.
+// Returns the index value of the Queue Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - queue-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerQosQueuePolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerQosQueuePolicy API operation for FortiOS updates the specified Queue Policy.
+// Returns the index value of the Queue Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - queue-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerQosQueuePolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerQosQueuePolicy API operation for FortiOS deletes the specified Queue Policy.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - queue-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerQosQueuePolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerQosQueuePolicy API operation for FortiOS gets the Queue Policy
+// with the specified index value.
+// Returns the requested Queue Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - queue-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerQosQueuePolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.qos/queue-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
