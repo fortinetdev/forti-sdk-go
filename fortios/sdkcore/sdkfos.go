@@ -14920,3 +14920,58 @@ func (c *FortiSDKClient) ReadRouterPolicy6(mkey string) (mapTmp map[string]inter
 	return
 }
 
+// CreateRouterStatic6 API operation for FortiOS creates a new Static6.
+// Returns the index value of the Static6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - static6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterStatic6(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/static6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateRouterStatic6 API operation for FortiOS updates the specified Static6.
+// Returns the index value of the Static6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - static6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterStatic6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/static6"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterStatic6 API operation for FortiOS deletes the specified Static6.
+// Returns error for service API and SDK errors.
+// See the router - static6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterStatic6(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/static6"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadRouterStatic6 API operation for FortiOS gets the Static6
+// with the specified index value.
+// Returns the requested Static6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - static6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterStatic6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/static6"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
