@@ -3994,3 +3994,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpConnCapability(mkey 
 	return
 }
 
+// CreateWirelessControllerHotspot20Icon API operation for FortiOS creates a new Icon.
+// Returns the index value of the Icon and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - icon chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20Icon(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20Icon API operation for FortiOS updates the specified Icon.
+// Returns the index value of the Icon and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - icon chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20Icon(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20Icon API operation for FortiOS deletes the specified Icon.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - icon chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20Icon(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20Icon API operation for FortiOS gets the Icon
+// with the specified index value.
+// Returns the requested Icon value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - icon chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20Icon(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/icon"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
