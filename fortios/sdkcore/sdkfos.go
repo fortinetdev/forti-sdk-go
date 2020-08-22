@@ -4048,3 +4048,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20Icon(mkey string) (mapTm
 	return
 }
 
+// CreateSwitchControllerTrafficPolicy API operation for FortiOS creates a new Traffic Policy.
+// Returns the index value of the Traffic Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - traffic-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerTrafficPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller/traffic-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerTrafficPolicy API operation for FortiOS updates the specified Traffic Policy.
+// Returns the index value of the Traffic Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - traffic-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerTrafficPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/traffic-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerTrafficPolicy API operation for FortiOS deletes the specified Traffic Policy.
+// Returns error for service API and SDK errors.
+// See the switch-controller - traffic-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerTrafficPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller/traffic-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerTrafficPolicy API operation for FortiOS gets the Traffic Policy
+// with the specified index value.
+// Returns the requested Traffic Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - traffic-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerTrafficPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/traffic-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
