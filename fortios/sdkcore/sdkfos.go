@@ -9412,3 +9412,57 @@ func (c *FortiSDKClient) ReadWebProxyGlobal(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateWebProxyForwardServer API operation for FortiOS creates a new Forward Server.
+// Returns the index value of the Forward Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - forward-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWebProxyForwardServer(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/web-proxy/forward-server"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWebProxyForwardServer API operation for FortiOS updates the specified Forward Server.
+// Returns the index value of the Forward Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - forward-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebProxyForwardServer(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/web-proxy/forward-server"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebProxyForwardServer API operation for FortiOS deletes the specified Forward Server.
+// Returns error for service API and SDK errors.
+// See the web-proxy - forward-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebProxyForwardServer(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/web-proxy/forward-server"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWebProxyForwardServer API operation for FortiOS gets the Forward Server
+// with the specified index value.
+// Returns the requested Forward Server value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - forward-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebProxyForwardServer(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/web-proxy/forward-server"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
