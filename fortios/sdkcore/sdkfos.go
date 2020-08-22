@@ -2590,3 +2590,57 @@ func (c *FortiSDKClient) ReadSystemEmailServer(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateSystemSessionHelper API operation for FortiOS creates a new Session Helper.
+// Returns the index value of the Session Helper and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - session-helper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemSessionHelper(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/session-helper"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemSessionHelper API operation for FortiOS updates the specified Session Helper.
+// Returns the index value of the Session Helper and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - session-helper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemSessionHelper(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/session-helper"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemSessionHelper API operation for FortiOS deletes the specified Session Helper.
+// Returns error for service API and SDK errors.
+// See the system - session-helper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemSessionHelper(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/session-helper"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemSessionHelper API operation for FortiOS gets the Session Helper
+// with the specified index value.
+// Returns the requested Session Helper value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - session-helper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemSessionHelper(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/session-helper"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
