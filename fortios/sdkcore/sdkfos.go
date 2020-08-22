@@ -809,3 +809,39 @@ func (c *FortiSDKClient) ReadSystemDdns(mkey string) (mapTmp map[string]interfac
 }
 
 
+// UpdateSystemSflow API operation for FortiOS updates the specified Sflow.
+// Returns the index value of the Sflow and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemSflow(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/sflow"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemSflow API operation for FortiOS deletes the specified Sflow.
+// Returns error for service API and SDK errors.
+// See the system - sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemSflow(mkey string) (err error) {
+
+	//No unset API for system - sflow
+	return
+}
+
+// ReadSystemSflow API operation for FortiOS gets the Sflow
+// with the specified index value.
+// Returns the requested Sflow value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemSflow(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/sflow"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
