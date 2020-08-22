@@ -503,3 +503,39 @@ func (c *FortiSDKClient) ReadSystemSitTunnel(mkey string) (mapTmp map[string]int
 }
 
 
+// UpdateSystemFssoPolling API operation for FortiOS updates the specified Fsso Polling.
+// Returns the index value of the Fsso Polling and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - fsso-polling chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemFssoPolling(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/fsso-polling"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemFssoPolling API operation for FortiOS deletes the specified Fsso Polling.
+// Returns error for service API and SDK errors.
+// See the system - fsso-polling chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemFssoPolling(mkey string) (err error) {
+
+	//No unset API for system - fsso-polling
+	return
+}
+
+// ReadSystemFssoPolling API operation for FortiOS gets the Fsso Polling
+// with the specified index value.
+// Returns the requested Fsso Polling value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - fsso-polling chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemFssoPolling(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/fsso-polling"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
