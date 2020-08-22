@@ -1205,3 +1205,39 @@ func (c *FortiSDKClient) ReadSystemSnmpUser(mkey string) (mapTmp map[string]inte
 }
 
 
+// UpdateSystemAutoupdatePushUpdate API operation for FortiOS updates the specified Push Update.
+// Returns the index value of the Push Update and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - push-update chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutoupdatePushUpdate(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.autoupdate/push-update"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutoupdatePushUpdate API operation for FortiOS deletes the specified Push Update.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - push-update chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutoupdatePushUpdate(mkey string) (err error) {
+
+	//No unset API for system.autoupdate - push-update
+	return
+}
+
+// ReadSystemAutoupdatePushUpdate API operation for FortiOS gets the Push Update
+// with the specified index value.
+// Returns the requested Push Update value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - push-update chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutoupdatePushUpdate(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.autoupdate/push-update"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
