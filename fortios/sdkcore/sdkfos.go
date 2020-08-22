@@ -12418,3 +12418,57 @@ func (c *FortiSDKClient) ReadSshFilterProfile(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateUserRadius API operation for FortiOS creates a new Radius.
+// Returns the index value of the Radius and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - radius chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserRadius(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/radius"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserRadius API operation for FortiOS updates the specified Radius.
+// Returns the index value of the Radius and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - radius chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserRadius(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/radius"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserRadius API operation for FortiOS deletes the specified Radius.
+// Returns error for service API and SDK errors.
+// See the user - radius chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserRadius(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/radius"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserRadius API operation for FortiOS gets the Radius
+// with the specified index value.
+// Returns the requested Radius value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - radius chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserRadius(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/radius"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
