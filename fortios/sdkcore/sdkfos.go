@@ -8296,3 +8296,57 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase1(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateVpnIpsecPhase2 API operation for FortiOS creates a new Phase2.
+// Returns the index value of the Phase2 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase2 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnIpsecPhase2(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ipsec/phase2"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnIpsecPhase2 API operation for FortiOS updates the specified Phase2.
+// Returns the index value of the Phase2 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase2 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnIpsecPhase2(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ipsec/phase2"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnIpsecPhase2 API operation for FortiOS deletes the specified Phase2.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase2 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnIpsecPhase2(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ipsec/phase2"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnIpsecPhase2 API operation for FortiOS gets the Phase2
+// with the specified index value.
+// Returns the requested Phase2 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase2 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnIpsecPhase2(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ipsec/phase2"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
