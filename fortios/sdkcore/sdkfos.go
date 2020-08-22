@@ -6910,3 +6910,57 @@ func (c *FortiSDKClient) ReadFirewallShapingPolicy(mkey string) (mapTmp map[stri
 	return
 }
 
+// CreateFirewallShapingProfile API operation for FortiOS creates a new Shaping Profile.
+// Returns the index value of the Shaping Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallShapingProfile(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/shaping-profile"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallShapingProfile API operation for FortiOS updates the specified Shaping Profile.
+// Returns the index value of the Shaping Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallShapingProfile(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/shaping-profile"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallShapingProfile API operation for FortiOS deletes the specified Shaping Profile.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallShapingProfile(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/shaping-profile"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallShapingProfile API operation for FortiOS gets the Shaping Profile
+// with the specified index value.
+// Returns the requested Shaping Profile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallShapingProfile(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/shaping-profile"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
