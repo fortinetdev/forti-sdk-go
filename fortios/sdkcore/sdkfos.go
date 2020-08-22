@@ -2555,3 +2555,38 @@ func (c *FortiSDKClient) ReadSystemFortiguard(mkey string) (mapTmp map[string]in
 }
 
 
+// UpdateSystemEmailServer API operation for FortiOS updates the specified Email Server.
+// Returns the index value of the Email Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - email-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemEmailServer(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/email-server"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemEmailServer API operation for FortiOS deletes the specified Email Server.
+// Returns error for service API and SDK errors.
+// See the system - email-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemEmailServer(mkey string) (err error) {
+
+	//No unset API for system - email-server
+	return
+}
+
+// ReadSystemEmailServer API operation for FortiOS gets the Email Server
+// with the specified index value.
+// Returns the requested Email Server value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - email-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemEmailServer(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/email-server"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
