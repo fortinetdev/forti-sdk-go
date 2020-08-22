@@ -15173,3 +15173,39 @@ func (c *FortiSDKClient) ReadRouterMulticastFlow(mkey string) (mapTmp map[string
 }
 
 
+// UpdateRouterMulticast API operation for FortiOS updates the specified Multicast.
+// Returns the index value of the Multicast and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterMulticast(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/multicast"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterMulticast API operation for FortiOS deletes the specified Multicast.
+// Returns error for service API and SDK errors.
+// See the router - multicast chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterMulticast(mkey string) (err error) {
+
+	//No unset API for router - multicast
+	return
+}
+
+// ReadRouterMulticast API operation for FortiOS gets the Multicast
+// with the specified index value.
+// Returns the requested Multicast value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterMulticast(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/multicast"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
