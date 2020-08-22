@@ -4697,3 +4697,39 @@ func (c *FortiSDKClient) ReadSwitchControllerStpSettings(mkey string) (mapTmp ma
 }
 
 
+// UpdateSwitchControllerSwitchLog API operation for FortiOS updates the specified Switch Log.
+// Returns the index value of the Switch Log and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-log chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerSwitchLog(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/switch-log"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerSwitchLog API operation for FortiOS deletes the specified Switch Log.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-log chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerSwitchLog(mkey string) (err error) {
+
+	//No unset API for switch-controller - switch-log
+	return
+}
+
+// ReadSwitchControllerSwitchLog API operation for FortiOS gets the Switch Log
+// with the specified index value.
+// Returns the requested Switch Log value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-log chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerSwitchLog(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/switch-log"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
