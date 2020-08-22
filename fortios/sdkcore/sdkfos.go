@@ -1762,3 +1762,57 @@ func (c *FortiSDKClient) ReadSystemSdnConnector(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateSystemIpv6Tunnel API operation for FortiOS creates a new Ipv6 Tunnel.
+// Returns the index value of the Ipv6 Tunnel and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemIpv6Tunnel(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/ipv6-tunnel"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemIpv6Tunnel API operation for FortiOS updates the specified Ipv6 Tunnel.
+// Returns the index value of the Ipv6 Tunnel and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemIpv6Tunnel(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ipv6-tunnel"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemIpv6Tunnel API operation for FortiOS deletes the specified Ipv6 Tunnel.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemIpv6Tunnel(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/ipv6-tunnel"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemIpv6Tunnel API operation for FortiOS gets the Ipv6 Tunnel
+// with the specified index value.
+// Returns the requested Ipv6 Tunnel value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemIpv6Tunnel(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ipv6-tunnel"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
