@@ -1096,3 +1096,57 @@ func (c *FortiSDKClient) ReadSystemSnmpSysinfo(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateSystemSnmpCommunity API operation for FortiOS creates a new Community.
+// Returns the index value of the Community and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.snmp - community chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemSnmpCommunity(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.snmp/community"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemSnmpCommunity API operation for FortiOS updates the specified Community.
+// Returns the index value of the Community and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.snmp - community chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemSnmpCommunity(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.snmp/community"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemSnmpCommunity API operation for FortiOS deletes the specified Community.
+// Returns error for service API and SDK errors.
+// See the system.snmp - community chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemSnmpCommunity(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.snmp/community"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemSnmpCommunity API operation for FortiOS gets the Community
+// with the specified index value.
+// Returns the requested Community value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.snmp - community chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemSnmpCommunity(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.snmp/community"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
