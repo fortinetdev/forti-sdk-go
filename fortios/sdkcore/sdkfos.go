@@ -3095,3 +3095,39 @@ func (c *FortiSDKClient) ReadSystemWccp(mkey string) (mapTmp map[string]interfac
 }
 
 
+// UpdateSystemNat64 API operation for FortiOS updates the specified Nat64.
+// Returns the index value of the Nat64 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - nat64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemNat64(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/nat64"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemNat64 API operation for FortiOS deletes the specified Nat64.
+// Returns error for service API and SDK errors.
+// See the system - nat64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemNat64(mkey string) (err error) {
+
+	//No unset API for system - nat64
+	return
+}
+
+// ReadSystemNat64 API operation for FortiOS gets the Nat64
+// with the specified index value.
+// Returns the requested Nat64 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - nat64 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemNat64(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/nat64"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
