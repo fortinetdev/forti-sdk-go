@@ -13678,3 +13678,57 @@ func (c *FortiSDKClient) ReadReportDataset(mkey string) (mapTmp map[string]inter
 	return
 }
 
+// CreateReportChart API operation for FortiOS creates a new Chart.
+// Returns the index value of the Chart and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - chart chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateReportChart(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/report/chart"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateReportChart API operation for FortiOS updates the specified Chart.
+// Returns the index value of the Chart and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - chart chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateReportChart(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/report/chart"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteReportChart API operation for FortiOS deletes the specified Chart.
+// Returns error for service API and SDK errors.
+// See the report - chart chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteReportChart(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/report/chart"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadReportChart API operation for FortiOS gets the Chart
+// with the specified index value.
+// Returns the requested Chart value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - chart chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadReportChart(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/report/chart"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
