@@ -3167,3 +3167,38 @@ func (c *FortiSDKClient) ReadSystemFtmPush(mkey string) (mapTmp map[string]inter
 }
 
 
+// UpdateSystemFortisandbox API operation for FortiOS updates the specified Fortisandbox.
+// Returns the index value of the Fortisandbox and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - fortisandbox chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemFortisandbox(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/fortisandbox"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemFortisandbox API operation for FortiOS deletes the specified Fortisandbox.
+// Returns error for service API and SDK errors.
+// See the system - fortisandbox chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemFortisandbox(mkey string) (err error) {
+
+	//No unset API for system - fortisandbox
+	return
+}
+
+// ReadSystemFortisandbox API operation for FortiOS gets the Fortisandbox
+// with the specified index value.
+// Returns the requested Fortisandbox value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - fortisandbox chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemFortisandbox(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/fortisandbox"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
