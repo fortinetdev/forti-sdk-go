@@ -3131,3 +3131,39 @@ func (c *FortiSDKClient) ReadSystemNat64(mkey string) (mapTmp map[string]interfa
 }
 
 
+// UpdateSystemFtmPush API operation for FortiOS updates the specified Ftm Push.
+// Returns the index value of the Ftm Push and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ftm-push chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemFtmPush(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ftm-push"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemFtmPush API operation for FortiOS deletes the specified Ftm Push.
+// Returns error for service API and SDK errors.
+// See the system - ftm-push chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemFtmPush(mkey string) (err error) {
+
+	//No unset API for system - ftm-push
+	return
+}
+
+// ReadSystemFtmPush API operation for FortiOS gets the Ftm Push
+// with the specified index value.
+// Returns the requested Ftm Push value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ftm-push chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemFtmPush(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ftm-push"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
