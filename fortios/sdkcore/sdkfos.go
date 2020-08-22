@@ -2464,3 +2464,58 @@ func (c *FortiSDKClient) ReadSystemLldpNetworkPolicy(mkey string) (mapTmp map[st
 	return
 }
 
+// CreateSystemClusterSync API operation for FortiOS creates a new Cluster Sync.
+// Returns the index value of the Cluster Sync and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - cluster-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemClusterSync(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/cluster-sync"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemClusterSync API operation for FortiOS updates the specified Cluster Sync.
+// Returns the index value of the Cluster Sync and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - cluster-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemClusterSync(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/cluster-sync"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemClusterSync API operation for FortiOS deletes the specified Cluster Sync.
+// Returns error for service API and SDK errors.
+// See the system - cluster-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemClusterSync(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/cluster-sync"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemClusterSync API operation for FortiOS gets the Cluster Sync
+// with the specified index value.
+// Returns the requested Cluster Sync value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - cluster-sync chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemClusterSync(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/cluster-sync"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
