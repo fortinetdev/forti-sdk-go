@@ -3670,3 +3670,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpNetworkAuthType(mkey
 	return
 }
 
+// CreateWirelessControllerHotspot20AnqpRoamingConsortium API operation for FortiOS creates a new Anqp Roaming Consortium.
+// Returns the index value of the Anqp Roaming Consortium and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-roaming-consortium chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpRoamingConsortium(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20AnqpRoamingConsortium API operation for FortiOS updates the specified Anqp Roaming Consortium.
+// Returns the index value of the Anqp Roaming Consortium and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-roaming-consortium chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpRoamingConsortium(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20AnqpRoamingConsortium API operation for FortiOS deletes the specified Anqp Roaming Consortium.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-roaming-consortium chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20AnqpRoamingConsortium(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20AnqpRoamingConsortium API operation for FortiOS gets the Anqp Roaming Consortium
+// with the specified index value.
+// Returns the requested Anqp Roaming Consortium value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-roaming-consortium chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpRoamingConsortium(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-roaming-consortium"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
