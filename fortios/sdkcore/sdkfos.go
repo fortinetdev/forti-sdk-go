@@ -8891,3 +8891,39 @@ func (c *FortiSDKClient) ReadWebfilterUrlfilter(mkey string) (mapTmp map[string]
 }
 
 
+// UpdateWebfilterIpsUrlfilterSetting API operation for FortiOS updates the specified Ips Urlfilter Setting.
+// Returns the index value of the Ips Urlfilter Setting and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - ips-urlfilter-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebfilterIpsUrlfilterSetting(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/webfilter/ips-urlfilter-setting"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebfilterIpsUrlfilterSetting API operation for FortiOS deletes the specified Ips Urlfilter Setting.
+// Returns error for service API and SDK errors.
+// See the webfilter - ips-urlfilter-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebfilterIpsUrlfilterSetting(mkey string) (err error) {
+
+	//No unset API for webfilter - ips-urlfilter-setting
+	return
+}
+
+// ReadWebfilterIpsUrlfilterSetting API operation for FortiOS gets the Ips Urlfilter Setting
+// with the specified index value.
+// Returns the requested Ips Urlfilter Setting value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - ips-urlfilter-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebfilterIpsUrlfilterSetting(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/webfilter/ips-urlfilter-setting"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
