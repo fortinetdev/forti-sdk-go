@@ -3202,3 +3202,58 @@ func (c *FortiSDKClient) ReadSystemFortisandbox(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateSystemVdomException API operation for FortiOS creates a new Vdom Exception.
+// Returns the index value of the Vdom Exception and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-exception chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemVdomException(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/vdom-exception"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemVdomException API operation for FortiOS updates the specified Vdom Exception.
+// Returns the index value of the Vdom Exception and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-exception chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVdomException(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vdom-exception"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVdomException API operation for FortiOS deletes the specified Vdom Exception.
+// Returns error for service API and SDK errors.
+// See the system - vdom-exception chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVdomException(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/vdom-exception"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemVdomException API operation for FortiOS gets the Vdom Exception
+// with the specified index value.
+// Returns the requested Vdom Exception value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-exception chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVdomException(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vdom-exception"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
