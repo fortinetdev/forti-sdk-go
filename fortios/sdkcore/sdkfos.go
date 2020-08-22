@@ -14524,3 +14524,57 @@ func (c *FortiSDKClient) ReadRouterPrefixList6(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateRouterKeyChain API operation for FortiOS creates a new Key Chain.
+// Returns the index value of the Key Chain and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - key-chain chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterKeyChain(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/key-chain"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateRouterKeyChain API operation for FortiOS updates the specified Key Chain.
+// Returns the index value of the Key Chain and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - key-chain chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterKeyChain(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/key-chain"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterKeyChain API operation for FortiOS deletes the specified Key Chain.
+// Returns error for service API and SDK errors.
+// See the router - key-chain chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterKeyChain(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/key-chain"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadRouterKeyChain API operation for FortiOS gets the Key Chain
+// with the specified index value.
+// Returns the requested Key Chain value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - key-chain chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterKeyChain(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/key-chain"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
