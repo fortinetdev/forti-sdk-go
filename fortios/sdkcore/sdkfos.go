@@ -1348,3 +1348,57 @@ func (c *FortiSDKClient) ReadSystemSessionTtl(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateSystemDhcpServer API operation for FortiOS creates a new Server.
+// Returns the index value of the Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.dhcp - server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemDhcpServer(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.dhcp/server"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemDhcpServer API operation for FortiOS updates the specified Server.
+// Returns the index value of the Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.dhcp - server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemDhcpServer(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.dhcp/server"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemDhcpServer API operation for FortiOS deletes the specified Server.
+// Returns error for service API and SDK errors.
+// See the system.dhcp - server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemDhcpServer(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.dhcp/server"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemDhcpServer API operation for FortiOS gets the Server
+// with the specified index value.
+// Returns the requested Server value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.dhcp - server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemDhcpServer(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.dhcp/server"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
