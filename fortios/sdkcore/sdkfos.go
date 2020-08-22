@@ -610,3 +610,57 @@ func (c *FortiSDKClient) ReadSystemHaMonitor(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateSystemArpTable API operation for FortiOS creates a new Arp Table.
+// Returns the index value of the Arp Table and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - arp-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemArpTable(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/arp-table"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemArpTable API operation for FortiOS updates the specified Arp Table.
+// Returns the index value of the Arp Table and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - arp-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemArpTable(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/arp-table"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemArpTable API operation for FortiOS deletes the specified Arp Table.
+// Returns error for service API and SDK errors.
+// See the system - arp-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemArpTable(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/arp-table"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemArpTable API operation for FortiOS gets the Arp Table
+// with the specified index value.
+// Returns the requested Arp Table value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - arp-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemArpTable(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/arp-table"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
