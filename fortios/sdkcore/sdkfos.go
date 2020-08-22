@@ -3040,3 +3040,58 @@ func (c *FortiSDKClient) ReadSystemNtp(mkey string) (mapTmp map[string]interface
 	return
 }
 
+// CreateSystemWccp API operation for FortiOS creates a new Wccp.
+// Returns the index value of the Wccp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - wccp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemWccp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/wccp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemWccp API operation for FortiOS updates the specified Wccp.
+// Returns the index value of the Wccp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - wccp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemWccp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/wccp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemWccp API operation for FortiOS deletes the specified Wccp.
+// Returns error for service API and SDK errors.
+// See the system - wccp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemWccp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/wccp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemWccp API operation for FortiOS gets the Wccp
+// with the specified index value.
+// Returns the requested Wccp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - wccp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemWccp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/wccp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
