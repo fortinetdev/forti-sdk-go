@@ -4552,3 +4552,57 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchProfile(mkey string) (mapTmp 
 	return
 }
 
+// CreateSwitchControllerCustomCommand API operation for FortiOS creates a new Custom Command.
+// Returns the index value of the Custom Command and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - custom-command chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerCustomCommand(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller/custom-command"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerCustomCommand API operation for FortiOS updates the specified Custom Command.
+// Returns the index value of the Custom Command and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - custom-command chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerCustomCommand(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/custom-command"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerCustomCommand API operation for FortiOS deletes the specified Custom Command.
+// Returns error for service API and SDK errors.
+// See the switch-controller - custom-command chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerCustomCommand(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller/custom-command"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerCustomCommand API operation for FortiOS gets the Custom Command
+// with the specified index value.
+// Returns the requested Custom Command value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - custom-command chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerCustomCommand(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/custom-command"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
