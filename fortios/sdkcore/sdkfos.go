@@ -10655,3 +10655,39 @@ func (c *FortiSDKClient) ReadSpamfilterProfile(mkey string) (mapTmp map[string]i
 }
 
 
+// UpdateSpamfilterFortishield API operation for FortiOS updates the specified Fortishield.
+// Returns the index value of the Fortishield and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - fortishield chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSpamfilterFortishield(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/spamfilter/fortishield"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSpamfilterFortishield API operation for FortiOS deletes the specified Fortishield.
+// Returns error for service API and SDK errors.
+// See the spamfilter - fortishield chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSpamfilterFortishield(mkey string) (err error) {
+
+	//No unset API for spamfilter - fortishield
+	return
+}
+
+// ReadSpamfilterFortishield API operation for FortiOS gets the Fortishield
+// with the specified index value.
+// Returns the requested Fortishield value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - fortishield chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSpamfilterFortishield(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/spamfilter/fortishield"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
