@@ -1241,3 +1241,39 @@ func (c *FortiSDKClient) ReadSystemAutoupdatePushUpdate(mkey string) (mapTmp map
 }
 
 
+// UpdateSystemAutoupdateSchedule API operation for FortiOS updates the specified Schedule.
+// Returns the index value of the Schedule and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - schedule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutoupdateSchedule(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.autoupdate/schedule"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutoupdateSchedule API operation for FortiOS deletes the specified Schedule.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - schedule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutoupdateSchedule(mkey string) (err error) {
+
+	//No unset API for system.autoupdate - schedule
+	return
+}
+
+// ReadSystemAutoupdateSchedule API operation for FortiOS gets the Schedule
+// with the specified index value.
+// Returns the requested Schedule value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - schedule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutoupdateSchedule(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.autoupdate/schedule"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
