@@ -719,3 +719,38 @@ func (c *FortiSDKClient) ReadSystemIpv6NeighborCache(mkey string) (mapTmp map[st
 }
 
 
+// UpdateSystemDns API operation for FortiOS updates the specified Dns.
+// Returns the index value of the Dns and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemDns(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/dns"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemDns API operation for FortiOS deletes the specified Dns.
+// Returns error for service API and SDK errors.
+// See the system - dns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemDns(mkey string) (err error) {
+
+	//No unset API for system - dns
+	return
+}
+
+// ReadSystemDns API operation for FortiOS gets the Dns
+// with the specified index value.
+// Returns the requested Dns value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemDns(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/dns"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
