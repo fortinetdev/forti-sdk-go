@@ -3346,3 +3346,57 @@ func (c *FortiSDKClient) ReadSystemAutomationTrigger(mkey string) (mapTmp map[st
 	return
 }
 
+// CreateSystemAutomationAction API operation for FortiOS creates a new Automation Action.
+// Returns the index value of the Automation Action and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-action chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAutomationAction(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/automation-action"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAutomationAction API operation for FortiOS updates the specified Automation Action.
+// Returns the index value of the Automation Action and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-action chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutomationAction(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/automation-action"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutomationAction API operation for FortiOS deletes the specified Automation Action.
+// Returns error for service API and SDK errors.
+// See the system - automation-action chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutomationAction(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/automation-action"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAutomationAction API operation for FortiOS gets the Automation Action
+// with the specified index value.
+// Returns the requested Automation Action value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-action chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutomationAction(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/automation-action"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
