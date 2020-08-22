@@ -15011,3 +15011,39 @@ func (c *FortiSDKClient) ReadRouterOspf(mkey string) (mapTmp map[string]interfac
 }
 
 
+// UpdateRouterOspf6 API operation for FortiOS updates the specified Ospf6.
+// Returns the index value of the Ospf6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - ospf6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterOspf6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/ospf6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterOspf6 API operation for FortiOS deletes the specified Ospf6.
+// Returns error for service API and SDK errors.
+// See the router - ospf6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterOspf6(mkey string) (err error) {
+
+	//No unset API for router - ospf6
+	return
+}
+
+// ReadRouterOspf6 API operation for FortiOS gets the Ospf6
+// with the specified index value.
+// Returns the requested Ospf6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - ospf6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterOspf6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/ospf6"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
