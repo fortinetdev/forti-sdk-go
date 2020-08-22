@@ -3257,3 +3257,38 @@ func (c *FortiSDKClient) ReadSystemVdomException(mkey string) (mapTmp map[string
 }
 
 
+// UpdateSystemCsf API operation for FortiOS updates the specified Csf.
+// Returns the index value of the Csf and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - csf chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemCsf(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/csf"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemCsf API operation for FortiOS deletes the specified Csf.
+// Returns error for service API and SDK errors.
+// See the system - csf chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemCsf(mkey string) (err error) {
+
+	//No unset API for system - csf
+	return
+}
+
+// ReadSystemCsf API operation for FortiOS gets the Csf
+// with the specified index value.
+// Returns the requested Csf value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - csf chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemCsf(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/csf"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
