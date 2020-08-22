@@ -8350,3 +8350,57 @@ func (c *FortiSDKClient) ReadVpnIpsecPhase2(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateVpnIpsecManualkey API operation for FortiOS creates a new Manualkey.
+// Returns the index value of the Manualkey and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - manualkey chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnIpsecManualkey(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnIpsecManualkey API operation for FortiOS updates the specified Manualkey.
+// Returns the index value of the Manualkey and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - manualkey chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnIpsecManualkey(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnIpsecManualkey API operation for FortiOS deletes the specified Manualkey.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - manualkey chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnIpsecManualkey(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnIpsecManualkey API operation for FortiOS gets the Manualkey
+// with the specified index value.
+// Returns the requested Manualkey value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - manualkey chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnIpsecManualkey(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ipsec/manualkey"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
