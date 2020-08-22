@@ -8458,3 +8458,57 @@ func (c *FortiSDKClient) ReadVpnIpsecConcentrator(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateVpnIpsecPhase1Interface API operation for FortiOS creates a new Phase1 Interface.
+// Returns the index value of the Phase1 Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase1-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnIpsecPhase1Interface(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnIpsecPhase1Interface API operation for FortiOS updates the specified Phase1 Interface.
+// Returns the index value of the Phase1 Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase1-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnIpsecPhase1Interface(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnIpsecPhase1Interface API operation for FortiOS deletes the specified Phase1 Interface.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase1-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnIpsecPhase1Interface(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnIpsecPhase1Interface API operation for FortiOS gets the Phase1 Interface
+// with the specified index value.
+// Returns the requested Phase1 Interface value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - phase1-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnIpsecPhase1Interface(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ipsec/phase1-interface"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
