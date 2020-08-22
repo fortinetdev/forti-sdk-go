@@ -12904,3 +12904,58 @@ func (c *FortiSDKClient) ReadUserPasswordPolicy(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateUserLocal API operation for FortiOS creates a new Local.
+// Returns the index value of the Local and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserLocal(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/local"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserLocal API operation for FortiOS updates the specified Local.
+// Returns the index value of the Local and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserLocal(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/local"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserLocal API operation for FortiOS deletes the specified Local.
+// Returns error for service API and SDK errors.
+// See the user - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserLocal(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/local"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserLocal API operation for FortiOS gets the Local
+// with the specified index value.
+// Returns the requested Local value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserLocal(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/local"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
