@@ -340,3 +340,57 @@ func (c *FortiSDKClient) ReadSystemSmsServer(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateSystemAdmin API operation for FortiOS creates a new Admin.
+// Returns the index value of the Admin and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - admin chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAdmin(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/admin"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAdmin API operation for FortiOS updates the specified Admin.
+// Returns the index value of the Admin and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - admin chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAdmin(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/admin"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAdmin API operation for FortiOS deletes the specified Admin.
+// Returns error for service API and SDK errors.
+// See the system - admin chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAdmin(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/admin"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAdmin API operation for FortiOS gets the Admin
+// with the specified index value.
+// Returns the requested Admin value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - admin chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAdmin(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/admin"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
