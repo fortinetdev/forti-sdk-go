@@ -7612,3 +7612,58 @@ func (c *FortiSDKClient) ReadFirewallSniffer(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateFirewallCentralSnatMap API operation for FortiOS creates a new Central Snat Map.
+// Returns the index value of the Central Snat Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - central-snat-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallCentralSnatMap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/central-snat-map"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallCentralSnatMap API operation for FortiOS updates the specified Central Snat Map.
+// Returns the index value of the Central Snat Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - central-snat-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallCentralSnatMap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/central-snat-map"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallCentralSnatMap API operation for FortiOS deletes the specified Central Snat Map.
+// Returns error for service API and SDK errors.
+// See the firewall - central-snat-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallCentralSnatMap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/central-snat-map"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallCentralSnatMap API operation for FortiOS gets the Central Snat Map
+// with the specified index value.
+// Returns the requested Central Snat Map value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - central-snat-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallCentralSnatMap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/central-snat-map"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
