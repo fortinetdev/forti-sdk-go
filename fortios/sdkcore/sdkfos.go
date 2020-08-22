@@ -2122,3 +2122,57 @@ func (c *FortiSDKClient) ReadSystemMobileTunnel(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateSystemPppoeInterface API operation for FortiOS creates a new Pppoe Interface.
+// Returns the index value of the Pppoe Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - pppoe-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemPppoeInterface(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/pppoe-interface"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemPppoeInterface API operation for FortiOS updates the specified Pppoe Interface.
+// Returns the index value of the Pppoe Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - pppoe-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemPppoeInterface(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/pppoe-interface"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemPppoeInterface API operation for FortiOS deletes the specified Pppoe Interface.
+// Returns error for service API and SDK errors.
+// See the system - pppoe-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemPppoeInterface(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/pppoe-interface"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemPppoeInterface API operation for FortiOS gets the Pppoe Interface
+// with the specified index value.
+// Returns the requested Pppoe Interface value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - pppoe-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemPppoeInterface(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/pppoe-interface"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
