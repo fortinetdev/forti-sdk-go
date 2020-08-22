@@ -6712,3 +6712,58 @@ func (c *FortiSDKClient) ReadFirewallSslServer(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateFirewallIdentityBasedRoute API operation for FortiOS creates a new Identity Based Route.
+// Returns the index value of the Identity Based Route and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - identity-based-route chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallIdentityBasedRoute(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/identity-based-route"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallIdentityBasedRoute API operation for FortiOS updates the specified Identity Based Route.
+// Returns the index value of the Identity Based Route and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - identity-based-route chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallIdentityBasedRoute(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/identity-based-route"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallIdentityBasedRoute API operation for FortiOS deletes the specified Identity Based Route.
+// Returns error for service API and SDK errors.
+// See the firewall - identity-based-route chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallIdentityBasedRoute(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/identity-based-route"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallIdentityBasedRoute API operation for FortiOS gets the Identity Based Route
+// with the specified index value.
+// Returns the requested Identity Based Route value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - identity-based-route chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallIdentityBasedRoute(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/identity-based-route"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
