@@ -8674,3 +8674,57 @@ func (c *FortiSDKClient) ReadVpnIpsecForticlient(mkey string) (mapTmp map[string
 	return
 }
 
+// CreateWebfilterFtgdLocalCat API operation for FortiOS creates a new Ftgd Local Cat.
+// Returns the index value of the Ftgd Local Cat and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - ftgd-local-cat chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWebfilterFtgdLocalCat(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWebfilterFtgdLocalCat API operation for FortiOS updates the specified Ftgd Local Cat.
+// Returns the index value of the Ftgd Local Cat and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - ftgd-local-cat chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebfilterFtgdLocalCat(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebfilterFtgdLocalCat API operation for FortiOS deletes the specified Ftgd Local Cat.
+// Returns error for service API and SDK errors.
+// See the webfilter - ftgd-local-cat chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebfilterFtgdLocalCat(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWebfilterFtgdLocalCat API operation for FortiOS gets the Ftgd Local Cat
+// with the specified index value.
+// Returns the requested Ftgd Local Cat value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the webfilter - ftgd-local-cat chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebfilterFtgdLocalCat(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/webfilter/ftgd-local-cat"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
