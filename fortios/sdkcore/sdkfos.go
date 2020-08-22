@@ -9520,3 +9520,57 @@ func (c *FortiSDKClient) ReadWebProxyForwardServerGroup(mkey string) (mapTmp map
 	return
 }
 
+// CreateWebProxyDebugUrl API operation for FortiOS creates a new Debug Url.
+// Returns the index value of the Debug Url and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - debug-url chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWebProxyDebugUrl(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/web-proxy/debug-url"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWebProxyDebugUrl API operation for FortiOS updates the specified Debug Url.
+// Returns the index value of the Debug Url and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - debug-url chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebProxyDebugUrl(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/web-proxy/debug-url"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebProxyDebugUrl API operation for FortiOS deletes the specified Debug Url.
+// Returns error for service API and SDK errors.
+// See the web-proxy - debug-url chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebProxyDebugUrl(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/web-proxy/debug-url"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWebProxyDebugUrl API operation for FortiOS gets the Debug Url
+// with the specified index value.
+// Returns the requested Debug Url value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - debug-url chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebProxyDebugUrl(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/web-proxy/debug-url"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
