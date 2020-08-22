@@ -13499,3 +13499,39 @@ func (c *FortiSDKClient) ReadAntivirusSettings(mkey string) (mapTmp map[string]i
 }
 
 
+// UpdateAntivirusHeuristic API operation for FortiOS updates the specified Heuristic.
+// Returns the index value of the Heuristic and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the antivirus - heuristic chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateAntivirusHeuristic(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/antivirus/heuristic"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteAntivirusHeuristic API operation for FortiOS deletes the specified Heuristic.
+// Returns error for service API and SDK errors.
+// See the antivirus - heuristic chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteAntivirusHeuristic(mkey string) (err error) {
+
+	//No unset API for antivirus - heuristic
+	return
+}
+
+// ReadAntivirusHeuristic API operation for FortiOS gets the Heuristic
+// with the specified index value.
+// Returns the requested Heuristic value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the antivirus - heuristic chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadAntivirusHeuristic(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/antivirus/heuristic"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
