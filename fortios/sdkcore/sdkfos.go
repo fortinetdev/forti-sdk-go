@@ -1277,3 +1277,39 @@ func (c *FortiSDKClient) ReadSystemAutoupdateSchedule(mkey string) (mapTmp map[s
 }
 
 
+// UpdateSystemAutoupdateTunneling API operation for FortiOS updates the specified Tunneling.
+// Returns the index value of the Tunneling and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - tunneling chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutoupdateTunneling(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.autoupdate/tunneling"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutoupdateTunneling API operation for FortiOS deletes the specified Tunneling.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - tunneling chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutoupdateTunneling(mkey string) (err error) {
+
+	//No unset API for system.autoupdate - tunneling
+	return
+}
+
+// ReadSystemAutoupdateTunneling API operation for FortiOS gets the Tunneling
+// with the specified index value.
+// Returns the requested Tunneling value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.autoupdate - tunneling chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutoupdateTunneling(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.autoupdate/tunneling"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
