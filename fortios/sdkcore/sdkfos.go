@@ -8404,3 +8404,57 @@ func (c *FortiSDKClient) ReadVpnIpsecManualkey(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateVpnIpsecConcentrator API operation for FortiOS creates a new Concentrator.
+// Returns the index value of the Concentrator and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - concentrator chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnIpsecConcentrator(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnIpsecConcentrator API operation for FortiOS updates the specified Concentrator.
+// Returns the index value of the Concentrator and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - concentrator chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnIpsecConcentrator(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnIpsecConcentrator API operation for FortiOS deletes the specified Concentrator.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - concentrator chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnIpsecConcentrator(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnIpsecConcentrator API operation for FortiOS gets the Concentrator
+// with the specified index value.
+// Returns the requested Concentrator value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ipsec - concentrator chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnIpsecConcentrator(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ipsec/concentrator"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
