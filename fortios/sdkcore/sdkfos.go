@@ -7738,3 +7738,57 @@ func (c *FortiSDKClient) ReadFirewallSshSetting(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateFirewallSshHostKey API operation for FortiOS creates a new Host Key.
+// Returns the index value of the Host Key and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - host-key chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallSshHostKey(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall.ssh/host-key"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallSshHostKey API operation for FortiOS updates the specified Host Key.
+// Returns the index value of the Host Key and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - host-key chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallSshHostKey(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall.ssh/host-key"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallSshHostKey API operation for FortiOS deletes the specified Host Key.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - host-key chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallSshHostKey(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall.ssh/host-key"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallSshHostKey API operation for FortiOS gets the Host Key
+// with the specified index value.
+// Returns the requested Host Key value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - host-key chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallSshHostKey(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall.ssh/host-key"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
