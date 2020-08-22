@@ -3400,3 +3400,58 @@ func (c *FortiSDKClient) ReadSystemAutomationAction(mkey string) (mapTmp map[str
 	return
 }
 
+// CreateSystemAutomationDestination API operation for FortiOS creates a new Automation Destination.
+// Returns the index value of the Automation Destination and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-destination chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAutomationDestination(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/automation-destination"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAutomationDestination API operation for FortiOS updates the specified Automation Destination.
+// Returns the index value of the Automation Destination and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-destination chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutomationDestination(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/automation-destination"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutomationDestination API operation for FortiOS deletes the specified Automation Destination.
+// Returns error for service API and SDK errors.
+// See the system - automation-destination chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutomationDestination(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/automation-destination"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAutomationDestination API operation for FortiOS gets the Automation Destination
+// with the specified index value.
+// Returns the requested Automation Destination value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-destination chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutomationDestination(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/automation-destination"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
