@@ -2375,3 +2375,38 @@ func (c *FortiSDKClient) ReadSystemResourceLimits(mkey string) (mapTmp map[strin
 }
 
 
+// UpdateSystemVirtualWanLink API operation for FortiOS updates the specified Virtual Wan Link.
+// Returns the index value of the Virtual Wan Link and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wan-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVirtualWanLink(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/virtual-wan-link"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVirtualWanLink API operation for FortiOS deletes the specified Virtual Wan Link.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wan-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVirtualWanLink(mkey string) (err error) {
+
+	//No unset API for system - virtual-wan-link
+	return
+}
+
+// ReadSystemVirtualWanLink API operation for FortiOS gets the Virtual Wan Link
+// with the specified index value.
+// Returns the requested Virtual Wan Link value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wan-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVirtualWanLink(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/virtual-wan-link"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
