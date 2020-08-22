@@ -2339,3 +2339,39 @@ func (c *FortiSDKClient) ReadSystemDnsServer(mkey string) (mapTmp map[string]int
 }
 
 
+// UpdateSystemResourceLimits API operation for FortiOS updates the specified Resource Limits.
+// Returns the index value of the Resource Limits and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - resource-limits chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemResourceLimits(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/resource-limits"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemResourceLimits API operation for FortiOS deletes the specified Resource Limits.
+// Returns error for service API and SDK errors.
+// See the system - resource-limits chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemResourceLimits(mkey string) (err error) {
+
+	//No unset API for system - resource-limits
+	return
+}
+
+// ReadSystemResourceLimits API operation for FortiOS gets the Resource Limits
+// with the specified index value.
+// Returns the requested Resource Limits value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - resource-limits chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemResourceLimits(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/resource-limits"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
