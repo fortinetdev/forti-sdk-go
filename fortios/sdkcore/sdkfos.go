@@ -1619,3 +1619,38 @@ func (c *FortiSDKClient) ReadSystemFm(mkey string) (mapTmp map[string]interface{
 }
 
 
+// UpdateSystemCentralManagement API operation for FortiOS updates the specified Central Management.
+// Returns the index value of the Central Management and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - central-management chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemCentralManagement(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/central-management"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemCentralManagement API operation for FortiOS deletes the specified Central Management.
+// Returns error for service API and SDK errors.
+// See the system - central-management chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemCentralManagement(mkey string) (err error) {
+
+	//No unset API for system - central-management
+	return
+}
+
+// ReadSystemCentralManagement API operation for FortiOS gets the Central Management
+// with the specified index value.
+// Returns the requested Central Management value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - central-management chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemCentralManagement(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/central-management"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
