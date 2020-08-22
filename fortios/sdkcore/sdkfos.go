@@ -12472,3 +12472,57 @@ func (c *FortiSDKClient) ReadUserRadius(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateUserTacacs API operation for FortiOS creates a new Tacacs+.
+// Returns the index value of the Tacacs+ and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - tacacs+ chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserTacacs(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/tacacs+"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserTacacs API operation for FortiOS updates the specified Tacacs+.
+// Returns the index value of the Tacacs+ and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - tacacs+ chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserTacacs(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/tacacs+"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserTacacs API operation for FortiOS deletes the specified Tacacs+.
+// Returns error for service API and SDK errors.
+// See the user - tacacs+ chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserTacacs(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/tacacs+"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserTacacs API operation for FortiOS gets the Tacacs+
+// with the specified index value.
+// Returns the requested Tacacs+ value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - tacacs+ chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserTacacs(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/tacacs+"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
