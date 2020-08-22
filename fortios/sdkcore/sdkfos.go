@@ -1871,3 +1871,38 @@ func (c *FortiSDKClient) ReadSystemExternalResource(mkey string) (mapTmp map[str
 }
 
 
+// UpdateSystemNetworkVisibility API operation for FortiOS updates the specified Network Visibility.
+// Returns the index value of the Network Visibility and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - network-visibility chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemNetworkVisibility(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/network-visibility"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemNetworkVisibility API operation for FortiOS deletes the specified Network Visibility.
+// Returns error for service API and SDK errors.
+// See the system - network-visibility chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemNetworkVisibility(mkey string) (err error) {
+
+	//No unset API for system - network-visibility
+	return
+}
+
+// ReadSystemNetworkVisibility API operation for FortiOS gets the Network Visibility
+// with the specified index value.
+// Returns the requested Network Visibility value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - network-visibility chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemNetworkVisibility(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/network-visibility"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
