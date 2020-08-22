@@ -7342,3 +7342,57 @@ func (c *FortiSDKClient) ReadFirewallDnstranslation(mkey string) (mapTmp map[str
 	return
 }
 
+// CreateFirewallMulticastPolicy API operation for FortiOS creates a new Multicast Policy.
+// Returns the index value of the Multicast Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - multicast-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallMulticastPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/multicast-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallMulticastPolicy API operation for FortiOS updates the specified Multicast Policy.
+// Returns the index value of the Multicast Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - multicast-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallMulticastPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/multicast-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallMulticastPolicy API operation for FortiOS deletes the specified Multicast Policy.
+// Returns error for service API and SDK errors.
+// See the firewall - multicast-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallMulticastPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/multicast-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallMulticastPolicy API operation for FortiOS gets the Multicast Policy
+// with the specified index value.
+// Returns the requested Multicast Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - multicast-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallMulticastPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/multicast-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
