@@ -881,3 +881,39 @@ func (c *FortiSDKClient) ReadSystemVdomSflow(mkey string) (mapTmp map[string]int
 }
 
 
+// UpdateSystemNetflow API operation for FortiOS updates the specified Netflow.
+// Returns the index value of the Netflow and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - netflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemNetflow(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/netflow"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemNetflow API operation for FortiOS deletes the specified Netflow.
+// Returns error for service API and SDK errors.
+// See the system - netflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemNetflow(mkey string) (err error) {
+
+	//No unset API for system - netflow
+	return
+}
+
+// ReadSystemNetflow API operation for FortiOS gets the Netflow
+// with the specified index value.
+// Returns the requested Netflow value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - netflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemNetflow(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/netflow"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
