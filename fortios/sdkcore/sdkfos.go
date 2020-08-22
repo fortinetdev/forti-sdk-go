@@ -215,3 +215,39 @@ func (c *FortiSDKClient) ReadSystemInterface(mkey string) (mapTmp map[string]int
 }
 
 
+// UpdateSystemPasswordPolicy API operation for FortiOS updates the specified Password Policy.
+// Returns the index value of the Password Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - password-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemPasswordPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/password-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemPasswordPolicy API operation for FortiOS deletes the specified Password Policy.
+// Returns error for service API and SDK errors.
+// See the system - password-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemPasswordPolicy(mkey string) (err error) {
+
+	//No unset API for system - password-policy
+	return
+}
+
+// ReadSystemPasswordPolicy API operation for FortiOS gets the Password Policy
+// with the specified index value.
+// Returns the requested Password Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - password-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemPasswordPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/password-policy"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
