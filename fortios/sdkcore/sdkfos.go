@@ -7126,3 +7126,57 @@ func (c *FortiSDKClient) ReadFirewallLocalInPolicy6(mkey string) (mapTmp map[str
 	return
 }
 
+// CreateFirewallTtlPolicy API operation for FortiOS creates a new Ttl Policy.
+// Returns the index value of the Ttl Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ttl-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallTtlPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/ttl-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallTtlPolicy API operation for FortiOS updates the specified Ttl Policy.
+// Returns the index value of the Ttl Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ttl-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallTtlPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/ttl-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallTtlPolicy API operation for FortiOS deletes the specified Ttl Policy.
+// Returns error for service API and SDK errors.
+// See the firewall - ttl-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallTtlPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/ttl-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallTtlPolicy API operation for FortiOS gets the Ttl Policy
+// with the specified index value.
+// Returns the requested Ttl Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ttl-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallTtlPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/ttl-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
