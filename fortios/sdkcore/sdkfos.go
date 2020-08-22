@@ -664,3 +664,58 @@ func (c *FortiSDKClient) ReadSystemArpTable(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateSystemIpv6NeighborCache API operation for FortiOS creates a new Ipv6 Neighbor Cache.
+// Returns the index value of the Ipv6 Neighbor Cache and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-neighbor-cache chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemIpv6NeighborCache(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemIpv6NeighborCache API operation for FortiOS updates the specified Ipv6 Neighbor Cache.
+// Returns the index value of the Ipv6 Neighbor Cache and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-neighbor-cache chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemIpv6NeighborCache(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemIpv6NeighborCache API operation for FortiOS deletes the specified Ipv6 Neighbor Cache.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-neighbor-cache chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemIpv6NeighborCache(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemIpv6NeighborCache API operation for FortiOS gets the Ipv6 Neighbor Cache
+// with the specified index value.
+// Returns the requested Ipv6 Neighbor Cache value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipv6-neighbor-cache chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemIpv6NeighborCache(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ipv6-neighbor-cache"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
