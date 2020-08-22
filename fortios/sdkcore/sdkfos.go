@@ -1960,3 +1960,57 @@ func (c *FortiSDKClient) ReadSystemGreTunnel(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateSystemIpsecAggregate API operation for FortiOS creates a new Ipsec Aggregate.
+// Returns the index value of the Ipsec Aggregate and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipsec-aggregate chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemIpsecAggregate(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/ipsec-aggregate"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemIpsecAggregate API operation for FortiOS updates the specified Ipsec Aggregate.
+// Returns the index value of the Ipsec Aggregate and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipsec-aggregate chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemIpsecAggregate(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ipsec-aggregate"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemIpsecAggregate API operation for FortiOS deletes the specified Ipsec Aggregate.
+// Returns error for service API and SDK errors.
+// See the system - ipsec-aggregate chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemIpsecAggregate(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/ipsec-aggregate"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemIpsecAggregate API operation for FortiOS gets the Ipsec Aggregate
+// with the specified index value.
+// Returns the requested Ipsec Aggregate value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipsec-aggregate chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemIpsecAggregate(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ipsec-aggregate"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
