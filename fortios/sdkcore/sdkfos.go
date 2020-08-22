@@ -10186,3 +10186,57 @@ func (c *FortiSDKClient) ReadDlpFilepattern(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateDlpFpSensitivity API operation for FortiOS creates a new Fp Sensitivity.
+// Returns the index value of the Fp Sensitivity and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dlp - fp-sensitivity chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateDlpFpSensitivity(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/dlp/fp-sensitivity"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateDlpFpSensitivity API operation for FortiOS updates the specified Fp Sensitivity.
+// Returns the index value of the Fp Sensitivity and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dlp - fp-sensitivity chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateDlpFpSensitivity(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/dlp/fp-sensitivity"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteDlpFpSensitivity API operation for FortiOS deletes the specified Fp Sensitivity.
+// Returns error for service API and SDK errors.
+// See the dlp - fp-sensitivity chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteDlpFpSensitivity(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/dlp/fp-sensitivity"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadDlpFpSensitivity API operation for FortiOS gets the Fp Sensitivity
+// with the specified index value.
+// Returns the requested Fp Sensitivity value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dlp - fp-sensitivity chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadDlpFpSensitivity(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/dlp/fp-sensitivity"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
