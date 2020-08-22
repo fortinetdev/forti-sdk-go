@@ -6856,3 +6856,57 @@ func (c *FortiSDKClient) ReadFirewallPolicy(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateFirewallShapingPolicy API operation for FortiOS creates a new Shaping Policy.
+// Returns the index value of the Shaping Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallShapingPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/shaping-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallShapingPolicy API operation for FortiOS updates the specified Shaping Policy.
+// Returns the index value of the Shaping Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallShapingPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/shaping-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallShapingPolicy API operation for FortiOS deletes the specified Shaping Policy.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallShapingPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/shaping-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallShapingPolicy API operation for FortiOS gets the Shaping Policy
+// with the specified index value.
+// Returns the requested Shaping Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - shaping-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallShapingPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/shaping-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
