@@ -106,3 +106,57 @@ func (c *FortiSDKClient) ReadSystemAccprofile(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateSystemObjectTagging API operation for FortiOS creates a new Object Tagging.
+// Returns the index value of the Object Tagging and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - object-tagging chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemObjectTagging(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/object-tagging"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemObjectTagging API operation for FortiOS updates the specified Object Tagging.
+// Returns the index value of the Object Tagging and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - object-tagging chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemObjectTagging(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/object-tagging"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemObjectTagging API operation for FortiOS deletes the specified Object Tagging.
+// Returns error for service API and SDK errors.
+// See the system - object-tagging chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemObjectTagging(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/object-tagging"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemObjectTagging API operation for FortiOS gets the Object Tagging
+// with the specified index value.
+// Returns the requested Object Tagging value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - object-tagging chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemObjectTagging(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/object-tagging"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
