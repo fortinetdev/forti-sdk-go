@@ -5542,3 +5542,57 @@ func (c *FortiSDKClient) ReadFirewallServiceGroup(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateFirewallInternetServiceExtension API operation for FortiOS creates a new Internet Service Extension.
+// Returns the index value of the Internet Service Extension and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-extension chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallInternetServiceExtension(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/internet-service-extension"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallInternetServiceExtension API operation for FortiOS updates the specified Internet Service Extension.
+// Returns the index value of the Internet Service Extension and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-extension chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallInternetServiceExtension(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/internet-service-extension"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallInternetServiceExtension API operation for FortiOS deletes the specified Internet Service Extension.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-extension chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallInternetServiceExtension(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/internet-service-extension"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallInternetServiceExtension API operation for FortiOS gets the Internet Service Extension
+// with the specified index value.
+// Returns the requested Internet Service Extension value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-extension chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallInternetServiceExtension(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/internet-service-extension"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
