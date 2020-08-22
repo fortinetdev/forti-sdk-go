@@ -4247,3 +4247,38 @@ func (c *FortiSDKClient) ReadSwitchControllerSecurityPolicy8021X(mkey string) (m
 }
 
 
+// UpdateSwitchControllerLldpSettings API operation for FortiOS updates the specified Lldp Settings.
+// Returns the index value of the Lldp Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerLldpSettings(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/lldp-settings"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerLldpSettings API operation for FortiOS deletes the specified Lldp Settings.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerLldpSettings(mkey string) (err error) {
+
+	//No unset API for switch-controller - lldp-settings
+	return
+}
+
+// ReadSwitchControllerLldpSettings API operation for FortiOS gets the Lldp Settings
+// with the specified index value.
+// Returns the requested Lldp Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerLldpSettings(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/lldp-settings"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
