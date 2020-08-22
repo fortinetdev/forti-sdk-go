@@ -160,3 +160,58 @@ func (c *FortiSDKClient) ReadSystemObjectTagging(mkey string) (mapTmp map[string
 	return
 }
 
+// CreateSystemInterface API operation for FortiOS creates a new Interface.
+// Returns the index value of the Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemInterface(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/interface"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemInterface API operation for FortiOS updates the specified Interface.
+// Returns the index value of the Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemInterface(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/interface"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemInterface API operation for FortiOS deletes the specified Interface.
+// Returns error for service API and SDK errors.
+// See the system - interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemInterface(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/interface"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemInterface API operation for FortiOS gets the Interface
+// with the specified index value.
+// Returns the requested Interface value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemInterface(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/interface"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
