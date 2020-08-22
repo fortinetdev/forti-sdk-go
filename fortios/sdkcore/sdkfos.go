@@ -4390,3 +4390,57 @@ func (c *FortiSDKClient) ReadSwitchControllerQosDot1PMap(mkey string) (mapTmp ma
 	return
 }
 
+// CreateSwitchControllerQosIpDscpMap API operation for FortiOS creates a new Ip Dscp Map.
+// Returns the index value of the Ip Dscp Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - ip-dscp-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerQosIpDscpMap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerQosIpDscpMap API operation for FortiOS updates the specified Ip Dscp Map.
+// Returns the index value of the Ip Dscp Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - ip-dscp-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerQosIpDscpMap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerQosIpDscpMap API operation for FortiOS deletes the specified Ip Dscp Map.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - ip-dscp-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerQosIpDscpMap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerQosIpDscpMap API operation for FortiOS gets the Ip Dscp Map
+// with the specified index value.
+// Returns the requested Ip Dscp Map value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - ip-dscp-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerQosIpDscpMap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.qos/ip-dscp-map"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
