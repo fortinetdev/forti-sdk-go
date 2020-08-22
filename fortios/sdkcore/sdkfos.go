@@ -2933,3 +2933,39 @@ func (c *FortiSDKClient) ReadSystemLinkMonitor(mkey string) (mapTmp map[string]i
 }
 
 
+// UpdateSystemAutoInstall API operation for FortiOS updates the specified Auto Install.
+// Returns the index value of the Auto Install and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - auto-install chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutoInstall(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/auto-install"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutoInstall API operation for FortiOS deletes the specified Auto Install.
+// Returns error for service API and SDK errors.
+// See the system - auto-install chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutoInstall(mkey string) (err error) {
+
+	//No unset API for system - auto-install
+	return
+}
+
+// ReadSystemAutoInstall API operation for FortiOS gets the Auto Install
+// with the specified index value.
+// Returns the requested Auto Install value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - auto-install chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutoInstall(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/auto-install"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
