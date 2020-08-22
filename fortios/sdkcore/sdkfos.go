@@ -2014,3 +2014,57 @@ func (c *FortiSDKClient) ReadSystemIpsecAggregate(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateSystemIpipTunnel API operation for FortiOS creates a new Ipip Tunnel.
+// Returns the index value of the Ipip Tunnel and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipip-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemIpipTunnel(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/ipip-tunnel"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemIpipTunnel API operation for FortiOS updates the specified Ipip Tunnel.
+// Returns the index value of the Ipip Tunnel and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipip-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemIpipTunnel(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ipip-tunnel"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemIpipTunnel API operation for FortiOS deletes the specified Ipip Tunnel.
+// Returns error for service API and SDK errors.
+// See the system - ipip-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemIpipTunnel(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/ipip-tunnel"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemIpipTunnel API operation for FortiOS gets the Ipip Tunnel
+// with the specified index value.
+// Returns the requested Ipip Tunnel value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ipip-tunnel chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemIpipTunnel(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ipip-tunnel"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
