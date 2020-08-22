@@ -754,3 +754,58 @@ func (c *FortiSDKClient) ReadSystemDns(mkey string) (mapTmp map[string]interface
 	return
 }
 
+// CreateSystemDdns API operation for FortiOS creates a new Ddns.
+// Returns the index value of the Ddns and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ddns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemDdns(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/ddns"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemDdns API operation for FortiOS updates the specified Ddns.
+// Returns the index value of the Ddns and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ddns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemDdns(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/ddns"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemDdns API operation for FortiOS deletes the specified Ddns.
+// Returns error for service API and SDK errors.
+// See the system - ddns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemDdns(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/ddns"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemDdns API operation for FortiOS gets the Ddns
+// with the specified index value.
+// Returns the requested Ddns value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ddns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemDdns(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/ddns"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
