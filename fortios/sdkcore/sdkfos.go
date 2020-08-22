@@ -6550,3 +6550,57 @@ func (c *FortiSDKClient) ReadFirewallIpmacbindingSetting(mkey string) (mapTmp ma
 	return
 }
 
+// CreateFirewallIpmacbindingTable API operation for FortiOS creates a new Table.
+// Returns the index value of the Table and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ipmacbinding - table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallIpmacbindingTable(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallIpmacbindingTable API operation for FortiOS updates the specified Table.
+// Returns the index value of the Table and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ipmacbinding - table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallIpmacbindingTable(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallIpmacbindingTable API operation for FortiOS deletes the specified Table.
+// Returns error for service API and SDK errors.
+// See the firewall.ipmacbinding - table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallIpmacbindingTable(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallIpmacbindingTable API operation for FortiOS gets the Table
+// with the specified index value.
+// Returns the requested Table value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ipmacbinding - table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallIpmacbindingTable(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall.ipmacbinding/table"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
