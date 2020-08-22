@@ -15209,3 +15209,38 @@ func (c *FortiSDKClient) ReadRouterMulticast(mkey string) (mapTmp map[string]int
 }
 
 
+// UpdateRouterMulticast6 API operation for FortiOS updates the specified Multicast6.
+// Returns the index value of the Multicast6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterMulticast6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/multicast6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterMulticast6 API operation for FortiOS deletes the specified Multicast6.
+// Returns error for service API and SDK errors.
+// See the router - multicast6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterMulticast6(mkey string) (err error) {
+
+	//No unset API for router - multicast6
+	return
+}
+
+// ReadRouterMulticast6 API operation for FortiOS gets the Multicast6
+// with the specified index value.
+// Returns the requested Multicast6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterMulticast6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/multicast6"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
