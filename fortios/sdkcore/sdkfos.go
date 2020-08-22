@@ -952,3 +952,57 @@ func (c *FortiSDKClient) ReadSystemVdomNetflow(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateSystemReplacemsgImage API operation for FortiOS creates a new Replacemsg Image.
+// Returns the index value of the Replacemsg Image and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-image chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgImage(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/replacemsg-image"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgImage API operation for FortiOS updates the specified Replacemsg Image.
+// Returns the index value of the Replacemsg Image and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-image chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgImage(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/replacemsg-image"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgImage API operation for FortiOS deletes the specified Replacemsg Image.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-image chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgImage(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/replacemsg-image"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgImage API operation for FortiOS gets the Replacemsg Image
+// with the specified index value.
+// Returns the requested Replacemsg Image value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-image chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgImage(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/replacemsg-image"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
