@@ -14687,3 +14687,39 @@ func (c *FortiSDKClient) ReadRouterRouteMap(mkey string) (mapTmp map[string]inte
 }
 
 
+// UpdateRouterRip API operation for FortiOS updates the specified Rip.
+// Returns the index value of the Rip and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - rip chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterRip(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/rip"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterRip API operation for FortiOS deletes the specified Rip.
+// Returns error for service API and SDK errors.
+// See the router - rip chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterRip(mkey string) (err error) {
+
+	//No unset API for router - rip
+	return
+}
+
+// ReadRouterRip API operation for FortiOS gets the Rip
+// with the specified index value.
+// Returns the requested Rip value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - rip chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterRip(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/rip"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
