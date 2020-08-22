@@ -10853,3 +10853,39 @@ func (c *FortiSDKClient) ReadLogSyslogdSetting(mkey string) (mapTmp map[string]i
 }
 
 
+// UpdateLogSyslogdFilter API operation for FortiOS updates the specified Filter.
+// Returns the index value of the Filter and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.syslogd - filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogSyslogdFilter(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log.syslogd/filter"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogSyslogdFilter API operation for FortiOS deletes the specified Filter.
+// Returns error for service API and SDK errors.
+// See the log.syslogd - filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogSyslogdFilter(mkey string) (err error) {
+
+	//No unset API for log.syslogd - filter
+	return
+}
+
+// ReadLogSyslogdFilter API operation for FortiOS gets the Filter
+// with the specified index value.
+// Returns the requested Filter value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.syslogd - filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogSyslogdFilter(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log.syslogd/filter"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
