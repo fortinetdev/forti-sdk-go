@@ -845,3 +845,39 @@ func (c *FortiSDKClient) ReadSystemSflow(mkey string) (mapTmp map[string]interfa
 }
 
 
+// UpdateSystemVdomSflow API operation for FortiOS updates the specified Vdom Sflow.
+// Returns the index value of the Vdom Sflow and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVdomSflow(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vdom-sflow"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVdomSflow API operation for FortiOS deletes the specified Vdom Sflow.
+// Returns error for service API and SDK errors.
+// See the system - vdom-sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVdomSflow(mkey string) (err error) {
+
+	//No unset API for system - vdom-sflow
+	return
+}
+
+// ReadSystemVdomSflow API operation for FortiOS gets the Vdom Sflow
+// with the specified index value.
+// Returns the requested Vdom Sflow value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVdomSflow(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vdom-sflow"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
