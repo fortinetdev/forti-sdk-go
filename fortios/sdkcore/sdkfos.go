@@ -2644,3 +2644,58 @@ func (c *FortiSDKClient) ReadSystemSessionHelper(mkey string) (mapTmp map[string
 	return
 }
 
+// CreateSystemProxyArp API operation for FortiOS creates a new Proxy Arp.
+// Returns the index value of the Proxy Arp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - proxy-arp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemProxyArp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/proxy-arp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemProxyArp API operation for FortiOS updates the specified Proxy Arp.
+// Returns the index value of the Proxy Arp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - proxy-arp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemProxyArp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/proxy-arp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemProxyArp API operation for FortiOS deletes the specified Proxy Arp.
+// Returns error for service API and SDK errors.
+// See the system - proxy-arp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemProxyArp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/proxy-arp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemProxyArp API operation for FortiOS gets the Proxy Arp
+// with the specified index value.
+// Returns the requested Proxy Arp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - proxy-arp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemProxyArp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/proxy-arp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
