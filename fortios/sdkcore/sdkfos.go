@@ -4157,3 +4157,38 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchInterfaceTag(mkey string) (ma
 }
 
 
+// UpdateSwitchController8021XSettings API operation for FortiOS updates the specified 802 1X Settings.
+// Returns the index value of the 802 1X Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - 802-1X-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchController8021XSettings(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/802-1X-settings"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchController8021XSettings API operation for FortiOS deletes the specified 802 1X Settings.
+// Returns error for service API and SDK errors.
+// See the switch-controller - 802-1X-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchController8021XSettings(mkey string) (err error) {
+
+	//No unset API for switch-controller - 802-1X-settings
+	return
+}
+
+// ReadSwitchController8021XSettings API operation for FortiOS gets the 802 1X Settings
+// with the specified index value.
+// Returns the requested 802 1X Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - 802-1X-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchController8021XSettings(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/802-1X-settings"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
