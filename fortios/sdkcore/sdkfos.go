@@ -7792,3 +7792,57 @@ func (c *FortiSDKClient) ReadFirewallSshHostKey(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateFirewallIpTranslation API operation for FortiOS creates a new Ip Translation.
+// Returns the index value of the Ip Translation and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ip-translation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallIpTranslation(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/ip-translation"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallIpTranslation API operation for FortiOS updates the specified Ip Translation.
+// Returns the index value of the Ip Translation and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ip-translation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallIpTranslation(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/ip-translation"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallIpTranslation API operation for FortiOS deletes the specified Ip Translation.
+// Returns error for service API and SDK errors.
+// See the firewall - ip-translation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallIpTranslation(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/ip-translation"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallIpTranslation API operation for FortiOS gets the Ip Translation
+// with the specified index value.
+// Returns the requested Ip Translation value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ip-translation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallIpTranslation(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/ip-translation"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
