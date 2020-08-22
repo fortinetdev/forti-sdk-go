@@ -4733,3 +4733,39 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchLog(mkey string) (mapTmp map[
 }
 
 
+// UpdateSwitchControllerIgmpSnooping API operation for FortiOS updates the specified Igmp Snooping.
+// Returns the index value of the Igmp Snooping and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - igmp-snooping chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerIgmpSnooping(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/igmp-snooping"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerIgmpSnooping API operation for FortiOS deletes the specified Igmp Snooping.
+// Returns error for service API and SDK errors.
+// See the switch-controller - igmp-snooping chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerIgmpSnooping(mkey string) (err error) {
+
+	//No unset API for switch-controller - igmp-snooping
+	return
+}
+
+// ReadSwitchControllerIgmpSnooping API operation for FortiOS gets the Igmp Snooping
+// with the specified index value.
+// Returns the requested Igmp Snooping value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - igmp-snooping chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerIgmpSnooping(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/igmp-snooping"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
