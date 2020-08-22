@@ -13786,3 +13786,57 @@ func (c *FortiSDKClient) ReadReportStyle(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateReportTheme API operation for FortiOS creates a new Theme.
+// Returns the index value of the Theme and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - theme chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateReportTheme(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/report/theme"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateReportTheme API operation for FortiOS updates the specified Theme.
+// Returns the index value of the Theme and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - theme chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateReportTheme(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/report/theme"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteReportTheme API operation for FortiOS deletes the specified Theme.
+// Returns error for service API and SDK errors.
+// See the report - theme chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteReportTheme(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/report/theme"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadReportTheme API operation for FortiOS gets the Theme
+// with the specified index value.
+// Returns the requested Theme value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the report - theme chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadReportTheme(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/report/theme"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
