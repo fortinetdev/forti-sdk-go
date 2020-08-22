@@ -4282,3 +4282,57 @@ func (c *FortiSDKClient) ReadSwitchControllerLldpSettings(mkey string) (mapTmp m
 	return
 }
 
+// CreateSwitchControllerLldpProfile API operation for FortiOS creates a new Lldp Profile.
+// Returns the index value of the Lldp Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerLldpProfile(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller/lldp-profile"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerLldpProfile API operation for FortiOS updates the specified Lldp Profile.
+// Returns the index value of the Lldp Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerLldpProfile(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/lldp-profile"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerLldpProfile API operation for FortiOS deletes the specified Lldp Profile.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerLldpProfile(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller/lldp-profile"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerLldpProfile API operation for FortiOS gets the Lldp Profile
+// with the specified index value.
+// Returns the requested Lldp Profile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - lldp-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerLldpProfile(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/lldp-profile"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
