@@ -15047,3 +15047,39 @@ func (c *FortiSDKClient) ReadRouterOspf6(mkey string) (mapTmp map[string]interfa
 }
 
 
+// UpdateRouterBgp API operation for FortiOS updates the specified Bgp.
+// Returns the index value of the Bgp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - bgp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterBgp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/bgp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterBgp API operation for FortiOS deletes the specified Bgp.
+// Returns error for service API and SDK errors.
+// See the router - bgp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterBgp(mkey string) (err error) {
+
+	//No unset API for router - bgp
+	return
+}
+
+// ReadRouterBgp API operation for FortiOS gets the Bgp
+// with the specified index value.
+// Returns the requested Bgp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - bgp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterBgp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/bgp"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
