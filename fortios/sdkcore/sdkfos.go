@@ -3778,3 +3778,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20Anqp3GppCellular(mkey st
 	return
 }
 
+// CreateWirelessControllerHotspot20AnqpIpAddressType API operation for FortiOS creates a new Anqp Ip Address Type.
+// Returns the index value of the Anqp Ip Address Type and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-ip-address-type chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20AnqpIpAddressType(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20AnqpIpAddressType API operation for FortiOS updates the specified Anqp Ip Address Type.
+// Returns the index value of the Anqp Ip Address Type and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-ip-address-type chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20AnqpIpAddressType(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20AnqpIpAddressType API operation for FortiOS deletes the specified Anqp Ip Address Type.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-ip-address-type chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20AnqpIpAddressType(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20AnqpIpAddressType API operation for FortiOS gets the Anqp Ip Address Type
+// with the specified index value.
+// Returns the requested Anqp Ip Address Type value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-ip-address-type chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpIpAddressType(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-ip-address-type"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
