@@ -2788,3 +2788,58 @@ func (c *FortiSDKClient) ReadSystemTosBasedPriority(mkey string) (mapTmp map[str
 	return
 }
 
+// CreateSystemDscpBasedPriority API operation for FortiOS creates a new Dscp Based Priority.
+// Returns the index value of the Dscp Based Priority and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dscp-based-priority chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemDscpBasedPriority(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/dscp-based-priority"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemDscpBasedPriority API operation for FortiOS updates the specified Dscp Based Priority.
+// Returns the index value of the Dscp Based Priority and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dscp-based-priority chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemDscpBasedPriority(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/dscp-based-priority"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemDscpBasedPriority API operation for FortiOS deletes the specified Dscp Based Priority.
+// Returns error for service API and SDK errors.
+// See the system - dscp-based-priority chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemDscpBasedPriority(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/dscp-based-priority"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemDscpBasedPriority API operation for FortiOS gets the Dscp Based Priority
+// with the specified index value.
+// Returns the requested Dscp Based Priority value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dscp-based-priority chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemDscpBasedPriority(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/dscp-based-priority"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
