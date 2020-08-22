@@ -9989,3 +9989,38 @@ func (c *FortiSDKClient) ReadWanoptRemoteStorage(mkey string) (mapTmp map[string
 }
 
 
+// UpdateFtpProxyExplicit API operation for FortiOS updates the specified Explicit.
+// Returns the index value of the Explicit and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ftp-proxy - explicit chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFtpProxyExplicit(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/ftp-proxy/explicit"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFtpProxyExplicit API operation for FortiOS deletes the specified Explicit.
+// Returns error for service API and SDK errors.
+// See the ftp-proxy - explicit chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFtpProxyExplicit(mkey string) (err error) {
+
+	//No unset API for ftp-proxy - explicit
+	return
+}
+
+// ReadFtpProxyExplicit API operation for FortiOS gets the Explicit
+// with the specified index value.
+// Returns the requested Explicit value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ftp-proxy - explicit chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFtpProxyExplicit(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/ftp-proxy/explicit"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
