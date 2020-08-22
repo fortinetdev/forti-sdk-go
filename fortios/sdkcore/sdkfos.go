@@ -7288,3 +7288,57 @@ func (c *FortiSDKClient) ReadFirewallProxyPolicy(mkey string) (mapTmp map[string
 	return
 }
 
+// CreateFirewallDnstranslation API operation for FortiOS creates a new Dnstranslation.
+// Returns the index value of the Dnstranslation and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - dnstranslation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallDnstranslation(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/dnstranslation"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallDnstranslation API operation for FortiOS updates the specified Dnstranslation.
+// Returns the index value of the Dnstranslation and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - dnstranslation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallDnstranslation(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/dnstranslation"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallDnstranslation API operation for FortiOS deletes the specified Dnstranslation.
+// Returns error for service API and SDK errors.
+// See the firewall - dnstranslation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallDnstranslation(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/dnstranslation"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallDnstranslation API operation for FortiOS gets the Dnstranslation
+// with the specified index value.
+// Returns the requested Dnstranslation value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - dnstranslation chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallDnstranslation(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/dnstranslation"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
