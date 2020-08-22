@@ -9574,3 +9574,57 @@ func (c *FortiSDKClient) ReadWebProxyDebugUrl(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateWebProxyWisp API operation for FortiOS creates a new Wisp.
+// Returns the index value of the Wisp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - wisp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWebProxyWisp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/web-proxy/wisp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWebProxyWisp API operation for FortiOS updates the specified Wisp.
+// Returns the index value of the Wisp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - wisp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWebProxyWisp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/web-proxy/wisp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWebProxyWisp API operation for FortiOS deletes the specified Wisp.
+// Returns error for service API and SDK errors.
+// See the web-proxy - wisp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWebProxyWisp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/web-proxy/wisp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWebProxyWisp API operation for FortiOS gets the Wisp
+// with the specified index value.
+// Returns the requested Wisp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the web-proxy - wisp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWebProxyWisp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/web-proxy/wisp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
