@@ -4192,3 +4192,58 @@ func (c *FortiSDKClient) ReadSwitchController8021XSettings(mkey string) (mapTmp 
 	return
 }
 
+// CreateSwitchControllerSecurityPolicy8021X API operation for FortiOS creates a new 802 1X.
+// Returns the index value of the 802 1X and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.security-policy - 802-1X chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerSecurityPolicy8021X(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerSecurityPolicy8021X API operation for FortiOS updates the specified 802 1X.
+// Returns the index value of the 802 1X and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.security-policy - 802-1X chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerSecurityPolicy8021X(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerSecurityPolicy8021X API operation for FortiOS deletes the specified 802 1X.
+// Returns error for service API and SDK errors.
+// See the switch-controller.security-policy - 802-1X chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerSecurityPolicy8021X(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerSecurityPolicy8021X API operation for FortiOS gets the 802 1X
+// with the specified index value.
+// Returns the requested 802 1X value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.security-policy - 802-1X chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerSecurityPolicy8021X(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.security-policy/802-1X"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
