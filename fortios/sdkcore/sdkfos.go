@@ -2176,3 +2176,57 @@ func (c *FortiSDKClient) ReadSystemPppoeInterface(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateSystemVxlan API operation for FortiOS creates a new Vxlan.
+// Returns the index value of the Vxlan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vxlan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemVxlan(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/vxlan"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemVxlan API operation for FortiOS updates the specified Vxlan.
+// Returns the index value of the Vxlan and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vxlan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVxlan(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vxlan"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVxlan API operation for FortiOS deletes the specified Vxlan.
+// Returns error for service API and SDK errors.
+// See the system - vxlan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVxlan(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/vxlan"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemVxlan API operation for FortiOS gets the Vxlan
+// with the specified index value.
+// Returns the requested Vxlan value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vxlan chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVxlan(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vxlan"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
