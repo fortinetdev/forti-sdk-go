@@ -11393,3 +11393,39 @@ func (c *FortiSDKClient) ReadLogMemorySetting(mkey string) (mapTmp map[string]in
 }
 
 
+// UpdateLogMemoryFilter API operation for FortiOS updates the specified Filter.
+// Returns the index value of the Filter and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.memory - filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogMemoryFilter(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log.memory/filter"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogMemoryFilter API operation for FortiOS deletes the specified Filter.
+// Returns error for service API and SDK errors.
+// See the log.memory - filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogMemoryFilter(mkey string) (err error) {
+
+	//No unset API for log.memory - filter
+	return
+}
+
+// ReadLogMemoryFilter API operation for FortiOS gets the Filter
+// with the specified index value.
+// Returns the requested Filter value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.memory - filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogMemoryFilter(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log.memory/filter"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
