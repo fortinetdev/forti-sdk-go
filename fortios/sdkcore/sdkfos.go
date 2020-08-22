@@ -9917,3 +9917,39 @@ func (c *FortiSDKClient) ReadWanoptContentDeliveryNetworkRule(mkey string) (mapT
 }
 
 
+// UpdateWanoptCacheService API operation for FortiOS updates the specified Cache Service.
+// Returns the index value of the Cache Service and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - cache-service chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWanoptCacheService(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wanopt/cache-service"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWanoptCacheService API operation for FortiOS deletes the specified Cache Service.
+// Returns error for service API and SDK errors.
+// See the wanopt - cache-service chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWanoptCacheService(mkey string) (err error) {
+
+	//No unset API for wanopt - cache-service
+	return
+}
+
+// ReadWanoptCacheService API operation for FortiOS gets the Cache Service
+// with the specified index value.
+// Returns the requested Cache Service value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - cache-service chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWanoptCacheService(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wanopt/cache-service"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
