@@ -15118,3 +15118,58 @@ func (c *FortiSDKClient) ReadRouterIsis(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateRouterMulticastFlow API operation for FortiOS creates a new Multicast Flow.
+// Returns the index value of the Multicast Flow and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast-flow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterMulticastFlow(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/multicast-flow"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateRouterMulticastFlow API operation for FortiOS updates the specified Multicast Flow.
+// Returns the index value of the Multicast Flow and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast-flow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterMulticastFlow(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/multicast-flow"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterMulticastFlow API operation for FortiOS deletes the specified Multicast Flow.
+// Returns error for service API and SDK errors.
+// See the router - multicast-flow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterMulticastFlow(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/multicast-flow"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadRouterMulticastFlow API operation for FortiOS gets the Multicast Flow
+// with the specified index value.
+// Returns the requested Multicast Flow value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - multicast-flow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterMulticastFlow(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/multicast-flow"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
