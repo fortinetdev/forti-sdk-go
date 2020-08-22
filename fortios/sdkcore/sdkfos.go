@@ -2843,3 +2843,38 @@ func (c *FortiSDKClient) ReadSystemDscpBasedPriority(mkey string) (mapTmp map[st
 }
 
 
+// UpdateSystemProbeResponse API operation for FortiOS updates the specified Probe Response.
+// Returns the index value of the Probe Response and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - probe-response chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemProbeResponse(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/probe-response"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemProbeResponse API operation for FortiOS deletes the specified Probe Response.
+// Returns error for service API and SDK errors.
+// See the system - probe-response chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemProbeResponse(mkey string) (err error) {
+
+	//No unset API for system - probe-response
+	return
+}
+
+// ReadSystemProbeResponse API operation for FortiOS gets the Probe Response
+// with the specified index value.
+// Returns the requested Probe Response value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - probe-response chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemProbeResponse(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/probe-response"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
