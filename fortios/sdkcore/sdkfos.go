@@ -7234,3 +7234,57 @@ func (c *FortiSDKClient) ReadFirewallPolicy64(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateFirewallProxyPolicy API operation for FortiOS creates a new Proxy Policy.
+// Returns the index value of the Proxy Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallProxyPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/proxy-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallProxyPolicy API operation for FortiOS updates the specified Proxy Policy.
+// Returns the index value of the Proxy Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallProxyPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/proxy-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallProxyPolicy API operation for FortiOS deletes the specified Proxy Policy.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallProxyPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/proxy-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallProxyPolicy API operation for FortiOS gets the Proxy Policy
+// with the specified index value.
+// Returns the requested Proxy Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallProxyPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/proxy-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
