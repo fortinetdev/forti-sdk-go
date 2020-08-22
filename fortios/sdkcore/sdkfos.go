@@ -4769,3 +4769,39 @@ func (c *FortiSDKClient) ReadSwitchControllerIgmpSnooping(mkey string) (mapTmp m
 }
 
 
+// UpdateSwitchControllerSflow API operation for FortiOS updates the specified Sflow.
+// Returns the index value of the Sflow and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerSflow(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/sflow"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerSflow API operation for FortiOS deletes the specified Sflow.
+// Returns error for service API and SDK errors.
+// See the switch-controller - sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerSflow(mkey string) (err error) {
+
+	//No unset API for switch-controller - sflow
+	return
+}
+
+// ReadSwitchControllerSflow API operation for FortiOS gets the Sflow
+// with the specified index value.
+// Returns the requested Sflow value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - sflow chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerSflow(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/sflow"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
