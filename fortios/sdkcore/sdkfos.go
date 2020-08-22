@@ -3724,3 +3724,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20AnqpRoamingConsortium(mk
 	return
 }
 
+// CreateWirelessControllerHotspot20Anqp3GppCellular API operation for FortiOS creates a new Anqp 3Gpp Cellular.
+// Returns the index value of the Anqp 3Gpp Cellular and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-3gpp-cellular chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20Anqp3GppCellular(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20Anqp3GppCellular API operation for FortiOS updates the specified Anqp 3Gpp Cellular.
+// Returns the index value of the Anqp 3Gpp Cellular and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-3gpp-cellular chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20Anqp3GppCellular(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20Anqp3GppCellular API operation for FortiOS deletes the specified Anqp 3Gpp Cellular.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-3gpp-cellular chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20Anqp3GppCellular(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20Anqp3GppCellular API operation for FortiOS gets the Anqp 3Gpp Cellular
+// with the specified index value.
+// Returns the requested Anqp 3Gpp Cellular value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - anqp-3gpp-cellular chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20Anqp3GppCellular(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/anqp-3gpp-cellular"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
