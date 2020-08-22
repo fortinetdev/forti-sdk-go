@@ -12742,3 +12742,57 @@ func (c *FortiSDKClient) ReadUserPop3(mkey string) (mapTmp map[string]interface{
 	return
 }
 
+// CreateUserFsso API operation for FortiOS creates a new Fsso.
+// Returns the index value of the Fsso and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - fsso chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserFsso(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/fsso"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserFsso API operation for FortiOS updates the specified Fsso.
+// Returns the index value of the Fsso and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - fsso chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserFsso(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/fsso"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserFsso API operation for FortiOS deletes the specified Fsso.
+// Returns error for service API and SDK errors.
+// See the user - fsso chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserFsso(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/fsso"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserFsso API operation for FortiOS gets the Fsso
+// with the specified index value.
+// Returns the requested Fsso value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - fsso chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserFsso(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/fsso"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
