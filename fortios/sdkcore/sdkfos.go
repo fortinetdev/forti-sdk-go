@@ -13354,3 +13354,57 @@ func (c *FortiSDKClient) ReadVoipProfile(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateDnsfilterDomainFilter API operation for FortiOS creates a new Domain Filter.
+// Returns the index value of the Domain Filter and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dnsfilter - domain-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateDnsfilterDomainFilter(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/dnsfilter/domain-filter"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateDnsfilterDomainFilter API operation for FortiOS updates the specified Domain Filter.
+// Returns the index value of the Domain Filter and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dnsfilter - domain-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateDnsfilterDomainFilter(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/dnsfilter/domain-filter"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteDnsfilterDomainFilter API operation for FortiOS deletes the specified Domain Filter.
+// Returns error for service API and SDK errors.
+// See the dnsfilter - domain-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteDnsfilterDomainFilter(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/dnsfilter/domain-filter"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadDnsfilterDomainFilter API operation for FortiOS gets the Domain Filter
+// with the specified index value.
+// Returns the requested Domain Filter value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the dnsfilter - domain-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadDnsfilterDomainFilter(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/dnsfilter/domain-filter"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
