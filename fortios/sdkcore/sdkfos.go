@@ -5650,3 +5650,57 @@ func (c *FortiSDKClient) ReadFirewallShaperTrafficShaper(mkey string) (mapTmp ma
 	return
 }
 
+// CreateFirewallShaperPerIpShaper API operation for FortiOS creates a new Per Ip Shaper.
+// Returns the index value of the Per Ip Shaper and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.shaper - per-ip-shaper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallShaperPerIpShaper(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallShaperPerIpShaper API operation for FortiOS updates the specified Per Ip Shaper.
+// Returns the index value of the Per Ip Shaper and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.shaper - per-ip-shaper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallShaperPerIpShaper(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallShaperPerIpShaper API operation for FortiOS deletes the specified Per Ip Shaper.
+// Returns error for service API and SDK errors.
+// See the firewall.shaper - per-ip-shaper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallShaperPerIpShaper(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallShaperPerIpShaper API operation for FortiOS gets the Per Ip Shaper
+// with the specified index value.
+// Returns the requested Per Ip Shaper value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.shaper - per-ip-shaper chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallShaperPerIpShaper(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall.shaper/per-ip-shaper"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
