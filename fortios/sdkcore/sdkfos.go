@@ -52,3 +52,57 @@ func (c *FortiSDKClient) ReadSystemGlobal(mkey string) (mapTmp map[string]interf
 	return
 }
 
+// CreateSystemAccprofile API operation for FortiOS creates a new Accprofile.
+// Returns the index value of the Accprofile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - accprofile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAccprofile(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/accprofile"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAccprofile API operation for FortiOS updates the specified Accprofile.
+// Returns the index value of the Accprofile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - accprofile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAccprofile(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/accprofile"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAccprofile API operation for FortiOS deletes the specified Accprofile.
+// Returns error for service API and SDK errors.
+// See the system - accprofile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAccprofile(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/accprofile"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAccprofile API operation for FortiOS gets the Accprofile
+// with the specified index value.
+// Returns the requested Accprofile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - accprofile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAccprofile(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/accprofile"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
