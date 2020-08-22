@@ -2230,3 +2230,57 @@ func (c *FortiSDKClient) ReadSystemVxlan(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateSystemDnsDatabase API operation for FortiOS creates a new Dns Database.
+// Returns the index value of the Dns Database and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dns-database chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemDnsDatabase(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/dns-database"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemDnsDatabase API operation for FortiOS updates the specified Dns Database.
+// Returns the index value of the Dns Database and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dns-database chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemDnsDatabase(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/dns-database"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemDnsDatabase API operation for FortiOS deletes the specified Dns Database.
+// Returns error for service API and SDK errors.
+// See the system - dns-database chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemDnsDatabase(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/dns-database"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemDnsDatabase API operation for FortiOS gets the Dns Database
+// with the specified index value.
+// Returns the requested Dns Database value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dns-database chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemDnsDatabase(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/dns-database"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
