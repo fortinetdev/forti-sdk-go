@@ -1006,3 +1006,58 @@ func (c *FortiSDKClient) ReadSystemReplacemsgImage(mkey string) (mapTmp map[stri
 	return
 }
 
+// CreateSystemReplacemsgGroup API operation for FortiOS creates a new Replacemsg Group.
+// Returns the index value of the Replacemsg Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/replacemsg-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgGroup API operation for FortiOS updates the specified Replacemsg Group.
+// Returns the index value of the Replacemsg Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/replacemsg-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgGroup API operation for FortiOS deletes the specified Replacemsg Group.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/replacemsg-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgGroup API operation for FortiOS gets the Replacemsg Group
+// with the specified index value.
+// Returns the requested Replacemsg Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - replacemsg-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/replacemsg-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
