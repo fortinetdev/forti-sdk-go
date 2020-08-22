@@ -9719,3 +9719,38 @@ func (c *FortiSDKClient) ReadWanoptWebcache(mkey string) (mapTmp map[string]inte
 }
 
 
+// UpdateWanoptSettings API operation for FortiOS updates the specified Settings.
+// Returns the index value of the Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWanoptSettings(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wanopt/settings"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWanoptSettings API operation for FortiOS deletes the specified Settings.
+// Returns error for service API and SDK errors.
+// See the wanopt - settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWanoptSettings(mkey string) (err error) {
+
+	//No unset API for wanopt - settings
+	return
+}
+
+// ReadWanoptSettings API operation for FortiOS gets the Settings
+// with the specified index value.
+// Returns the requested Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wanopt - settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWanoptSettings(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wanopt/settings"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
