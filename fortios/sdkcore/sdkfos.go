@@ -7450,3 +7450,57 @@ func (c *FortiSDKClient) ReadFirewallMulticastPolicy6(mkey string) (mapTmp map[s
 	return
 }
 
+// CreateFirewallInterfacePolicy API operation for FortiOS creates a new Interface Policy.
+// Returns the index value of the Interface Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - interface-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallInterfacePolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/interface-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallInterfacePolicy API operation for FortiOS updates the specified Interface Policy.
+// Returns the index value of the Interface Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - interface-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallInterfacePolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/interface-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallInterfacePolicy API operation for FortiOS deletes the specified Interface Policy.
+// Returns error for service API and SDK errors.
+// See the firewall - interface-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallInterfacePolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/interface-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallInterfacePolicy API operation for FortiOS gets the Interface Policy
+// with the specified index value.
+// Returns the requested Interface Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - interface-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallInterfacePolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/interface-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
