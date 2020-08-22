@@ -4336,3 +4336,57 @@ func (c *FortiSDKClient) ReadSwitchControllerLldpProfile(mkey string) (mapTmp ma
 	return
 }
 
+// CreateSwitchControllerQosDot1PMap API operation for FortiOS creates a new Dot1P Map.
+// Returns the index value of the Dot1P Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - dot1p-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerQosDot1PMap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerQosDot1PMap API operation for FortiOS updates the specified Dot1P Map.
+// Returns the index value of the Dot1P Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - dot1p-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerQosDot1PMap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerQosDot1PMap API operation for FortiOS deletes the specified Dot1P Map.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - dot1p-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerQosDot1PMap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerQosDot1PMap API operation for FortiOS gets the Dot1P Map
+// with the specified index value.
+// Returns the requested Dot1P Map value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - dot1p-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerQosDot1PMap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.qos/dot1p-map"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
