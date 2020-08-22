@@ -3292,3 +3292,57 @@ func (c *FortiSDKClient) ReadSystemCsf(mkey string) (mapTmp map[string]interface
 	return
 }
 
+// CreateSystemAutomationTrigger API operation for FortiOS creates a new Automation Trigger.
+// Returns the index value of the Automation Trigger and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-trigger chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAutomationTrigger(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/automation-trigger"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAutomationTrigger API operation for FortiOS updates the specified Automation Trigger.
+// Returns the index value of the Automation Trigger and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-trigger chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAutomationTrigger(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/automation-trigger"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAutomationTrigger API operation for FortiOS deletes the specified Automation Trigger.
+// Returns error for service API and SDK errors.
+// See the system - automation-trigger chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAutomationTrigger(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/automation-trigger"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAutomationTrigger API operation for FortiOS gets the Automation Trigger
+// with the specified index value.
+// Returns the requested Automation Trigger value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - automation-trigger chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAutomationTrigger(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/automation-trigger"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
