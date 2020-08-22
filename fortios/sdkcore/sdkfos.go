@@ -11105,3 +11105,39 @@ func (c *FortiSDKClient) ReadLogSyslogd3Filter(mkey string) (mapTmp map[string]i
 }
 
 
+// UpdateLogSyslogd3OverrideFilter API operation for FortiOS updates the specified Override Filter.
+// Returns the index value of the Override Filter and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.syslogd3 - override-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogSyslogd3OverrideFilter(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log.syslogd3/override-filter"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogSyslogd3OverrideFilter API operation for FortiOS deletes the specified Override Filter.
+// Returns error for service API and SDK errors.
+// See the log.syslogd3 - override-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogSyslogd3OverrideFilter(mkey string) (err error) {
+
+	//No unset API for log.syslogd3 - override-filter
+	return
+}
+
+// ReadLogSyslogd3OverrideFilter API operation for FortiOS gets the Override Filter
+// with the specified index value.
+// Returns the requested Override Filter value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.syslogd3 - override-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogSyslogd3OverrideFilter(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log.syslogd3/override-filter"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
