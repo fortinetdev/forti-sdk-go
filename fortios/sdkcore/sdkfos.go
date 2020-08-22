@@ -6658,3 +6658,57 @@ func (c *FortiSDKClient) ReadFirewallProfileGroup(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateFirewallSslServer API operation for FortiOS creates a new Ssl Server.
+// Returns the index value of the Ssl Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallSslServer(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/ssl-server"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallSslServer API operation for FortiOS updates the specified Ssl Server.
+// Returns the index value of the Ssl Server and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallSslServer(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/ssl-server"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallSslServer API operation for FortiOS deletes the specified Ssl Server.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallSslServer(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/ssl-server"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallSslServer API operation for FortiOS gets the Ssl Server
+// with the specified index value.
+// Returns the requested Ssl Server value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-server chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallSslServer(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/ssl-server"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
