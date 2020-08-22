@@ -11357,3 +11357,39 @@ func (c *FortiSDKClient) ReadLogMemoryGlobalSetting(mkey string) (mapTmp map[str
 }
 
 
+// UpdateLogMemorySetting API operation for FortiOS updates the specified Setting.
+// Returns the index value of the Setting and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.memory - setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogMemorySetting(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log.memory/setting"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogMemorySetting API operation for FortiOS deletes the specified Setting.
+// Returns error for service API and SDK errors.
+// See the log.memory - setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogMemorySetting(mkey string) (err error) {
+
+	//No unset API for log.memory - setting
+	return
+}
+
+// ReadLogMemorySetting API operation for FortiOS gets the Setting
+// with the specified index value.
+// Returns the requested Setting value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.memory - setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogMemorySetting(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log.memory/setting"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
