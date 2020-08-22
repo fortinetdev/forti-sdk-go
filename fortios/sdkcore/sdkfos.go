@@ -4606,3 +4606,58 @@ func (c *FortiSDKClient) ReadSwitchControllerCustomCommand(mkey string) (mapTmp 
 	return
 }
 
+// CreateSwitchControllerVirtualPortPool API operation for FortiOS creates a new Virtual Port Pool.
+// Returns the index value of the Virtual Port Pool and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - virtual-port-pool chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerVirtualPortPool(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerVirtualPortPool API operation for FortiOS updates the specified Virtual Port Pool.
+// Returns the index value of the Virtual Port Pool and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - virtual-port-pool chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerVirtualPortPool(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerVirtualPortPool API operation for FortiOS deletes the specified Virtual Port Pool.
+// Returns error for service API and SDK errors.
+// See the switch-controller - virtual-port-pool chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerVirtualPortPool(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerVirtualPortPool API operation for FortiOS gets the Virtual Port Pool
+// with the specified index value.
+// Returns the requested Virtual Port Pool value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - virtual-port-pool chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerVirtualPortPool(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/virtual-port-pool"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
