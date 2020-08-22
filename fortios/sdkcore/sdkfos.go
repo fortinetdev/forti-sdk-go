@@ -14866,3 +14866,57 @@ func (c *FortiSDKClient) ReadRouterPolicy(mkey string) (mapTmp map[string]interf
 	return
 }
 
+// CreateRouterPolicy6 API operation for FortiOS creates a new Policy6.
+// Returns the index value of the Policy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterPolicy6(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/policy6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateRouterPolicy6 API operation for FortiOS updates the specified Policy6.
+// Returns the index value of the Policy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterPolicy6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/policy6"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterPolicy6 API operation for FortiOS deletes the specified Policy6.
+// Returns error for service API and SDK errors.
+// See the router - policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterPolicy6(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/policy6"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadRouterPolicy6 API operation for FortiOS gets the Policy6
+// with the specified index value.
+// Returns the requested Policy6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - policy6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterPolicy6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/policy6"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
