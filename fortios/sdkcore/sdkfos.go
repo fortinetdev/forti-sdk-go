@@ -8152,3 +8152,58 @@ func (c *FortiSDKClient) ReadVpnSslWebUserGroupBookmark(mkey string) (mapTmp map
 	return
 }
 
+// CreateVpnSslWebUserBookmark API operation for FortiOS creates a new User Bookmark.
+// Returns the index value of the User Bookmark and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnSslWebUserBookmark(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnSslWebUserBookmark API operation for FortiOS updates the specified User Bookmark.
+// Returns the index value of the User Bookmark and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnSslWebUserBookmark(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnSslWebUserBookmark API operation for FortiOS deletes the specified User Bookmark.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnSslWebUserBookmark(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnSslWebUserBookmark API operation for FortiOS gets the User Bookmark
+// with the specified index value.
+// Returns the requested User Bookmark value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.ssl.web - user-bookmark chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnSslWebUserBookmark(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.ssl.web/user-bookmark"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
