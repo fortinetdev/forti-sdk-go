@@ -6856,6 +6856,60 @@ func (c *FortiSDKClient) ReadFirewallIpmacbindingTable(mkey string) (mapTmp map[
 	return
 }
 
+// CreateFirewallSslSshProfile API operation for FortiOS creates a new Ssl Ssh Profile.
+// Returns the index value of the Ssl Ssh Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-ssh-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallSslSshProfile(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallSslSshProfile API operation for FortiOS updates the specified Ssl Ssh Profile.
+// Returns the index value of the Ssl Ssh Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-ssh-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallSslSshProfile(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallSslSshProfile API operation for FortiOS deletes the specified Ssl Ssh Profile.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-ssh-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallSslSshProfile(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallSslSshProfile API operation for FortiOS gets the Ssl Ssh Profile
+// with the specified index value.
+// Returns the requested Ssl Ssh Profile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ssl-ssh-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallSslSshProfile(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/ssl-ssh-profile"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 // CreateFirewallProfileGroup API operation for FortiOS creates a new Profile Group.
 // Returns the index value of the Profile Group and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
