@@ -2428,6 +2428,60 @@ func (c *FortiSDKClient) ReadSystemVxlan(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateSystemVirtualWirePair API operation for FortiOS creates a new Virtual Wire Pair.
+// Returns the index value of the Virtual Wire Pair and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wire-pair chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemVirtualWirePair(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/virtual-wire-pair"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemVirtualWirePair API operation for FortiOS updates the specified Virtual Wire Pair.
+// Returns the index value of the Virtual Wire Pair and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wire-pair chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVirtualWirePair(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/virtual-wire-pair"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVirtualWirePair API operation for FortiOS deletes the specified Virtual Wire Pair.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wire-pair chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVirtualWirePair(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/virtual-wire-pair"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemVirtualWirePair API operation for FortiOS gets the Virtual Wire Pair
+// with the specified index value.
+// Returns the requested Virtual Wire Pair value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - virtual-wire-pair chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVirtualWirePair(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/virtual-wire-pair"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 // CreateSystemDnsDatabase API operation for FortiOS creates a new Dns Database.
 // Returns the index value of the Dns Database and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
