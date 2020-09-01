@@ -15909,3 +15909,75 @@ func (c *FortiSDKClient) ReadRouterSetting(mkey string) (mapTmp map[string]inter
 	mapTmp, err = read(c, HTTPMethod, path, true)
 	return
 }
+
+
+// UpdateRouterBfd API operation for FortiOS updates the specified Bfd.
+// Returns the index value of the Bfd and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - bfd chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterBfd(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/bfd"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterBfd API operation for FortiOS deletes the specified Bfd.
+// Returns error for service API and SDK errors.
+// See the router - bfd chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterBfd(mkey string) (err error) {
+
+	//No unset API for router - bfd
+	return
+}
+
+// ReadRouterBfd API operation for FortiOS gets the Bfd
+// with the specified index value.
+// Returns the requested Bfd value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - bfd chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterBfd(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/bfd"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
+// UpdateRouterBfd6 API operation for FortiOS updates the specified Bfd6.
+// Returns the index value of the Bfd6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - bfd6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterBfd6(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/bfd6"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterBfd6 API operation for FortiOS deletes the specified Bfd6.
+// Returns error for service API and SDK errors.
+// See the router - bfd6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterBfd6(mkey string) (err error) {
+
+	//No unset API for router - bfd6
+	return
+}
+
+// ReadRouterBfd6 API operation for FortiOS gets the Bfd6
+// with the specified index value.
+// Returns the requested Bfd6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - bfd6 chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterBfd6(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/bfd6"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
