@@ -14938,6 +14938,60 @@ func (c *FortiSDKClient) ReadRouterAccessList6(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateRouterAspathList API operation for FortiOS creates a new Aspath List.
+// Returns the index value of the Aspath List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - aspath-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateRouterAspathList(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/router/aspath-list"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateRouterAspathList API operation for FortiOS updates the specified Aspath List.
+// Returns the index value of the Aspath List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - aspath-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateRouterAspathList(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/router/aspath-list"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteRouterAspathList API operation for FortiOS deletes the specified Aspath List.
+// Returns error for service API and SDK errors.
+// See the router - aspath-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteRouterAspathList(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/router/aspath-list"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadRouterAspathList API operation for FortiOS gets the Aspath List
+// with the specified index value.
+// Returns the requested Aspath List value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the router - aspath-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadRouterAspathList(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/router/aspath-list"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 // CreateRouterPrefixList API operation for FortiOS creates a new Prefix List.
 // Returns the index value of the Prefix List and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
