@@ -214,6 +214,60 @@ func (c *FortiSDKClient) ReadSystemVdomLink(mkey string) (mapTmp map[string]inte
 	return
 }
 
+// CreateSystemSwitchInterface API operation for FortiOS creates a new Switch Interface.
+// Returns the index value of the Switch Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - switch-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemSwitchInterface(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/switch-interface"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemSwitchInterface API operation for FortiOS updates the specified Switch Interface.
+// Returns the index value of the Switch Interface and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - switch-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemSwitchInterface(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/switch-interface"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemSwitchInterface API operation for FortiOS deletes the specified Switch Interface.
+// Returns error for service API and SDK errors.
+// See the system - switch-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemSwitchInterface(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/switch-interface"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemSwitchInterface API operation for FortiOS gets the Switch Interface
+// with the specified index value.
+// Returns the requested Switch Interface value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - switch-interface chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemSwitchInterface(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/switch-interface"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 // CreateSystemObjectTagging API operation for FortiOS creates a new Object Tagging.
 // Returns the index value of the Object Tagging and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
