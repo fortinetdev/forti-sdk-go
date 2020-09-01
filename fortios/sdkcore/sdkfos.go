@@ -13714,6 +13714,60 @@ func (c *FortiSDKClient) ReadUserDevice(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateUserDeviceGroup API operation for FortiOS creates a new Device Group.
+// Returns the index value of the Device Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserDeviceGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/device-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserDeviceGroup API operation for FortiOS updates the specified Device Group.
+// Returns the index value of the Device Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserDeviceGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/device-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserDeviceGroup API operation for FortiOS deletes the specified Device Group.
+// Returns error for service API and SDK errors.
+// See the user - device-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserDeviceGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/device-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserDeviceGroup API operation for FortiOS gets the Device Group
+// with the specified index value.
+// Returns the requested Device Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - device-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserDeviceGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/device-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 // CreateUserDeviceAccessList API operation for FortiOS creates a new Device Access List.
 // Returns the index value of the Device Access List and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
