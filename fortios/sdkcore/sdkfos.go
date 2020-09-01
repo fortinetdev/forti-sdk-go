@@ -160,6 +160,60 @@ func (c *FortiSDKClient) ReadSystemAccprofile(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateSystemVdomLink API operation for FortiOS creates a new Vdom Link.
+// Returns the index value of the Vdom Link and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemVdomLink(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/vdom-link"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemVdomLink API operation for FortiOS updates the specified Vdom Link.
+// Returns the index value of the Vdom Link and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVdomLink(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vdom-link"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVdomLink API operation for FortiOS deletes the specified Vdom Link.
+// Returns error for service API and SDK errors.
+// See the system - vdom-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVdomLink(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/vdom-link"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemVdomLink API operation for FortiOS gets the Vdom Link
+// with the specified index value.
+// Returns the requested Vdom Link value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-link chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVdomLink(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vdom-link"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 // CreateSystemObjectTagging API operation for FortiOS creates a new Object Tagging.
 // Returns the index value of the Object Tagging and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
