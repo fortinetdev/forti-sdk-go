@@ -8062,6 +8062,61 @@ func (c *FortiSDKClient) ReadFirewallSshLocalKey(mkey string) (mapTmp map[string
 	return
 }
 
+// CreateFirewallSshLocalCa API operation for FortiOS creates a new Local Ca.
+// Returns the index value of the Local Ca and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - local-ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallSshLocalCa(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall.ssh/local-ca"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallSshLocalCa API operation for FortiOS updates the specified Local Ca.
+// Returns the index value of the Local Ca and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - local-ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallSshLocalCa(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall.ssh/local-ca"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallSshLocalCa API operation for FortiOS deletes the specified Local Ca.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - local-ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallSshLocalCa(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall.ssh/local-ca"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallSshLocalCa API operation for FortiOS gets the Local Ca
+// with the specified index value.
+// Returns the requested Local Ca value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall.ssh - local-ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallSshLocalCa(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall.ssh/local-ca"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
 // UpdateFirewallSshSetting API operation for FortiOS updates the specified Setting.
 // Returns the index value of the Setting and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
