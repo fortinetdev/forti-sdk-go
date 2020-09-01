@@ -16,6 +16,60 @@ type creatUpdateOutput struct {
 }
 
 
+// CreateSystemVdom API operation for FortiOS creates a new Vdom.
+// Returns the index value of the Vdom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemVdom(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/vdom"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemVdom API operation for FortiOS updates the specified Vdom.
+// Returns the index value of the Vdom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVdom(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vdom"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVdom API operation for FortiOS deletes the specified Vdom.
+// Returns error for service API and SDK errors.
+// See the system - vdom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVdom(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/vdom"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemVdom API operation for FortiOS gets the Vdom
+// with the specified index value.
+// Returns the requested Vdom value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVdom(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vdom"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
 
 // UpdateSystemGlobal API operation for FortiOS updates the specified Global.
 // Returns the index value of the Global and execution result when the request executes successfully.
