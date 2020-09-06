@@ -17122,3 +17122,51 @@ func (c *FortiSDKClient) ReadSystemReplacemsgUtm(mkey string) (mapTmp map[string
 	return
 }
 
+// CreateSystemReplacemsgIcap API operation for FortiOS creates a new Icap.
+// Returns the index value of the Icap and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - icap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgIcap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/icap"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgIcap API operation for FortiOS updates the specified Icap.
+// Returns the index value of the Icap and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - icap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgIcap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/icap"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgIcap API operation for FortiOS deletes the specified Icap.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - icap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgIcap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/icap"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgIcap API operation for FortiOS gets the Icap
+// with the specified index value.
+// Returns the requested Icap value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - icap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgIcap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/icap"
