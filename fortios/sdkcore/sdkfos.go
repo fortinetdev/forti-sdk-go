@@ -16072,3 +16072,57 @@ func (c *FortiSDKClient) ReadSystemGeneve(mkey string) (mapTmp map[string]interf
 }
 
 
+// CreateSystemCustomLanguage API operation for FortiOS creates a new Custom Language.
+// Returns the index value of the Custom Language and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - custom-language chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemCustomLanguage(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/custom-language"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemCustomLanguage API operation for FortiOS updates the specified Custom Language.
+// Returns the index value of the Custom Language and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - custom-language chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemCustomLanguage(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/custom-language"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemCustomLanguage API operation for FortiOS deletes the specified Custom Language.
+// Returns error for service API and SDK errors.
+// See the system - custom-language chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemCustomLanguage(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/custom-language"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemCustomLanguage API operation for FortiOS gets the Custom Language
+// with the specified index value.
+// Returns the requested Custom Language value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - custom-language chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemCustomLanguage(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/custom-language"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
