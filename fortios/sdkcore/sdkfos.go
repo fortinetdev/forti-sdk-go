@@ -21220,3 +21220,57 @@ func (c *FortiSDKClient) ReadWafMainClass(mkey string) (mapTmp map[string]interf
 	return
 }
 
+// CreateWafSubClass API operation for FortiOS creates a new Sub Class.
+// Returns the index value of the Sub Class and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the waf - sub-class chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWafSubClass(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/waf/sub-class"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWafSubClass API operation for FortiOS updates the specified Sub Class.
+// Returns the index value of the Sub Class and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the waf - sub-class chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWafSubClass(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/waf/sub-class"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWafSubClass API operation for FortiOS deletes the specified Sub Class.
+// Returns error for service API and SDK errors.
+// See the waf - sub-class chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWafSubClass(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/waf/sub-class"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWafSubClass API operation for FortiOS gets the Sub Class
+// with the specified index value.
+// Returns the requested Sub Class value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the waf - sub-class chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWafSubClass(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/waf/sub-class"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
