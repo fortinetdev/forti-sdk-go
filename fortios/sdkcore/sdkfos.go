@@ -20644,3 +20644,57 @@ func (c *FortiSDKClient) ReadWanoptProfile(mkey string) (mapTmp map[string]inter
 	return
 }
 
+// CreateApplicationName API operation for FortiOS creates a new Name.
+// Returns the index value of the Name and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the application - name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateApplicationName(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/application/name"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateApplicationName API operation for FortiOS updates the specified Name.
+// Returns the index value of the Name and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the application - name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateApplicationName(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/application/name"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteApplicationName API operation for FortiOS deletes the specified Name.
+// Returns error for service API and SDK errors.
+// See the application - name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteApplicationName(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/application/name"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadApplicationName API operation for FortiOS gets the Name
+// with the specified index value.
+// Returns the requested Name value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the application - name chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadApplicationName(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/application/name"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
