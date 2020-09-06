@@ -17890,3 +17890,58 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20HsProfile(mkey string) (
 	return
 }
 
+// CreateWirelessControllerVap API operation for FortiOS creates a new Vap.
+// Returns the index value of the Vap and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerVap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller/vap"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerVap API operation for FortiOS updates the specified Vap.
+// Returns the index value of the Vap and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerVap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/vap"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerVap API operation for FortiOS deletes the specified Vap.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerVap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller/vap"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerVap API operation for FortiOS gets the Vap
+// with the specified index value.
+// Returns the requested Vap value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerVap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/vap"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
