@@ -19318,3 +19318,57 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceGroup(mkey string) (mapTmp m
 	return
 }
 
+// CreateFirewallInternetServiceCustom API operation for FortiOS creates a new Internet Service Custom.
+// Returns the index value of the Internet Service Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallInternetServiceCustom(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/internet-service-custom"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallInternetServiceCustom API operation for FortiOS updates the specified Internet Service Custom.
+// Returns the index value of the Internet Service Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallInternetServiceCustom(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/internet-service-custom"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallInternetServiceCustom API operation for FortiOS deletes the specified Internet Service Custom.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallInternetServiceCustom(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/internet-service-custom"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallInternetServiceCustom API operation for FortiOS gets the Internet Service Custom
+// with the specified index value.
+// Returns the requested Internet Service Custom value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallInternetServiceCustom(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/internet-service-custom"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
