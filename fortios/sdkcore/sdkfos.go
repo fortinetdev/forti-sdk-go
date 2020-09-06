@@ -18340,3 +18340,57 @@ func (c *FortiSDKClient) ReadWirelessControllerWtpProfile(mkey string) (mapTmp m
 	return
 }
 
+// CreateWirelessControllerWtp API operation for FortiOS creates a new Wtp.
+// Returns the index value of the Wtp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wtp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerWtp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller/wtp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerWtp API operation for FortiOS updates the specified Wtp.
+// Returns the index value of the Wtp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wtp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerWtp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/wtp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerWtp API operation for FortiOS deletes the specified Wtp.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wtp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerWtp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller/wtp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerWtp API operation for FortiOS gets the Wtp
+// with the specified index value.
+// Returns the requested Wtp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wtp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerWtp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/wtp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
