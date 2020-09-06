@@ -20392,3 +20392,57 @@ func (c *FortiSDKClient) ReadIpsDecoder(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateIpsRule API operation for FortiOS creates a new Rule.
+// Returns the index value of the Rule and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateIpsRule(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/ips/rule"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateIpsRule API operation for FortiOS updates the specified Rule.
+// Returns the index value of the Rule and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateIpsRule(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/ips/rule"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteIpsRule API operation for FortiOS deletes the specified Rule.
+// Returns error for service API and SDK errors.
+// See the ips - rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteIpsRule(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/ips/rule"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadIpsRule API operation for FortiOS gets the Rule
+// with the specified index value.
+// Returns the requested Rule value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - rule chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadIpsRule(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/ips/rule"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
