@@ -19030,3 +19030,39 @@ func (c *FortiSDKClient) ReadSwitchControllerSwitchGroup(mkey string) (mapTmp ma
 }
 
 
+// UpdateSwitchControllerStormControl API operation for FortiOS updates the specified Storm Control.
+// Returns the index value of the Storm Control and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - storm-control chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerStormControl(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/storm-control"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerStormControl API operation for FortiOS deletes the specified Storm Control.
+// Returns error for service API and SDK errors.
+// See the switch-controller - storm-control chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerStormControl(mkey string) (err error) {
+
+	//No unset API for switch-controller - storm-control
+	return
+}
+
+// ReadSwitchControllerStormControl API operation for FortiOS gets the Storm Control
+// with the specified index value.
+// Returns the requested Storm Control value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - storm-control chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerStormControl(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/storm-control"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
