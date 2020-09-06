@@ -20446,3 +20446,57 @@ func (c *FortiSDKClient) ReadIpsRule(mkey string) (mapTmp map[string]interface{}
 	return
 }
 
+// CreateIpsRuleSettings API operation for FortiOS creates a new Rule Settings.
+// Returns the index value of the Rule Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - rule-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateIpsRuleSettings(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/ips/rule-settings"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateIpsRuleSettings API operation for FortiOS updates the specified Rule Settings.
+// Returns the index value of the Rule Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - rule-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateIpsRuleSettings(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/ips/rule-settings"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteIpsRuleSettings API operation for FortiOS deletes the specified Rule Settings.
+// Returns error for service API and SDK errors.
+// See the ips - rule-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteIpsRuleSettings(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/ips/rule-settings"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadIpsRuleSettings API operation for FortiOS gets the Rule Settings
+// with the specified index value.
+// Returns the requested Rule Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - rule-settings chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadIpsRuleSettings(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/ips/rule-settings"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
