@@ -15981,3 +15981,39 @@ func (c *FortiSDKClient) ReadRouterBfd6(mkey string) (mapTmp map[string]interfac
 	mapTmp, err = read(c, HTTPMethod, path, true)
 	return
 }
+
+// UpdateSystemSaml API operation for FortiOS updates the specified Saml.
+// Returns the index value of the Saml and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - saml chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemSaml(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/saml"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemSaml API operation for FortiOS deletes the specified Saml.
+// Returns error for service API and SDK errors.
+// See the system - saml chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemSaml(mkey string) (err error) {
+
+	//No unset API for system - saml
+	return
+}
+
+// ReadSystemSaml API operation for FortiOS gets the Saml
+// with the specified index value.
+// Returns the requested Saml value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - saml chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemSaml(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/saml"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
