@@ -19258,3 +19258,63 @@ func (c *FortiSDKClient) ReadFirewallInternetService(mkey string) (mapTmp map[st
 	return
 }
 
+// CreateFirewallInternetServiceGroup API operation for FortiOS creates a new Internet Service Group.
+// Returns the index value of the Internet Service Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallInternetServiceGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/internet-service-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallInternetServiceGroup API operation for FortiOS updates the specified Internet Service Group.
+// Returns the index value of the Internet Service Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallInternetServiceGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/internet-service-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallInternetServiceGroup API operation for FortiOS deletes the specified Internet Service Group.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallInternetServiceGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/internet-service-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallInternetServiceGroup API operation for FortiOS gets the Internet Service Group
+// with the specified index value.
+// Returns the requested Internet Service Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallInternetServiceGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/internet-service-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
