@@ -21004,3 +21004,57 @@ func (c *FortiSDKClient) ReadUserFssoPolling(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateUserFortitoken API operation for FortiOS creates a new Fortitoken.
+// Returns the index value of the Fortitoken and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - fortitoken chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserFortitoken(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/fortitoken"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserFortitoken API operation for FortiOS updates the specified Fortitoken.
+// Returns the index value of the Fortitoken and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - fortitoken chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserFortitoken(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/fortitoken"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserFortitoken API operation for FortiOS deletes the specified Fortitoken.
+// Returns error for service API and SDK errors.
+// See the user - fortitoken chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserFortitoken(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/fortitoken"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserFortitoken API operation for FortiOS gets the Fortitoken
+// with the specified index value.
+// Returns the requested Fortitoken value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - fortitoken chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserFortitoken(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/fortitoken"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
