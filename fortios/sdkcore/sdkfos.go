@@ -18827,3 +18827,38 @@ func (c *FortiSDKClient) ReadSwitchControllerAutoConfigPolicy(mkey string) (mapT
 }
 
 
+// UpdateSwitchControllerAutoConfigDefault API operation for FortiOS updates the specified Default.
+// Returns the index value of the Default and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - default chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerAutoConfigDefault(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.auto-config/default"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerAutoConfigDefault API operation for FortiOS deletes the specified Default.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - default chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerAutoConfigDefault(mkey string) (err error) {
+
+	//No unset API for switch-controller.auto-config - default
+	return
+}
+
+// ReadSwitchControllerAutoConfigDefault API operation for FortiOS gets the Default
+// with the specified index value.
+// Returns the requested Default value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - default chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerAutoConfigDefault(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.auto-config/default"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
