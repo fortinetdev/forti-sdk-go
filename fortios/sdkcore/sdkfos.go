@@ -20500,3 +20500,58 @@ func (c *FortiSDKClient) ReadIpsRuleSettings(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateIpsCustom API operation for FortiOS creates a new Custom.
+// Returns the index value of the Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateIpsCustom(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/ips/custom"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateIpsCustom API operation for FortiOS updates the specified Custom.
+// Returns the index value of the Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateIpsCustom(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/ips/custom"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteIpsCustom API operation for FortiOS deletes the specified Custom.
+// Returns error for service API and SDK errors.
+// See the ips - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteIpsCustom(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/ips/custom"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadIpsCustom API operation for FortiOS gets the Custom
+// with the specified index value.
+// Returns the requested Custom value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the ips - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadIpsCustom(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/ips/custom"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
