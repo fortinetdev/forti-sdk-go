@@ -19888,3 +19888,57 @@ func (c *FortiSDKClient) ReadVpnCertificateCa(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateVpnCertificateLocal API operation for FortiOS creates a new Local.
+// Returns the index value of the Local and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnCertificateLocal(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.certificate/local"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnCertificateLocal API operation for FortiOS updates the specified Local.
+// Returns the index value of the Local and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnCertificateLocal(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.certificate/local"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnCertificateLocal API operation for FortiOS deletes the specified Local.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnCertificateLocal(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.certificate/local"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnCertificateLocal API operation for FortiOS gets the Local
+// with the specified index value.
+// Returns the requested Local value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnCertificateLocal(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.certificate/local"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
