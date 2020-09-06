@@ -21328,3 +21328,57 @@ func (c *FortiSDKClient) ReadWafSignature(mkey string) (mapTmp map[string]interf
 	return
 }
 
+// CreateEndpointControlForticlientEms API operation for FortiOS creates a new Forticlient Ems.
+// Returns the index value of the Forticlient Ems and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-ems chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateEndpointControlForticlientEms(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateEndpointControlForticlientEms API operation for FortiOS updates the specified Forticlient Ems.
+// Returns the index value of the Forticlient Ems and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-ems chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateEndpointControlForticlientEms(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteEndpointControlForticlientEms API operation for FortiOS deletes the specified Forticlient Ems.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-ems chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteEndpointControlForticlientEms(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadEndpointControlForticlientEms API operation for FortiOS gets the Forticlient Ems
+// with the specified index value.
+// Returns the requested Forticlient Ems value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - forticlient-ems chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadEndpointControlForticlientEms(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/endpoint-control/forticlient-ems"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
