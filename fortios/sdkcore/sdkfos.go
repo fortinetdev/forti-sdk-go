@@ -20122,3 +20122,57 @@ func (c *FortiSDKClient) ReadVpnL2Tp(mkey string) (mapTmp map[string]interface{}
 	return
 }
 
+// CreateCertificateCa API operation for FortiOS creates a new Ca.
+// Returns the index value of the Ca and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateCertificateCa(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/certificate/ca"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateCertificateCa API operation for FortiOS updates the specified Ca.
+// Returns the index value of the Ca and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateCertificateCa(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/certificate/ca"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteCertificateCa API operation for FortiOS deletes the specified Ca.
+// Returns error for service API and SDK errors.
+// See the certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteCertificateCa(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/certificate/ca"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadCertificateCa API operation for FortiOS gets the Ca
+// with the specified index value.
+// Returns the requested Ca value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadCertificateCa(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/certificate/ca"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
