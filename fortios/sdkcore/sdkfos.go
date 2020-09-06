@@ -16181,3 +16181,39 @@ func (c *FortiSDKClient) ReadSystemStorage(mkey string) (mapTmp map[string]inter
 }
 
 
+// UpdateSystemDedicatedMgmt API operation for FortiOS updates the specified Dedicated Mgmt.
+// Returns the index value of the Dedicated Mgmt and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dedicated-mgmt chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemDedicatedMgmt(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/dedicated-mgmt"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemDedicatedMgmt API operation for FortiOS deletes the specified Dedicated Mgmt.
+// Returns error for service API and SDK errors.
+// See the system - dedicated-mgmt chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemDedicatedMgmt(mkey string) (err error) {
+
+	//No unset API for system - dedicated-mgmt
+	return
+}
+
+// ReadSystemDedicatedMgmt API operation for FortiOS gets the Dedicated Mgmt
+// with the specified index value.
+// Returns the requested Dedicated Mgmt value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - dedicated-mgmt chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemDedicatedMgmt(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/dedicated-mgmt"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
