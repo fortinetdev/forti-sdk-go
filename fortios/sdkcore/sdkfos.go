@@ -20176,3 +20176,57 @@ func (c *FortiSDKClient) ReadCertificateCa(mkey string) (mapTmp map[string]inter
 	return
 }
 
+// CreateCertificateLocal API operation for FortiOS creates a new Local.
+// Returns the index value of the Local and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateCertificateLocal(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/certificate/local"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateCertificateLocal API operation for FortiOS updates the specified Local.
+// Returns the index value of the Local and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateCertificateLocal(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/certificate/local"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteCertificateLocal API operation for FortiOS deletes the specified Local.
+// Returns error for service API and SDK errors.
+// See the certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteCertificateLocal(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/certificate/local"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadCertificateLocal API operation for FortiOS gets the Local
+// with the specified index value.
+// Returns the requested Local value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - local chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadCertificateLocal(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/certificate/local"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
