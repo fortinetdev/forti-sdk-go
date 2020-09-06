@@ -19690,3 +19690,57 @@ func (c *FortiSDKClient) ReadFirewallPolicy46(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateFirewallDosPolicy API operation for FortiOS creates a new Dos Policy.
+// Returns the index value of the Dos Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - DoS-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallDosPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/DoS-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallDosPolicy API operation for FortiOS updates the specified Dos Policy.
+// Returns the index value of the Dos Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - DoS-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallDosPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/DoS-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallDosPolicy API operation for FortiOS deletes the specified Dos Policy.
+// Returns error for service API and SDK errors.
+// See the firewall - DoS-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallDosPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/DoS-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallDosPolicy API operation for FortiOS gets the Dos Policy
+// with the specified index value.
+// Returns the requested Dos Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - DoS-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallDosPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/DoS-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
