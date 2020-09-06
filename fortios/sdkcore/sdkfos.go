@@ -19372,3 +19372,57 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceCustom(mkey string) (mapTmp 
 	return
 }
 
+// CreateFirewallInternetServiceCustomGroup API operation for FortiOS creates a new Internet Service Custom Group.
+// Returns the index value of the Internet Service Custom Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallInternetServiceCustomGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallInternetServiceCustomGroup API operation for FortiOS updates the specified Internet Service Custom Group.
+// Returns the index value of the Internet Service Custom Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallInternetServiceCustomGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallInternetServiceCustomGroup API operation for FortiOS deletes the specified Internet Service Custom Group.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallInternetServiceCustomGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallInternetServiceCustomGroup API operation for FortiOS gets the Internet Service Custom Group
+// with the specified index value.
+// Returns the requested Internet Service Custom Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-custom-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallInternetServiceCustomGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/internet-service-custom-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
