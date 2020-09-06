@@ -21382,3 +21382,57 @@ func (c *FortiSDKClient) ReadEndpointControlForticlientEms(mkey string) (mapTmp 
 	return
 }
 
+// CreateEndpointControlClient API operation for FortiOS creates a new Client.
+// Returns the index value of the Client and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - client chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateEndpointControlClient(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/endpoint-control/client"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateEndpointControlClient API operation for FortiOS updates the specified Client.
+// Returns the index value of the Client and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - client chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateEndpointControlClient(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/endpoint-control/client"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteEndpointControlClient API operation for FortiOS deletes the specified Client.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - client chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteEndpointControlClient(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/endpoint-control/client"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadEndpointControlClient API operation for FortiOS gets the Client
+// with the specified index value.
+// Returns the requested Client value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the endpoint-control - client chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadEndpointControlClient(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/endpoint-control/client"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
