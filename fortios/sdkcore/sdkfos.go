@@ -19168,3 +19168,39 @@ func (c *FortiSDKClient) DeleteSwitchControllerMacSyncSettings(mkey string) (err
 func (c *FortiSDKClient) ReadSwitchControllerMacSyncSettings(mkey string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/switch-controller/mac-sync-settings"
+// UpdateSwitchControllerQuarantine API operation for FortiOS updates the specified Quarantine.
+// Returns the index value of the Quarantine and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - quarantine chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerQuarantine(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/quarantine"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerQuarantine API operation for FortiOS deletes the specified Quarantine.
+// Returns error for service API and SDK errors.
+// See the switch-controller - quarantine chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerQuarantine(mkey string) (err error) {
+
+	//No unset API for switch-controller - quarantine
+	return
+}
+
+// ReadSwitchControllerQuarantine API operation for FortiOS gets the Quarantine
+// with the specified index value.
+// Returns the requested Quarantine value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - quarantine chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerQuarantine(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/quarantine"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
