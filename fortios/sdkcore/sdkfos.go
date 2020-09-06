@@ -20051,3 +20051,39 @@ func (c *FortiSDKClient) ReadVpnCertificateRemote(mkey string) (mapTmp map[strin
 }
 
 
+// UpdateVpnPptp API operation for FortiOS updates the specified Pptp.
+// Returns the index value of the Pptp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn - pptp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnPptp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn/pptp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnPptp API operation for FortiOS deletes the specified Pptp.
+// Returns error for service API and SDK errors.
+// See the vpn - pptp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnPptp(mkey string) (err error) {
+
+	//No unset API for vpn - pptp
+	return
+}
+
+// ReadVpnPptp API operation for FortiOS gets the Pptp
+// with the specified index value.
+// Returns the requested Pptp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn - pptp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnPptp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn/pptp"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
