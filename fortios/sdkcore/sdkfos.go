@@ -17782,3 +17782,57 @@ func (c *FortiSDKClient) ReadWirelessControllerHotspot20H2QpOsuProvider(mkey str
 	return
 }
 
+// CreateWirelessControllerHotspot20QosMap API operation for FortiOS creates a new Qos Map.
+// Returns the index value of the Qos Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - qos-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerHotspot20QosMap(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerHotspot20QosMap API operation for FortiOS updates the specified Qos Map.
+// Returns the index value of the Qos Map and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - qos-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerHotspot20QosMap(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerHotspot20QosMap API operation for FortiOS deletes the specified Qos Map.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - qos-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerHotspot20QosMap(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerHotspot20QosMap API operation for FortiOS gets the Qos Map
+// with the specified index value.
+// Returns the requested Qos Map value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller.hotspot20 - qos-map chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerHotspot20QosMap(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller.hotspot20/qos-map"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
