@@ -16258,3 +16258,57 @@ func (c *FortiSDKClient) ReadSystemVdomDns(mkey string) (mapTmp map[string]inter
 	return
 }
 
+// CreateSystemReplacemsgMail API operation for FortiOS creates a new Mail.
+// Returns the index value of the Mail and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - mail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgMail(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/mail"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgMail API operation for FortiOS updates the specified Mail.
+// Returns the index value of the Mail and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - mail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgMail(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/mail"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgMail API operation for FortiOS deletes the specified Mail.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - mail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgMail(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/mail"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgMail API operation for FortiOS gets the Mail
+// with the specified index value.
+// Returns the requested Mail value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - mail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgMail(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/mail"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
