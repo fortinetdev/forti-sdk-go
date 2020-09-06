@@ -18124,3 +18124,57 @@ func (c *FortiSDKClient) ReadWirelessControllerRegion(mkey string) (mapTmp map[s
 	return
 }
 
+// CreateWirelessControllerVapGroup API operation for FortiOS creates a new Vap Group.
+// Returns the index value of the Vap Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerVapGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller/vap-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerVapGroup API operation for FortiOS updates the specified Vap Group.
+// Returns the index value of the Vap Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerVapGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/vap-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerVapGroup API operation for FortiOS deletes the specified Vap Group.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerVapGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller/vap-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerVapGroup API operation for FortiOS gets the Vap Group
+// with the specified index value.
+// Returns the requested Vap Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - vap-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerVapGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/vap-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
