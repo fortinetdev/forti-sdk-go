@@ -16017,3 +16017,58 @@ func (c *FortiSDKClient) ReadSystemSaml(mkey string) (mapTmp map[string]interfac
 	return
 }
 
+// CreateSystemGeneve API operation for FortiOS creates a new Geneve.
+// Returns the index value of the Geneve and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - geneve chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemGeneve(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/geneve"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemGeneve API operation for FortiOS updates the specified Geneve.
+// Returns the index value of the Geneve and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - geneve chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemGeneve(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/geneve"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemGeneve API operation for FortiOS deletes the specified Geneve.
+// Returns error for service API and SDK errors.
+// See the system - geneve chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemGeneve(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/geneve"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemGeneve API operation for FortiOS gets the Geneve
+// with the specified index value.
+// Returns the requested Geneve value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - geneve chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemGeneve(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/geneve"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
