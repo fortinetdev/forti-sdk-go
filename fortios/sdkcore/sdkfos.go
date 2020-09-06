@@ -20698,3 +20698,57 @@ func (c *FortiSDKClient) ReadApplicationName(mkey string) (mapTmp map[string]int
 	return
 }
 
+// CreateApplicationCustom API operation for FortiOS creates a new Custom.
+// Returns the index value of the Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the application - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateApplicationCustom(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/application/custom"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateApplicationCustom API operation for FortiOS updates the specified Custom.
+// Returns the index value of the Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the application - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateApplicationCustom(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/application/custom"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteApplicationCustom API operation for FortiOS deletes the specified Custom.
+// Returns error for service API and SDK errors.
+// See the application - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteApplicationCustom(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/application/custom"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadApplicationCustom API operation for FortiOS gets the Custom
+// with the specified index value.
+// Returns the requested Custom value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the application - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadApplicationCustom(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/application/custom"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
