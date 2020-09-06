@@ -17014,3 +17014,57 @@ func (c *FortiSDKClient) ReadSystemReplacemsgNacQuar(mkey string) (mapTmp map[st
 	return
 }
 
+// CreateSystemReplacemsgTrafficQuota API operation for FortiOS creates a new Traffic Quota.
+// Returns the index value of the Traffic Quota and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - traffic-quota chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgTrafficQuota(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/traffic-quota"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgTrafficQuota API operation for FortiOS updates the specified Traffic Quota.
+// Returns the index value of the Traffic Quota and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - traffic-quota chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgTrafficQuota(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/traffic-quota"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgTrafficQuota API operation for FortiOS deletes the specified Traffic Quota.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - traffic-quota chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgTrafficQuota(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/traffic-quota"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgTrafficQuota API operation for FortiOS gets the Traffic Quota
+// with the specified index value.
+// Returns the requested Traffic Quota value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - traffic-quota chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgTrafficQuota(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/traffic-quota"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
