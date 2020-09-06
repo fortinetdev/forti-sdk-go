@@ -17314,3 +17314,58 @@ func (c *FortiSDKClient) ReadSystemAlarm(mkey string) (mapTmp map[string]interfa
 	return
 }
 
+// CreateSystemMacAddressTable API operation for FortiOS creates a new Mac Address Table.
+// Returns the index value of the Mac Address Table and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - mac-address-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemMacAddressTable(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/mac-address-table"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemMacAddressTable API operation for FortiOS updates the specified Mac Address Table.
+// Returns the index value of the Mac Address Table and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - mac-address-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemMacAddressTable(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/mac-address-table"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemMacAddressTable API operation for FortiOS deletes the specified Mac Address Table.
+// Returns error for service API and SDK errors.
+// See the system - mac-address-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemMacAddressTable(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/mac-address-table"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemMacAddressTable API operation for FortiOS gets the Mac Address Table
+// with the specified index value.
+// Returns the requested Mac Address Table value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - mac-address-table chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemMacAddressTable(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/mac-address-table"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
