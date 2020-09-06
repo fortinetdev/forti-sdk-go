@@ -19474,3 +19474,57 @@ func (c *FortiSDKClient) DeleteFirewallInternetServiceDefinition(mkey string) (e
 func (c *FortiSDKClient) ReadFirewallInternetServiceDefinition(mkey string) (mapTmp map[string]interface{}, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/internet-service-definition"
+// CreateFirewallProxyAddrgrp API operation for FortiOS creates a new Proxy Addrgrp.
+// Returns the index value of the Proxy Addrgrp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-addrgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallProxyAddrgrp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallProxyAddrgrp API operation for FortiOS updates the specified Proxy Addrgrp.
+// Returns the index value of the Proxy Addrgrp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-addrgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallProxyAddrgrp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallProxyAddrgrp API operation for FortiOS deletes the specified Proxy Addrgrp.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-addrgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallProxyAddrgrp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallProxyAddrgrp API operation for FortiOS gets the Proxy Addrgrp
+// with the specified index value.
+// Returns the requested Proxy Addrgrp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - proxy-addrgrp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallProxyAddrgrp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/proxy-addrgrp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
