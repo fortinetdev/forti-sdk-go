@@ -19834,3 +19834,57 @@ func (c *FortiSDKClient) ReadFirewallIpv6EhFilter(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateVpnCertificateCa API operation for FortiOS creates a new Ca.
+// Returns the index value of the Ca and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnCertificateCa(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.certificate/ca"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnCertificateCa API operation for FortiOS updates the specified Ca.
+// Returns the index value of the Ca and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnCertificateCa(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.certificate/ca"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnCertificateCa API operation for FortiOS deletes the specified Ca.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnCertificateCa(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.certificate/ca"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnCertificateCa API operation for FortiOS gets the Ca
+// with the specified index value.
+// Returns the requested Ca value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - ca chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnCertificateCa(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.certificate/ca"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
