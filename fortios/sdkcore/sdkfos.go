@@ -18718,3 +18718,57 @@ func (c *FortiSDKClient) ReadSwitchControllerSecurityPolicyCaptivePortal(mkey st
 	return
 }
 
+// CreateSwitchControllerQosQosPolicy API operation for FortiOS creates a new Qos Policy.
+// Returns the index value of the Qos Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - qos-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerQosQosPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerQosQosPolicy API operation for FortiOS updates the specified Qos Policy.
+// Returns the index value of the Qos Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - qos-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerQosQosPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerQosQosPolicy API operation for FortiOS deletes the specified Qos Policy.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - qos-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerQosQosPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerQosQosPolicy API operation for FortiOS gets the Qos Policy
+// with the specified index value.
+// Returns the requested Qos Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.qos - qos-policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerQosQosPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.qos/qos-policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
