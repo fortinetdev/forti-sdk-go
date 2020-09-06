@@ -16217,3 +16217,44 @@ func (c *FortiSDKClient) ReadSystemDedicatedMgmt(mkey string) (mapTmp map[string
 }
 
 
+// UpdateSystemVdomDns API operation for FortiOS updates the specified Vdom Dns.
+// Returns the index value of the Vdom Dns and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-dns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVdomDns(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vdom-dns"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVdomDns API operation for FortiOS deletes the specified Vdom Dns.
+// Returns error for service API and SDK errors.
+// See the system - vdom-dns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVdomDns(mkey string) (err error) {
+
+	//No unset API for system - vdom-dns
+	return
+}
+
+// ReadSystemVdomDns API operation for FortiOS gets the Vdom Dns
+// with the specified index value.
+// Returns the requested Vdom Dns value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-dns chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVdomDns(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vdom-dns"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
