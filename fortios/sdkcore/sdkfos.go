@@ -19426,3 +19426,51 @@ func (c *FortiSDKClient) ReadFirewallInternetServiceCustomGroup(mkey string) (ma
 	return
 }
 
+// CreateFirewallInternetServiceDefinition API operation for FortiOS creates a new Internet Service Definition.
+// Returns the index value of the Internet Service Definition and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-definition chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateFirewallInternetServiceDefinition(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/firewall/internet-service-definition"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateFirewallInternetServiceDefinition API operation for FortiOS updates the specified Internet Service Definition.
+// Returns the index value of the Internet Service Definition and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-definition chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallInternetServiceDefinition(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/internet-service-definition"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallInternetServiceDefinition API operation for FortiOS deletes the specified Internet Service Definition.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-definition chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallInternetServiceDefinition(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/firewall/internet-service-definition"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadFirewallInternetServiceDefinition API operation for FortiOS gets the Internet Service Definition
+// with the specified index value.
+// Returns the requested Internet Service Definition value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - internet-service-definition chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallInternetServiceDefinition(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/internet-service-definition"
