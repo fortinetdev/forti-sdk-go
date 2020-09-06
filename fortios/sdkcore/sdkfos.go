@@ -19799,3 +19799,38 @@ func (c *FortiSDKClient) ReadFirewallDosPolicy6(mkey string) (mapTmp map[string]
 }
 
 
+// UpdateFirewallIpv6EhFilter API operation for FortiOS updates the specified Ipv6 Eh Filter.
+// Returns the index value of the Ipv6 Eh Filter and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ipv6-eh-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFirewallIpv6EhFilter(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/firewall/ipv6-eh-filter"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteFirewallIpv6EhFilter API operation for FortiOS deletes the specified Ipv6 Eh Filter.
+// Returns error for service API and SDK errors.
+// See the firewall - ipv6-eh-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFirewallIpv6EhFilter(mkey string) (err error) {
+
+	//No unset API for firewall - ipv6-eh-filter
+	return
+}
+
+// ReadFirewallIpv6EhFilter API operation for FortiOS gets the Ipv6 Eh Filter
+// with the specified index value.
+// Returns the requested Ipv6 Eh Filter value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the firewall - ipv6-eh-filter chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFirewallIpv6EhFilter(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/ipv6-eh-filter"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
