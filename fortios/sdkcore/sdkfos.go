@@ -16420,3 +16420,57 @@ func (c *FortiSDKClient) ReadSystemReplacemsgWebproxy(mkey string) (mapTmp map[s
 	return
 }
 
+// CreateSystemReplacemsgFtp API operation for FortiOS creates a new Ftp.
+// Returns the index value of the Ftp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - ftp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgFtp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/ftp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgFtp API operation for FortiOS updates the specified Ftp.
+// Returns the index value of the Ftp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - ftp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgFtp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/ftp"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgFtp API operation for FortiOS deletes the specified Ftp.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - ftp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgFtp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/ftp"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgFtp API operation for FortiOS gets the Ftp
+// with the specified index value.
+// Returns the requested Ftp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - ftp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgFtp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/ftp"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
