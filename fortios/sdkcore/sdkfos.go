@@ -18862,3 +18862,57 @@ func (c *FortiSDKClient) ReadSwitchControllerAutoConfigDefault(mkey string) (map
 	return
 }
 
+// CreateSwitchControllerAutoConfigCustom API operation for FortiOS creates a new Custom.
+// Returns the index value of the Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerAutoConfigCustom(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerAutoConfigCustom API operation for FortiOS updates the specified Custom.
+// Returns the index value of the Custom and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerAutoConfigCustom(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerAutoConfigCustom API operation for FortiOS deletes the specified Custom.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerAutoConfigCustom(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerAutoConfigCustom API operation for FortiOS gets the Custom
+// with the specified index value.
+// Returns the requested Custom value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - custom chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerAutoConfigCustom(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.auto-config/custom"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
