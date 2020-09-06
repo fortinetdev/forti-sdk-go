@@ -20230,3 +20230,57 @@ func (c *FortiSDKClient) ReadCertificateLocal(mkey string) (mapTmp map[string]in
 	return
 }
 
+// CreateCertificateCrl API operation for FortiOS creates a new Crl.
+// Returns the index value of the Crl and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - crl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateCertificateCrl(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/certificate/crl"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateCertificateCrl API operation for FortiOS updates the specified Crl.
+// Returns the index value of the Crl and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - crl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateCertificateCrl(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/certificate/crl"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteCertificateCrl API operation for FortiOS deletes the specified Crl.
+// Returns error for service API and SDK errors.
+// See the certificate - crl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteCertificateCrl(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/certificate/crl"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadCertificateCrl API operation for FortiOS gets the Crl
+// with the specified index value.
+// Returns the requested Crl value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the certificate - crl chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadCertificateCrl(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/certificate/crl"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
