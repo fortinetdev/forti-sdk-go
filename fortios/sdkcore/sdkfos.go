@@ -16960,3 +16960,57 @@ func (c *FortiSDKClient) ReadSystemReplacemsgDeviceDetectionPortal(mkey string) 
 	return
 }
 
+// CreateSystemReplacemsgNacQuar API operation for FortiOS creates a new Nac Quar.
+// Returns the index value of the Nac Quar and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - nac-quar chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgNacQuar(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/nac-quar"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgNacQuar API operation for FortiOS updates the specified Nac Quar.
+// Returns the index value of the Nac Quar and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - nac-quar chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgNacQuar(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/nac-quar"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgNacQuar API operation for FortiOS deletes the specified Nac Quar.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - nac-quar chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgNacQuar(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/nac-quar"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgNacQuar API operation for FortiOS gets the Nac Quar
+// with the specified index value.
+// Returns the requested Nac Quar value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - nac-quar chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgNacQuar(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/nac-quar"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
