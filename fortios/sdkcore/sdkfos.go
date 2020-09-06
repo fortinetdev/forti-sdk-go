@@ -17569,3 +17569,54 @@ func (c *FortiSDKClient) ReadSystemAffinityInterrupt(mkey string) (mapTmp map[st
 	return
 }
 
+// CreateSystemAffinityPacketRedistribution API operation for FortiOS creates a new Affinity Packet Redistribution.
+// Returns the index value of the Affinity Packet Redistribution and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - affinity-packet-redistribution chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemAffinityPacketRedistribution(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemAffinityPacketRedistribution API operation for FortiOS updates the specified Affinity Packet Redistribution.
+// Returns the index value of the Affinity Packet Redistribution and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - affinity-packet-redistribution chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemAffinityPacketRedistribution(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemAffinityPacketRedistribution API operation for FortiOS deletes the specified Affinity Packet Redistribution.
+// Returns error for service API and SDK errors.
+// See the system - affinity-packet-redistribution chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemAffinityPacketRedistribution(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemAffinityPacketRedistribution API operation for FortiOS gets the Affinity Packet Redistribution
+// with the specified index value.
+// Returns the requested Affinity Packet Redistribution value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - affinity-packet-redistribution chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemAffinityPacketRedistribution(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/affinity-packet-redistribution"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
