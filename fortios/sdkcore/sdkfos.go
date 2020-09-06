@@ -17945,3 +17945,39 @@ func (c *FortiSDKClient) ReadWirelessControllerVap(mkey string) (mapTmp map[stri
 }
 
 
+// UpdateWirelessControllerTimers API operation for FortiOS updates the specified Timers.
+// Returns the index value of the Timers and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - timers chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerTimers(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/timers"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerTimers API operation for FortiOS deletes the specified Timers.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - timers chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerTimers(mkey string) (err error) {
+
+	//No unset API for wireless-controller - timers
+	return
+}
+
+// ReadWirelessControllerTimers API operation for FortiOS gets the Timers
+// with the specified index value.
+// Returns the requested Timers value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - timers chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerTimers(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/timers"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
