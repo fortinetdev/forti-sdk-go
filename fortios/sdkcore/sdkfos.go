@@ -16126,3 +16126,58 @@ func (c *FortiSDKClient) ReadSystemCustomLanguage(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateSystemStorage API operation for FortiOS creates a new Storage.
+// Returns the index value of the Storage and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemStorage(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/storage"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemStorage API operation for FortiOS updates the specified Storage.
+// Returns the index value of the Storage and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemStorage(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/storage"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemStorage API operation for FortiOS deletes the specified Storage.
+// Returns error for service API and SDK errors.
+// See the system - storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemStorage(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/storage"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemStorage API operation for FortiOS gets the Storage
+// with the specified index value.
+// Returns the requested Storage value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - storage chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemStorage(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/storage"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
