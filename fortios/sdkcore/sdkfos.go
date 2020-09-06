@@ -18178,3 +18178,57 @@ func (c *FortiSDKClient) ReadWirelessControllerVapGroup(mkey string) (mapTmp map
 	return
 }
 
+// CreateWirelessControllerWidsProfile API operation for FortiOS creates a new Wids Profile.
+// Returns the index value of the Wids Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wids-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerWidsProfile(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller/wids-profile"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerWidsProfile API operation for FortiOS updates the specified Wids Profile.
+// Returns the index value of the Wids Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wids-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerWidsProfile(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/wids-profile"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerWidsProfile API operation for FortiOS deletes the specified Wids Profile.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wids-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerWidsProfile(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller/wids-profile"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerWidsProfile API operation for FortiOS gets the Wids Profile
+// with the specified index value.
+// Returns the requested Wids Profile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - wids-profile chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerWidsProfile(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/wids-profile"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
