@@ -20878,3 +20878,39 @@ func (c *FortiSDKClient) ReadLogSyslogd2OverrideSetting(mkey string) (mapTmp map
 }
 
 
+// UpdateLogSyslogd3OverrideSetting API operation for FortiOS updates the specified Override Setting.
+// Returns the index value of the Override Setting and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.syslogd3 - override-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateLogSyslogd3OverrideSetting(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/log.syslogd3/override-setting"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteLogSyslogd3OverrideSetting API operation for FortiOS deletes the specified Override Setting.
+// Returns error for service API and SDK errors.
+// See the log.syslogd3 - override-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteLogSyslogd3OverrideSetting(mkey string) (err error) {
+
+	//No unset API for log.syslogd3 - override-setting
+	return
+}
+
+// ReadLogSyslogd3OverrideSetting API operation for FortiOS gets the Override Setting
+// with the specified index value.
+// Returns the requested Override Setting value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the log.syslogd3 - override-setting chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadLogSyslogd3OverrideSetting(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/log.syslogd3/override-setting"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
