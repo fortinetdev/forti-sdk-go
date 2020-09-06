@@ -18772,3 +18772,58 @@ func (c *FortiSDKClient) ReadSwitchControllerQosQosPolicy(mkey string) (mapTmp m
 	return
 }
 
+// CreateSwitchControllerAutoConfigPolicy API operation for FortiOS creates a new Policy.
+// Returns the index value of the Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerAutoConfigPolicy(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerAutoConfigPolicy API operation for FortiOS updates the specified Policy.
+// Returns the index value of the Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerAutoConfigPolicy(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerAutoConfigPolicy API operation for FortiOS deletes the specified Policy.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerAutoConfigPolicy(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerAutoConfigPolicy API operation for FortiOS gets the Policy
+// with the specified index value.
+// Returns the requested Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller.auto-config - policy chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerAutoConfigPolicy(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller.auto-config/policy"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
