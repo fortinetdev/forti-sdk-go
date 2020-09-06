@@ -20087,3 +20087,38 @@ func (c *FortiSDKClient) ReadVpnPptp(mkey string) (mapTmp map[string]interface{}
 }
 
 
+// UpdateVpnL2Tp API operation for FortiOS updates the specified L2Tp.
+// Returns the index value of the L2Tp and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn - l2tp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnL2Tp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn/l2tp"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnL2Tp API operation for FortiOS deletes the specified L2Tp.
+// Returns error for service API and SDK errors.
+// See the vpn - l2tp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnL2Tp(mkey string) (err error) {
+
+	//No unset API for vpn - l2tp
+	return
+}
+
+// ReadVpnL2Tp API operation for FortiOS gets the L2Tp
+// with the specified index value.
+// Returns the requested L2Tp value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn - l2tp chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnL2Tp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn/l2tp"
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
