@@ -18070,3 +18070,57 @@ func (c *FortiSDKClient) ReadWirelessControllerBonjourProfile(mkey string) (mapT
 	return
 }
 
+// CreateWirelessControllerRegion API operation for FortiOS creates a new Region.
+// Returns the index value of the Region and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - region chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateWirelessControllerRegion(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/wireless-controller/region"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateWirelessControllerRegion API operation for FortiOS updates the specified Region.
+// Returns the index value of the Region and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - region chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateWirelessControllerRegion(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/wireless-controller/region"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteWirelessControllerRegion API operation for FortiOS deletes the specified Region.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - region chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteWirelessControllerRegion(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/wireless-controller/region"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadWirelessControllerRegion API operation for FortiOS gets the Region
+// with the specified index value.
+// Returns the requested Region value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the wireless-controller - region chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadWirelessControllerRegion(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/wireless-controller/region"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
