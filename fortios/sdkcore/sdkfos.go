@@ -16636,3 +16636,57 @@ func (c *FortiSDKClient) ReadSystemReplacemsgSpam(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateSystemReplacemsgAlertmail API operation for FortiOS creates a new Alertmail.
+// Returns the index value of the Alertmail and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - alertmail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgAlertmail(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/alertmail"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgAlertmail API operation for FortiOS updates the specified Alertmail.
+// Returns the index value of the Alertmail and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - alertmail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgAlertmail(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/alertmail"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgAlertmail API operation for FortiOS deletes the specified Alertmail.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - alertmail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgAlertmail(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/alertmail"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgAlertmail API operation for FortiOS gets the Alertmail
+// with the specified index value.
+// Returns the requested Alertmail value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - alertmail chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgAlertmail(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/alertmail"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
