@@ -17068,3 +17068,57 @@ func (c *FortiSDKClient) ReadSystemReplacemsgTrafficQuota(mkey string) (mapTmp m
 	return
 }
 
+// CreateSystemReplacemsgUtm API operation for FortiOS creates a new Utm.
+// Returns the index value of the Utm and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - utm chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgUtm(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/utm"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgUtm API operation for FortiOS updates the specified Utm.
+// Returns the index value of the Utm and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - utm chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgUtm(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/utm"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgUtm API operation for FortiOS deletes the specified Utm.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - utm chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgUtm(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/utm"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgUtm API operation for FortiOS gets the Utm
+// with the specified index value.
+// Returns the requested Utm value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - utm chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgUtm(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/utm"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
