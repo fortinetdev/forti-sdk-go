@@ -17224,3 +17224,58 @@ func (c *FortiSDKClient) ReadSystemDhcp6Server(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateSystemVdomProperty API operation for FortiOS creates a new Vdom Property.
+// Returns the index value of the Vdom Property and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-property chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemVdomProperty(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system/vdom-property"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemVdomProperty API operation for FortiOS updates the specified Vdom Property.
+// Returns the index value of the Vdom Property and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-property chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemVdomProperty(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system/vdom-property"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemVdomProperty API operation for FortiOS deletes the specified Vdom Property.
+// Returns error for service API and SDK errors.
+// See the system - vdom-property chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemVdomProperty(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system/vdom-property"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemVdomProperty API operation for FortiOS gets the Vdom Property
+// with the specified index value.
+// Returns the requested Vdom Property value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - vdom-property chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemVdomProperty(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system/vdom-property"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
