@@ -21112,3 +21112,57 @@ func (c *FortiSDKClient) ReadUserDeviceCategory(mkey string) (mapTmp map[string]
 	return
 }
 
+// CreateUserSecurityExemptList API operation for FortiOS creates a new Security Exempt List.
+// Returns the index value of the Security Exempt List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - security-exempt-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateUserSecurityExemptList(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/user/security-exempt-list"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateUserSecurityExemptList API operation for FortiOS updates the specified Security Exempt List.
+// Returns the index value of the Security Exempt List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - security-exempt-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateUserSecurityExemptList(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/user/security-exempt-list"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteUserSecurityExemptList API operation for FortiOS deletes the specified Security Exempt List.
+// Returns error for service API and SDK errors.
+// See the user - security-exempt-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteUserSecurityExemptList(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/user/security-exempt-list"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadUserSecurityExemptList API operation for FortiOS gets the Security Exempt List
+// with the specified index value.
+// Returns the requested Security Exempt List value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the user - security-exempt-list chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadUserSecurityExemptList(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/user/security-exempt-list"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
