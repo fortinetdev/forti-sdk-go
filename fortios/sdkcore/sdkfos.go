@@ -19996,3 +19996,58 @@ func (c *FortiSDKClient) ReadVpnCertificateCrl(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateVpnCertificateRemote API operation for FortiOS creates a new Remote.
+// Returns the index value of the Remote and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - remote chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateVpnCertificateRemote(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/vpn.certificate/remote"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateVpnCertificateRemote API operation for FortiOS updates the specified Remote.
+// Returns the index value of the Remote and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - remote chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateVpnCertificateRemote(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/vpn.certificate/remote"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteVpnCertificateRemote API operation for FortiOS deletes the specified Remote.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - remote chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteVpnCertificateRemote(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/vpn.certificate/remote"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadVpnCertificateRemote API operation for FortiOS gets the Remote
+// with the specified index value.
+// Returns the requested Remote value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the vpn.certificate - remote chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadVpnCertificateRemote(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/vpn.certificate/remote"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
