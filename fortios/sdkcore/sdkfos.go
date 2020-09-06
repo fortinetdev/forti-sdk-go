@@ -16312,3 +16312,57 @@ func (c *FortiSDKClient) ReadSystemReplacemsgMail(mkey string) (mapTmp map[strin
 	return
 }
 
+// CreateSystemReplacemsgHttp API operation for FortiOS creates a new Http.
+// Returns the index value of the Http and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - http chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemReplacemsgHttp(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/system.replacemsg/http"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSystemReplacemsgHttp API operation for FortiOS updates the specified Http.
+// Returns the index value of the Http and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - http chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemReplacemsgHttp(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/system.replacemsg/http"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSystemReplacemsgHttp API operation for FortiOS deletes the specified Http.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - http chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemReplacemsgHttp(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/system.replacemsg/http"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSystemReplacemsgHttp API operation for FortiOS gets the Http
+// with the specified index value.
+// Returns the requested Http value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system.replacemsg - http chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemReplacemsgHttp(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/system.replacemsg/http"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
