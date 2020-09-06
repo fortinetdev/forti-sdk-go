@@ -18970,3 +18970,63 @@ func (c *FortiSDKClient) ReadSwitchControllerManagedSwitch(mkey string) (mapTmp 
 	return
 }
 
+// CreateSwitchControllerSwitchGroup API operation for FortiOS creates a new Switch Group.
+// Returns the index value of the Switch Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSwitchControllerSwitchGroup(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/switch-controller/switch-group"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSwitchControllerSwitchGroup API operation for FortiOS updates the specified Switch Group.
+// Returns the index value of the Switch Group and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSwitchControllerSwitchGroup(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/switch-controller/switch-group"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSwitchControllerSwitchGroup API operation for FortiOS deletes the specified Switch Group.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSwitchControllerSwitchGroup(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/switch-controller/switch-group"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSwitchControllerSwitchGroup API operation for FortiOS gets the Switch Group
+// with the specified index value.
+// Returns the requested Switch Group value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the switch-controller - switch-group chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSwitchControllerSwitchGroup(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/switch-controller/switch-group"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
+
+	mapTmp, err = read(c, HTTPMethod, path, true)
+	return
+}
+
+
