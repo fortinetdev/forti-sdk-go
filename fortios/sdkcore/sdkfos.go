@@ -20752,3 +20752,57 @@ func (c *FortiSDKClient) ReadApplicationCustom(mkey string) (mapTmp map[string]i
 	return
 }
 
+// CreateSpamfilterIptrust API operation for FortiOS creates a new Iptrust.
+// Returns the index value of the Iptrust and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - iptrust chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSpamfilterIptrust(params *map[string]interface{}) (output map[string]interface{}, err error) {
+
+	HTTPMethod := "POST"
+	path := "/api/v2/cmdb/spamfilter/iptrust"
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// UpdateSpamfilterIptrust API operation for FortiOS updates the specified Iptrust.
+// Returns the index value of the Iptrust and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - iptrust chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSpamfilterIptrust(params *map[string]interface{}, mkey string) (output map[string]interface{}, err error) {
+	HTTPMethod := "PUT"
+	path := "/api/v2/cmdb/spamfilter/iptrust"
+	path += "/" + escapeURLString(mkey)
+	output = make(map[string]interface{})
+
+	err = createUpdate(c, HTTPMethod, path, params, output)
+	return
+}
+
+// DeleteSpamfilterIptrust API operation for FortiOS deletes the specified Iptrust.
+// Returns error for service API and SDK errors.
+// See the spamfilter - iptrust chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSpamfilterIptrust(mkey string) (err error) {
+	HTTPMethod := "DELETE"
+	path := "/api/v2/cmdb/spamfilter/iptrust"
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, HTTPMethod, path)
+	return
+}
+
+// ReadSpamfilterIptrust API operation for FortiOS gets the Iptrust
+// with the specified index value.
+// Returns the requested Iptrust value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the spamfilter - iptrust chapter in the FortiOS Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSpamfilterIptrust(mkey string) (mapTmp map[string]interface{}, err error) {
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/spamfilter/iptrust"
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, HTTPMethod, path, false)
+	return
+}
+
