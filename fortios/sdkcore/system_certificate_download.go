@@ -11,13 +11,10 @@ import (
 type JSONSystemCertificateDownload struct {
 	Mkey string `json:"mkey"`
 	Type string `json:"type"`
+	Vdom string `json:"vdom"`
 }
 
-// ReadSystemAdminProfiles API operation for FortiOS gets the access profile
-// with the specified index value.
-// Returns the requested access profile value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - accprofile chapter in the FortiOS Handbook - CLI Reference.
+// Downloads certificate from Fortigate
 func (c *FortiSDKClient) ReadSystemCertificateDownload(params *JSONSystemCertificateDownload) (res string, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/monitor/system/certificate/download"
