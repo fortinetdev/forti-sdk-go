@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 	"net/http"
 	"net/url"
 	"strings"
@@ -48,7 +49,8 @@ func EscapeURLString(v string) string { // doesn't support "<>()"'#"
 }
 
 func escapeURLString(v string) string { // doesn't support "<>()"'#"
-	return strings.Replace(url.QueryEscape(v), "+", "%20", -1)
+	return v
+	// return strings.Replace(url.QueryEscape(v), "+", "%20", -1)
 }
 
 // NewClient initializes a new global plugin client
@@ -62,8 +64,34 @@ func NewClient(auth *auth.Auth, client *http.Client) *FortiSDKClient {
 	c.Config.HTTPCon = client
 	c.Config.FwTarget = auth.Hostname
 
-	login(auth, c)
+	if auth.Session != "" {
+		c.Session = auth.Session
+	} else {
+		login(auth, c)
+	}
+
+	saveSession(auth, c.Session)
+
 	return c
+}
+
+func saveSession(auth *auth.Auth, session string) {
+	if auth.LogSession == true {
+		f, err := os.Create("presession.txt")
+		if err != nil {
+			return
+		}
+		_, err = f.WriteString(session + "\n")
+		if err != nil {
+			f.Close()
+			return
+		}
+
+		err = f.Close()
+		if err != nil {
+			return
+		}
+	}
 }
 
 func login(auth *auth.Auth, c *FortiSDKClient) {

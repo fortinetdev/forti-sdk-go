@@ -25,9 +25,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallPolicyMove(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -61,9 +60,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallMulticastPolicyMove(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -97,9 +95,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallInterfacePolicyMove(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -133,9 +130,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallInterfacePolicy6Move(params *map[
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -169,9 +165,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallLocalInPolicyMove(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -205,9 +200,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallLocalInPolicy6Move(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -241,9 +235,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallPolicy64Move(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -277,9 +270,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallDosPolicyMove(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -313,9 +305,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallPolicy46Move(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -349,9 +340,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallDosPolicy6Move(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -385,9 +375,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallShapingPolicyMove(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -421,9 +410,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallMulticastPolicy6Move(params *map[
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -457,9 +445,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallCentralSnatMapMove(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -493,9 +480,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallProxyPolicyMove(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -529,9 +515,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallSecurityPolicyMove(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "move", params, output, true)
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
 	return
 }
 
@@ -564,9 +549,7 @@ func (c *FortiSDKClient) CreatePackagesPkg(params *map[string]interface{}, globa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -582,9 +565,8 @@ func (c *FortiSDKClient) UpdatePackagesPkg(params *map[string]interface{}, globa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -633,9 +615,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallPolicy(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -651,9 +631,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallPolicy(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -702,9 +681,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalHeaderPolicy(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -720,9 +697,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalHeaderPolicy(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -771,9 +747,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalFooterPolicy(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -789,9 +763,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalFooterPolicy(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -840,9 +813,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalHeaderPolicy6(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -858,9 +829,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalHeaderPolicy6(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -909,9 +879,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalFooterPolicy6(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -927,9 +895,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalFooterPolicy6(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -978,9 +945,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallMulticastPolicy(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -996,9 +961,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallMulticastPolicy(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1047,9 +1011,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallInterfacePolicy(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1065,9 +1027,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallInterfacePolicy(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1116,9 +1077,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallInterfacePolicy6(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1134,9 +1093,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallInterfacePolicy6(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1185,9 +1143,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallLocalInPolicy(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1203,9 +1159,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallLocalInPolicy(params *map[string]
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1254,9 +1209,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallLocalInPolicy6(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1272,9 +1225,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallLocalInPolicy6(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1323,9 +1275,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallPolicy64(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1341,9 +1291,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallPolicy64(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1392,9 +1341,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallDosPolicy(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1410,9 +1357,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallDosPolicy(params *map[string]inte
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1461,9 +1407,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallPolicy46(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1479,9 +1423,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallPolicy46(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1530,9 +1473,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallDosPolicy6(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1548,9 +1489,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallDosPolicy6(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1599,9 +1539,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallShapingPolicy(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1617,9 +1555,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallShapingPolicy(params *map[string]
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1668,9 +1605,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalHeaderShapingPolicy(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1686,9 +1621,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalHeaderShapingPolicy(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1737,9 +1671,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalFooterShapingPolicy(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1755,9 +1687,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalFooterShapingPolicy(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1806,9 +1737,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallMulticastPolicy6(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1824,9 +1753,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallMulticastPolicy6(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1875,9 +1803,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallCentralSnatMap(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1893,9 +1819,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallCentralSnatMap(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -1944,9 +1869,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallProxyPolicy(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -1962,9 +1885,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallProxyPolicy(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2013,9 +1935,7 @@ func (c *FortiSDKClient) CreatePackagesAuthenticationRule(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2031,9 +1951,8 @@ func (c *FortiSDKClient) UpdatePackagesAuthenticationRule(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2083,9 +2002,8 @@ func (c *FortiSDKClient) UpdatePackagesAuthenticationSetting(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2126,9 +2044,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalHeaderConsolidatedPolicy(params *ma
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2144,9 +2060,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalHeaderConsolidatedPolicy(params *ma
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2195,9 +2110,7 @@ func (c *FortiSDKClient) CreatePackagesGlobalFooterConsolidatedPolicy(params *ma
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2213,9 +2126,8 @@ func (c *FortiSDKClient) UpdatePackagesGlobalFooterConsolidatedPolicy(params *ma
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2264,9 +2176,7 @@ func (c *FortiSDKClient) CreatePackagesFirewallSecurityPolicy(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2282,9 +2192,8 @@ func (c *FortiSDKClient) UpdatePackagesFirewallSecurityPolicy(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2334,9 +2243,8 @@ func (c *FortiSDKClient) UpdateDvmdbScriptExecute(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2354,49 +2262,8 @@ func (c *FortiSDKClient) UpdateDvmCmdAddDevice(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateDvmCmdAddDevList API operation for FortiManager updates the specified CmdAddDev List.
-// Returns the index value of the CmdAddDev List and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvm - cmd add dev-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmCmdAddDevList(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvm/cmd/add/dev-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateDvmCmdDiscoverDevice API operation for FortiManager updates the specified CmdDiscoverDevice.
-// Returns the index value of the CmdDiscoverDevice and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvm - cmd discover device chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmCmdDiscoverDevice(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvm/cmd/discover/device"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2414,49 +2281,8 @@ func (c *FortiSDKClient) UpdateDvmCmdUpdateDevice(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateDvmCmdUpdateDevList API operation for FortiManager updates the specified CmdUpdateDev List.
-// Returns the index value of the CmdUpdateDev List and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvm - cmd update dev-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmCmdUpdateDevList(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvm/cmd/update/dev-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateDvmCmdReloadDevList API operation for FortiManager updates the specified CmdReloadDev List.
-// Returns the index value of the CmdReloadDev List and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvm - cmd reload dev-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmCmdReloadDevList(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvm/cmd/reload/dev-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2474,29 +2300,8 @@ func (c *FortiSDKClient) UpdateDvmCmdDelDevice(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateDvmCmdDelDevList API operation for FortiManager updates the specified CmdDelDev List.
-// Returns the index value of the CmdDelDev List and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvm - cmd del dev-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmCmdDelDevList(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvm/cmd/del/dev-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2514,9 +2319,8 @@ func (c *FortiSDKClient) UpdateSecurityconsoleAbort(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2534,29 +2338,8 @@ func (c *FortiSDKClient) UpdateSecurityconsoleInstallPreview(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateSecurityconsolePreviewResult API operation for FortiManager updates the specified PreviewResult.
-// Returns the index value of the PreviewResult and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the securityconsole - preview result chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateSecurityconsolePreviewResult(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/securityconsole/preview/result"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2574,9 +2357,8 @@ func (c *FortiSDKClient) UpdateSecurityconsoleInstallPackage(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2594,29 +2376,8 @@ func (c *FortiSDKClient) UpdateSecurityconsoleInstallDevice(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
-	return
-}
-
-
-
-
-// UpdateSecurityconsoleImportDevObjs API operation for FortiManager updates the specified ImportDevObjs.
-// Returns the index value of the ImportDevObjs and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the securityconsole - import dev objs chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateSecurityconsoleImportDevObjs(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/securityconsole/import/dev/objs"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2634,9 +2395,8 @@ func (c *FortiSDKClient) UpdateSecurityconsolePackageCommit(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2654,9 +2414,8 @@ func (c *FortiSDKClient) UpdateSecurityconsolePackageCancelInstall(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2674,9 +2433,8 @@ func (c *FortiSDKClient) UpdateSecurityconsolePackageClone(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2694,9 +2452,8 @@ func (c *FortiSDKClient) UpdateSecurityconsolePackageMove(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2714,9 +2471,8 @@ func (c *FortiSDKClient) UpdateSecurityconsoleReinstallPackage(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2734,9 +2490,8 @@ func (c *FortiSDKClient) UpdateSecurityconsoleSignCertificateTemplate(params *ma
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2754,9 +2509,8 @@ func (c *FortiSDKClient) UpdateSecurityconsolePblockClone(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "exec", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "exec", params, false)
 	return
 }
 
@@ -2773,9 +2527,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterFtgdLocalCat(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2791,9 +2543,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterFtgdLocalCat(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2842,9 +2593,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterUrlfilter(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2860,9 +2609,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterUrlfilter(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2911,9 +2659,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterFtgdLocalRating(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2929,9 +2675,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterFtgdLocalRating(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -2980,9 +2725,7 @@ func (c *FortiSDKClient) CreateObjectVpnCertificateCa(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -2998,9 +2741,8 @@ func (c *FortiSDKClient) UpdateObjectVpnCertificateCa(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3049,9 +2791,7 @@ func (c *FortiSDKClient) CreateObjectVpnCertificateRemote(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3067,9 +2807,8 @@ func (c *FortiSDKClient) UpdateObjectVpnCertificateRemote(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3119,9 +2858,8 @@ func (c *FortiSDKClient) UpdateObjectSystemFortiguard(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3162,9 +2900,7 @@ func (c *FortiSDKClient) CreateObjectIpsCustom(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3180,9 +2916,8 @@ func (c *FortiSDKClient) UpdateObjectIpsCustom(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3231,9 +2966,7 @@ func (c *FortiSDKClient) CreateObjectSystemDhcpServer(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3249,9 +2982,8 @@ func (c *FortiSDKClient) UpdateObjectSystemDhcpServer(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3300,9 +3032,7 @@ func (c *FortiSDKClient) CreateObjectFirewallAddress(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3318,9 +3048,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallAddress(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3369,9 +3098,7 @@ func (c *FortiSDKClient) CreateObjectFirewallAddress6(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3387,9 +3114,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallAddress6(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3438,9 +3164,7 @@ func (c *FortiSDKClient) CreateObjectFirewallAddrgrp(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3456,9 +3180,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallAddrgrp(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3507,9 +3230,7 @@ func (c *FortiSDKClient) CreateObjectUserAdgrp(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3525,9 +3246,8 @@ func (c *FortiSDKClient) UpdateObjectUserAdgrp(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3576,9 +3296,7 @@ func (c *FortiSDKClient) CreateObjectUserRadius(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3594,9 +3312,8 @@ func (c *FortiSDKClient) UpdateObjectUserRadius(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3645,9 +3362,7 @@ func (c *FortiSDKClient) CreateObjectUserLdap(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3663,9 +3378,8 @@ func (c *FortiSDKClient) UpdateObjectUserLdap(params *map[string]interface{}, gl
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3714,9 +3428,7 @@ func (c *FortiSDKClient) CreateObjectUserLocal(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3732,9 +3444,8 @@ func (c *FortiSDKClient) UpdateObjectUserLocal(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3783,9 +3494,7 @@ func (c *FortiSDKClient) CreateObjectUserPeer(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3801,9 +3510,8 @@ func (c *FortiSDKClient) UpdateObjectUserPeer(params *map[string]interface{}, gl
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3852,9 +3560,7 @@ func (c *FortiSDKClient) CreateObjectUserPeergrp(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3870,9 +3576,8 @@ func (c *FortiSDKClient) UpdateObjectUserPeergrp(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3921,9 +3626,7 @@ func (c *FortiSDKClient) CreateObjectUserGroup(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -3939,9 +3642,8 @@ func (c *FortiSDKClient) UpdateObjectUserGroup(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -3990,9 +3692,7 @@ func (c *FortiSDKClient) CreateObjectFirewallServiceCustom(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4008,9 +3708,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallServiceCustom(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4059,9 +3758,7 @@ func (c *FortiSDKClient) CreateObjectFirewallServiceGroup(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4077,9 +3774,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallServiceGroup(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4128,9 +3824,7 @@ func (c *FortiSDKClient) CreateObjectFirewallScheduleOnetime(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4146,9 +3840,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallScheduleOnetime(params *map[string]
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4197,9 +3890,7 @@ func (c *FortiSDKClient) CreateObjectFirewallScheduleRecurring(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4215,9 +3906,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallScheduleRecurring(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4266,9 +3956,7 @@ func (c *FortiSDKClient) CreateObjectFirewallIppool(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4284,9 +3972,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallIppool(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4335,9 +4022,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVip(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4353,9 +4038,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVip(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4404,9 +4088,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVipgrp(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4422,9 +4104,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVipgrp(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4473,9 +4154,7 @@ func (c *FortiSDKClient) CreateObjectFirewallAddrgrp6(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4491,9 +4170,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallAddrgrp6(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4542,9 +4220,7 @@ func (c *FortiSDKClient) CreateObjectIpsSensor(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4560,9 +4236,8 @@ func (c *FortiSDKClient) UpdateObjectIpsSensor(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4611,9 +4286,7 @@ func (c *FortiSDKClient) CreateObjectLogCustomField(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4629,9 +4302,8 @@ func (c *FortiSDKClient) UpdateObjectLogCustomField(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4680,9 +4352,7 @@ func (c *FortiSDKClient) CreateObjectUserTacacs(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4698,9 +4368,8 @@ func (c *FortiSDKClient) UpdateObjectUserTacacs(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4749,9 +4418,7 @@ func (c *FortiSDKClient) CreateObjectFirewallLdbMonitor(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4767,9 +4434,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallLdbMonitor(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4818,9 +4484,7 @@ func (c *FortiSDKClient) CreateObjectApplicationList(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4836,9 +4500,8 @@ func (c *FortiSDKClient) UpdateObjectApplicationList(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4887,9 +4550,7 @@ func (c *FortiSDKClient) CreateObjectDlpSensor(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4905,9 +4566,8 @@ func (c *FortiSDKClient) UpdateObjectDlpSensor(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -4956,9 +4616,7 @@ func (c *FortiSDKClient) CreateObjectWanoptPeer(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -4974,9 +4632,8 @@ func (c *FortiSDKClient) UpdateObjectWanoptPeer(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5025,9 +4682,7 @@ func (c *FortiSDKClient) CreateObjectWanoptAuthGroup(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5043,9 +4698,8 @@ func (c *FortiSDKClient) UpdateObjectWanoptAuthGroup(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5094,9 +4748,7 @@ func (c *FortiSDKClient) CreateObjectVpnSslWebPortal(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5112,9 +4764,8 @@ func (c *FortiSDKClient) UpdateObjectVpnSslWebPortal(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5163,9 +4814,7 @@ func (c *FortiSDKClient) CreateObjectSystemReplacemsgImage(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5181,9 +4830,8 @@ func (c *FortiSDKClient) UpdateObjectSystemReplacemsgImage(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5232,9 +4880,7 @@ func (c *FortiSDKClient) CreateObjectSystemReplacemsgGroup(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5250,9 +4896,8 @@ func (c *FortiSDKClient) UpdateObjectSystemReplacemsgGroup(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5290,75 +4935,6 @@ func (c *FortiSDKClient) ReadObjectSystemReplacemsgGroup(globaladom, mkey string
 	return
 }
 
-// CreateObjectFirewallGtp API operation for FortiManager creates a new Gtp.
-// Returns the index value of the Gtp and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object firewall - gtp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectFirewallGtp(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/firewall/gtp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectFirewallGtp API operation for FortiManager updates the specified Gtp.
-// Returns the index value of the Gtp and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object firewall - gtp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectFirewallGtp(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/firewall/gtp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectFirewallGtp API operation for FortiManager deletes the specified Gtp.
-// Returns error for service API and SDK errors.
-// See the object firewall - gtp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectFirewallGtp(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/firewall/gtp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectFirewallGtp API operation for FortiManager gets the Gtp
-// with the specified index value.
-// Returns the requested Gtp value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object firewall - gtp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectFirewallGtp(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/firewall/gtp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectWebfilterContent API operation for FortiManager creates a new Content.
 // Returns the index value of the Content and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -5370,9 +4946,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterContent(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5388,9 +4962,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterContent(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5439,9 +5012,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterContentHeader(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5457,9 +5028,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterContentHeader(params *map[string]i
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5508,9 +5078,7 @@ func (c *FortiSDKClient) CreateObjectFirewallScheduleGroup(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5526,9 +5094,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallScheduleGroup(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5577,9 +5144,7 @@ func (c *FortiSDKClient) CreateObjectFirewallShaperTrafficShaper(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5595,9 +5160,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallShaperTrafficShaper(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5646,9 +5210,7 @@ func (c *FortiSDKClient) CreateObjectFirewallShaperPerIpShaper(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5664,9 +5226,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallShaperPerIpShaper(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5715,9 +5276,7 @@ func (c *FortiSDKClient) CreateObjectVpnSslWebHostCheckSoftware(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5733,9 +5292,8 @@ func (c *FortiSDKClient) UpdateObjectVpnSslWebHostCheckSoftware(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5784,9 +5342,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerVap(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5802,9 +5358,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerVap(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5853,9 +5408,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerVapGroup(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5871,9 +5424,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerVapGroup(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5922,9 +5474,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterProfile(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -5940,9 +5490,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterProfile(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -5991,9 +5540,7 @@ func (c *FortiSDKClient) CreateObjectAntivirusProfile(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6009,9 +5556,8 @@ func (c *FortiSDKClient) UpdateObjectAntivirusProfile(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6060,9 +5606,7 @@ func (c *FortiSDKClient) CreateObjectFirewallProfileProtocolOptions(params *map[
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6078,9 +5622,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallProfileProtocolOptions(params *map[
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6129,9 +5672,7 @@ func (c *FortiSDKClient) CreateObjectFirewallProfileGroup(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6147,9 +5688,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallProfileGroup(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6198,9 +5738,7 @@ func (c *FortiSDKClient) CreateObjectVoipProfile(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6216,9 +5754,8 @@ func (c *FortiSDKClient) UpdateObjectVoipProfile(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6267,9 +5804,7 @@ func (c *FortiSDKClient) CreateObjectUserFortitoken(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6285,9 +5820,8 @@ func (c *FortiSDKClient) UpdateObjectUserFortitoken(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6336,9 +5870,7 @@ func (c *FortiSDKClient) CreateObjectWebProxyForwardServer(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6354,9 +5886,8 @@ func (c *FortiSDKClient) UpdateObjectWebProxyForwardServer(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6405,9 +5936,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerWtpProfile(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6423,9 +5952,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerWtpProfile(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6474,9 +6002,7 @@ func (c *FortiSDKClient) CreateObjectDlpFilepattern(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6492,9 +6018,8 @@ func (c *FortiSDKClient) UpdateObjectDlpFilepattern(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6543,9 +6068,7 @@ func (c *FortiSDKClient) CreateObjectIcapServer(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6561,9 +6084,8 @@ func (c *FortiSDKClient) UpdateObjectIcapServer(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6612,9 +6134,7 @@ func (c *FortiSDKClient) CreateObjectIcapProfile(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6630,9 +6150,8 @@ func (c *FortiSDKClient) UpdateObjectIcapProfile(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6681,9 +6200,7 @@ func (c *FortiSDKClient) CreateObjectUserFsso(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6699,9 +6216,8 @@ func (c *FortiSDKClient) UpdateObjectUserFsso(params *map[string]interface{}, gl
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6750,9 +6266,7 @@ func (c *FortiSDKClient) CreateObjectSystemSmsServer(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6768,9 +6282,8 @@ func (c *FortiSDKClient) UpdateObjectSystemSmsServer(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6819,9 +6332,7 @@ func (c *FortiSDKClient) CreateObjectVpnCertificateOcspServer(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6837,9 +6348,8 @@ func (c *FortiSDKClient) UpdateObjectVpnCertificateOcspServer(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6888,9 +6398,7 @@ func (c *FortiSDKClient) CreateObjectUserPasswordPolicy(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6906,9 +6414,8 @@ func (c *FortiSDKClient) UpdateObjectUserPasswordPolicy(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -6957,9 +6464,7 @@ func (c *FortiSDKClient) CreateObjectUserFssoPolling(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -6975,9 +6480,8 @@ func (c *FortiSDKClient) UpdateObjectUserFssoPolling(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7026,9 +6530,7 @@ func (c *FortiSDKClient) CreateObjectFirewallIppool6(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7044,9 +6546,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallIppool6(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7095,9 +6596,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVip6(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7113,9 +6612,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVip6(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7164,9 +6662,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVipgrp6(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7182,9 +6678,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVipgrp6(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7233,9 +6728,7 @@ func (c *FortiSDKClient) CreateObjectFirewallIdentityBasedRoute(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7251,9 +6744,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallIdentityBasedRoute(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7302,9 +6794,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerWidsProfile(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7320,9 +6810,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerWidsProfile(params *map[s
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7360,75 +6849,6 @@ func (c *FortiSDKClient) ReadObjectWirelessControllerWidsProfile(globaladom, mke
 	return
 }
 
-// CreateObjectSwitchControllerManagedSwitch API operation for FortiManager creates a new Managed Switch.
-// Returns the index value of the Managed Switch and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object switch-controller - managed-switch chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectSwitchControllerManagedSwitch(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/switch-controller/managed-switch"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectSwitchControllerManagedSwitch API operation for FortiManager updates the specified Managed Switch.
-// Returns the index value of the Managed Switch and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object switch-controller - managed-switch chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectSwitchControllerManagedSwitch(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/switch-controller/managed-switch"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectSwitchControllerManagedSwitch API operation for FortiManager deletes the specified Managed Switch.
-// Returns error for service API and SDK errors.
-// See the object switch-controller - managed-switch chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectSwitchControllerManagedSwitch(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/switch-controller/managed-switch"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectSwitchControllerManagedSwitch API operation for FortiManager gets the Managed Switch
-// with the specified index value.
-// Returns the requested Managed Switch value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object switch-controller - managed-switch chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectSwitchControllerManagedSwitch(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/switch-controller/managed-switch"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectWanoptProfile API operation for FortiManager creates a new Profile.
 // Returns the index value of the Profile and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -7440,9 +6860,7 @@ func (c *FortiSDKClient) CreateObjectWanoptProfile(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7458,9 +6876,8 @@ func (c *FortiSDKClient) UpdateObjectWanoptProfile(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7509,9 +6926,7 @@ func (c *FortiSDKClient) CreateObjectFirewallMulticastAddress(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7527,9 +6942,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallMulticastAddress(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7578,9 +6992,7 @@ func (c *FortiSDKClient) CreateObjectFirewallServiceCategory(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7596,9 +7008,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallServiceCategory(params *map[string]
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7647,9 +7058,7 @@ func (c *FortiSDKClient) CreateObjectSystemGeoipOverride(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7665,9 +7074,8 @@ func (c *FortiSDKClient) UpdateObjectSystemGeoipOverride(params *map[string]inte
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7716,9 +7124,7 @@ func (c *FortiSDKClient) CreateObjectApplicationCustom(params *map[string]interf
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7734,9 +7140,8 @@ func (c *FortiSDKClient) UpdateObjectApplicationCustom(params *map[string]interf
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7785,9 +7190,7 @@ func (c *FortiSDKClient) CreateObjectVpnSslWebRealm(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7803,9 +7206,8 @@ func (c *FortiSDKClient) UpdateObjectVpnSslWebRealm(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7854,9 +7256,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVip64(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7872,9 +7272,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVip64(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7923,9 +7322,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVip46(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -7941,9 +7338,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVip46(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -7992,9 +7388,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVipgrp64(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8010,9 +7404,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVipgrp64(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8061,9 +7454,7 @@ func (c *FortiSDKClient) CreateObjectFirewallVipgrp46(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8079,9 +7470,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallVipgrp46(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8130,9 +7520,7 @@ func (c *FortiSDKClient) CreateObjectWebProxyForwardServerGroup(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8148,9 +7536,8 @@ func (c *FortiSDKClient) UpdateObjectWebProxyForwardServerGroup(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8199,9 +7586,7 @@ func (c *FortiSDKClient) CreateObjectUserPop3(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8217,9 +7602,8 @@ func (c *FortiSDKClient) UpdateObjectUserPop3(params *map[string]interface{}, gl
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8268,9 +7652,7 @@ func (c *FortiSDKClient) CreateObjectWebProxyProfile(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8286,9 +7668,8 @@ func (c *FortiSDKClient) UpdateObjectWebProxyProfile(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8337,9 +7718,7 @@ func (c *FortiSDKClient) CreateObjectExtenderControllerSimProfile(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8355,9 +7734,8 @@ func (c *FortiSDKClient) UpdateObjectExtenderControllerSimProfile(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8406,9 +7784,7 @@ func (c *FortiSDKClient) CreateObjectUserSecurityExemptList(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8424,9 +7800,8 @@ func (c *FortiSDKClient) UpdateObjectUserSecurityExemptList(params *map[string]i
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8475,9 +7850,7 @@ func (c *FortiSDKClient) CreateObjectFirewallSslSshProfile(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8493,9 +7866,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallSslSshProfile(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8544,9 +7916,7 @@ func (c *FortiSDKClient) CreateObjectSystemCustomLanguage(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8562,9 +7932,8 @@ func (c *FortiSDKClient) UpdateObjectSystemCustomLanguage(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8613,9 +7982,7 @@ func (c *FortiSDKClient) CreateObjectSystemGeoipCountry(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8631,9 +7998,8 @@ func (c *FortiSDKClient) UpdateObjectSystemGeoipCountry(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8682,9 +8048,7 @@ func (c *FortiSDKClient) CreateObjectWebfilterCategories(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8700,9 +8064,8 @@ func (c *FortiSDKClient) UpdateObjectWebfilterCategories(params *map[string]inte
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8751,9 +8114,7 @@ func (c *FortiSDKClient) CreateObjectSystemVirtualWirePair(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8769,9 +8130,8 @@ func (c *FortiSDKClient) UpdateObjectSystemVirtualWirePair(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8820,9 +8180,7 @@ func (c *FortiSDKClient) CreateObjectFirewallMulticastAddress6(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8838,9 +8196,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallMulticastAddress6(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8889,9 +8246,7 @@ func (c *FortiSDKClient) CreateObjectWafMainClass(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8907,9 +8262,8 @@ func (c *FortiSDKClient) UpdateObjectWafMainClass(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -8958,9 +8312,7 @@ func (c *FortiSDKClient) CreateObjectWafSubClass(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -8976,9 +8328,8 @@ func (c *FortiSDKClient) UpdateObjectWafSubClass(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9027,9 +8378,7 @@ func (c *FortiSDKClient) CreateObjectWafSignature(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9045,9 +8394,8 @@ func (c *FortiSDKClient) UpdateObjectWafSignature(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9096,9 +8444,7 @@ func (c *FortiSDKClient) CreateObjectWafProfile(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9114,9 +8460,8 @@ func (c *FortiSDKClient) UpdateObjectWafProfile(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9165,9 +8510,7 @@ func (c *FortiSDKClient) CreateObjectDnsfilterProfile(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9183,9 +8526,8 @@ func (c *FortiSDKClient) UpdateObjectDnsfilterProfile(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9234,9 +8576,7 @@ func (c *FortiSDKClient) CreateObjectWebProxyWisp(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9252,9 +8592,8 @@ func (c *FortiSDKClient) UpdateObjectWebProxyWisp(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9303,9 +8642,7 @@ func (c *FortiSDKClient) CreateObjectUserKrbKeytab(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9321,9 +8658,8 @@ func (c *FortiSDKClient) UpdateObjectUserKrbKeytab(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9361,144 +8697,6 @@ func (c *FortiSDKClient) ReadObjectUserKrbKeytab(globaladom, mkey string, parali
 	return
 }
 
-// CreateObjectGtpApn API operation for FortiManager creates a new Apn.
-// Returns the index value of the Apn and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - apn chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectGtpApn(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/apn"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectGtpApn API operation for FortiManager updates the specified Apn.
-// Returns the index value of the Apn and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - apn chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectGtpApn(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/apn"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectGtpApn API operation for FortiManager deletes the specified Apn.
-// Returns error for service API and SDK errors.
-// See the object gtp - apn chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectGtpApn(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/gtp/apn"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectGtpApn API operation for FortiManager gets the Apn
-// with the specified index value.
-// Returns the requested Apn value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - apn chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectGtpApn(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/apn"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
-// CreateObjectGtpApngrp API operation for FortiManager creates a new Apngrp.
-// Returns the index value of the Apngrp and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - apngrp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectGtpApngrp(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/apngrp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectGtpApngrp API operation for FortiManager updates the specified Apngrp.
-// Returns the index value of the Apngrp and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - apngrp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectGtpApngrp(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/apngrp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectGtpApngrp API operation for FortiManager deletes the specified Apngrp.
-// Returns error for service API and SDK errors.
-// See the object gtp - apngrp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectGtpApngrp(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/gtp/apngrp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectGtpApngrp API operation for FortiManager gets the Apngrp
-// with the specified index value.
-// Returns the requested Apngrp value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - apngrp chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectGtpApngrp(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/apngrp"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectApplicationCategories API operation for FortiManager creates a new Categories.
 // Returns the index value of the Categories and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -9510,9 +8708,7 @@ func (c *FortiSDKClient) CreateObjectApplicationCategories(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9528,9 +8724,8 @@ func (c *FortiSDKClient) UpdateObjectApplicationCategories(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9579,9 +8774,7 @@ func (c *FortiSDKClient) CreateObjectApplicationGroup(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9597,9 +8790,8 @@ func (c *FortiSDKClient) UpdateObjectApplicationGroup(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9637,75 +8829,6 @@ func (c *FortiSDKClient) ReadObjectApplicationGroup(globaladom, mkey string, par
 	return
 }
 
-// CreateObjectFirewallShapingProfile API operation for FortiManager creates a new Shaping Profile.
-// Returns the index value of the Shaping Profile and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object firewall - shaping-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectFirewallShapingProfile(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/firewall/shaping-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectFirewallShapingProfile API operation for FortiManager updates the specified Shaping Profile.
-// Returns the index value of the Shaping Profile and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object firewall - shaping-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectFirewallShapingProfile(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/firewall/shaping-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectFirewallShapingProfile API operation for FortiManager deletes the specified Shaping Profile.
-// Returns error for service API and SDK errors.
-// See the object firewall - shaping-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectFirewallShapingProfile(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/firewall/shaping-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectFirewallShapingProfile API operation for FortiManager gets the Shaping Profile
-// with the specified index value.
-// Returns the requested Shaping Profile value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object firewall - shaping-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectFirewallShapingProfile(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/firewall/shaping-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectDnsfilterDomainFilter API operation for FortiManager creates a new Domain Filter.
 // Returns the index value of the Domain Filter and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -9717,9 +8840,7 @@ func (c *FortiSDKClient) CreateObjectDnsfilterDomainFilter(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9735,9 +8856,8 @@ func (c *FortiSDKClient) UpdateObjectDnsfilterDomainFilter(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9787,9 +8907,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetService(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9830,9 +8949,7 @@ func (c *FortiSDKClient) CreateObjectFirewallInternetServiceCustom(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9848,9 +8965,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetServiceCustom(params *map[s
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9899,9 +9015,7 @@ func (c *FortiSDKClient) CreateObjectFirewallProxyAddress(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9917,9 +9031,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallProxyAddress(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -9968,9 +9081,7 @@ func (c *FortiSDKClient) CreateObjectFirewallProxyAddrgrp(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -9986,9 +9097,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallProxyAddrgrp(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10026,75 +9136,6 @@ func (c *FortiSDKClient) ReadObjectFirewallProxyAddrgrp(globaladom, mkey string,
 	return
 }
 
-// CreateObjectWirelessControllerBonjourProfile API operation for FortiManager creates a new Bonjour Profile.
-// Returns the index value of the Bonjour Profile and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - bonjour-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectWirelessControllerBonjourProfile(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/bonjour-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectWirelessControllerBonjourProfile API operation for FortiManager updates the specified Bonjour Profile.
-// Returns the index value of the Bonjour Profile and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - bonjour-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectWirelessControllerBonjourProfile(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/bonjour-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectWirelessControllerBonjourProfile API operation for FortiManager deletes the specified Bonjour Profile.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - bonjour-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectWirelessControllerBonjourProfile(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/bonjour-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectWirelessControllerBonjourProfile API operation for FortiManager gets the Bonjour Profile
-// with the specified index value.
-// Returns the requested Bonjour Profile value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - bonjour-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectWirelessControllerBonjourProfile(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/bonjour-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectSwitchControllerSecurityPolicy8021X API operation for FortiManager creates a new Security Policy802 1X.
 // Returns the index value of the Security Policy802 1X and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -10106,9 +9147,7 @@ func (c *FortiSDKClient) CreateObjectSwitchControllerSecurityPolicy8021X(params 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10124,9 +9163,8 @@ func (c *FortiSDKClient) UpdateObjectSwitchControllerSecurityPolicy8021X(params 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10175,9 +9213,7 @@ func (c *FortiSDKClient) CreateObjectSwitchControllerLldpProfile(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10193,9 +9229,8 @@ func (c *FortiSDKClient) UpdateObjectSwitchControllerLldpProfile(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10244,9 +9279,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerQosProfile(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10262,9 +9295,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerQosProfile(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10313,9 +9345,7 @@ func (c *FortiSDKClient) CreateObjectAuthenticationScheme(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10331,9 +9361,8 @@ func (c *FortiSDKClient) UpdateObjectAuthenticationScheme(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10371,213 +9400,6 @@ func (c *FortiSDKClient) ReadObjectAuthenticationScheme(globaladom, mkey string,
 	return
 }
 
-// CreateObjectGtpMessageFilterV0V1 API operation for FortiManager creates a new Message Filter V0V1.
-// Returns the index value of the Message Filter V0V1 and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v0v1 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectGtpMessageFilterV0V1(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v0v1"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectGtpMessageFilterV0V1 API operation for FortiManager updates the specified Message Filter V0V1.
-// Returns the index value of the Message Filter V0V1 and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v0v1 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectGtpMessageFilterV0V1(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v0v1"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectGtpMessageFilterV0V1 API operation for FortiManager deletes the specified Message Filter V0V1.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v0v1 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectGtpMessageFilterV0V1(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v0v1"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectGtpMessageFilterV0V1 API operation for FortiManager gets the Message Filter V0V1
-// with the specified index value.
-// Returns the requested Message Filter V0V1 value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v0v1 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectGtpMessageFilterV0V1(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v0v1"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
-// CreateObjectGtpMessageFilterV2 API operation for FortiManager creates a new Message Filter V2.
-// Returns the index value of the Message Filter V2 and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v2 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectGtpMessageFilterV2(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v2"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectGtpMessageFilterV2 API operation for FortiManager updates the specified Message Filter V2.
-// Returns the index value of the Message Filter V2 and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v2 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectGtpMessageFilterV2(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v2"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectGtpMessageFilterV2 API operation for FortiManager deletes the specified Message Filter V2.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v2 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectGtpMessageFilterV2(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v2"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectGtpMessageFilterV2 API operation for FortiManager gets the Message Filter V2
-// with the specified index value.
-// Returns the requested Message Filter V2 value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - message-filter-v2 chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectGtpMessageFilterV2(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/message-filter-v2"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
-// CreateObjectGtpIeWhiteList API operation for FortiManager creates a new Ie White List.
-// Returns the index value of the Ie White List and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - ie-white-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectGtpIeWhiteList(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/ie-white-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectGtpIeWhiteList API operation for FortiManager updates the specified Ie White List.
-// Returns the index value of the Ie White List and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - ie-white-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectGtpIeWhiteList(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/ie-white-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectGtpIeWhiteList API operation for FortiManager deletes the specified Ie White List.
-// Returns error for service API and SDK errors.
-// See the object gtp - ie-white-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectGtpIeWhiteList(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/gtp/ie-white-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectGtpIeWhiteList API operation for FortiManager gets the Ie White List
-// with the specified index value.
-// Returns the requested Ie White List value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - ie-white-list chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectGtpIeWhiteList(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/ie-white-list"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectWirelessControllerBleProfile API operation for FortiManager creates a new Ble Profile.
 // Returns the index value of the Ble Profile and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -10589,9 +9411,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerBleProfile(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10607,9 +9427,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerBleProfile(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10658,9 +9477,7 @@ func (c *FortiSDKClient) CreateObjectSwitchControllerQosDot1PMap(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10676,9 +9493,8 @@ func (c *FortiSDKClient) UpdateObjectSwitchControllerQosDot1PMap(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10727,9 +9543,7 @@ func (c *FortiSDKClient) CreateObjectSwitchControllerQosIpDscpMap(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10745,9 +9559,8 @@ func (c *FortiSDKClient) UpdateObjectSwitchControllerQosIpDscpMap(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10796,9 +9609,7 @@ func (c *FortiSDKClient) CreateObjectSwitchControllerQosQueuePolicy(params *map[
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10814,9 +9625,8 @@ func (c *FortiSDKClient) UpdateObjectSwitchControllerQosQueuePolicy(params *map[
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10865,9 +9675,7 @@ func (c *FortiSDKClient) CreateObjectSwitchControllerQosQosPolicy(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10883,9 +9691,8 @@ func (c *FortiSDKClient) UpdateObjectSwitchControllerQosQosPolicy(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -10934,9 +9741,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20AnqpVenueName(pa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -10952,9 +9757,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20AnqpVenueName(pa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11003,9 +9807,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20AnqpNetworkAuthT
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11021,9 +9823,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20AnqpNetworkAuthT
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11072,9 +9873,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20AnqpRoamingConso
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11090,9 +9889,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20AnqpRoamingConso
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11141,9 +9939,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20AnqpNaiRealm(par
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11159,9 +9955,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20AnqpNaiRealm(par
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11210,9 +10005,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20Anqp3GppCellular
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11228,9 +10021,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20Anqp3GppCellular
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11279,9 +10071,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20AnqpIpAddressTyp
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11297,9 +10087,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20AnqpIpAddressTyp
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11348,9 +10137,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20H2QpOperatorName
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11366,9 +10153,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20H2QpOperatorName
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11417,9 +10203,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20H2QpWanMetric(pa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11435,9 +10219,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20H2QpWanMetric(pa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11486,9 +10269,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20H2QpConnCapabili
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11504,9 +10285,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20H2QpConnCapabili
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11555,9 +10335,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20H2QpOsuProvider(
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11573,9 +10351,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20H2QpOsuProvider(
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11624,9 +10401,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20QosMap(params *m
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11642,9 +10417,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20QosMap(params *m
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11693,9 +10467,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerHotspot20HsProfile(params
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11711,9 +10483,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerHotspot20HsProfile(params
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11762,9 +10533,7 @@ func (c *FortiSDKClient) CreateObjectSystemSdnConnector(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11780,9 +10549,8 @@ func (c *FortiSDKClient) UpdateObjectSystemSdnConnector(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11831,9 +10599,7 @@ func (c *FortiSDKClient) CreateObjectUserDomainController(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11849,9 +10615,8 @@ func (c *FortiSDKClient) UpdateObjectUserDomainController(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11900,9 +10665,7 @@ func (c *FortiSDKClient) CreateObjectSystemObjectTagging(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11918,9 +10681,8 @@ func (c *FortiSDKClient) UpdateObjectSystemObjectTagging(params *map[string]inte
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -11969,9 +10731,7 @@ func (c *FortiSDKClient) CreateObjectFirewallAddress6Template(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -11987,9 +10747,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallAddress6Template(params *map[string
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12038,9 +10797,7 @@ func (c *FortiSDKClient) CreateObjectFirewallWildcardFqdnCustom(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12056,9 +10813,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallWildcardFqdnCustom(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12107,9 +10863,7 @@ func (c *FortiSDKClient) CreateObjectFirewallWildcardFqdnGroup(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12125,9 +10879,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallWildcardFqdnGroup(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12176,9 +10929,7 @@ func (c *FortiSDKClient) CreateObjectFirewallInternetServiceGroup(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12194,9 +10945,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetServiceGroup(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12245,9 +10995,7 @@ func (c *FortiSDKClient) CreateObjectFirewallInternetServiceCustomGroup(params *
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12263,9 +11011,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetServiceCustomGroup(params *
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12314,9 +11061,7 @@ func (c *FortiSDKClient) CreateObjectSystemExternalResource(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12332,9 +11077,8 @@ func (c *FortiSDKClient) UpdateObjectSystemExternalResource(params *map[string]i
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12383,9 +11127,7 @@ func (c *FortiSDKClient) CreateObjectSshFilterProfile(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12401,9 +11143,8 @@ func (c *FortiSDKClient) UpdateObjectSshFilterProfile(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12441,75 +11182,6 @@ func (c *FortiSDKClient) ReadObjectSshFilterProfile(globaladom, mkey string, par
 	return
 }
 
-// CreateObjectGtpTunnelLimit API operation for FortiManager creates a new Tunnel Limit.
-// Returns the index value of the Tunnel Limit and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - tunnel-limit chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectGtpTunnelLimit(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/tunnel-limit"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectGtpTunnelLimit API operation for FortiManager updates the specified Tunnel Limit.
-// Returns the index value of the Tunnel Limit and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - tunnel-limit chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectGtpTunnelLimit(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/tunnel-limit"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectGtpTunnelLimit API operation for FortiManager deletes the specified Tunnel Limit.
-// Returns error for service API and SDK errors.
-// See the object gtp - tunnel-limit chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectGtpTunnelLimit(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/gtp/tunnel-limit"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectGtpTunnelLimit API operation for FortiManager gets the Tunnel Limit
-// with the specified index value.
-// Returns the requested Tunnel Limit value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object gtp - tunnel-limit chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectGtpTunnelLimit(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/gtp/tunnel-limit"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectWirelessControllerUtmProfile API operation for FortiManager creates a new Utm Profile.
 // Returns the index value of the Utm Profile and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -12521,9 +11193,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerUtmProfile(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12539,9 +11209,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerUtmProfile(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12590,9 +11259,7 @@ func (c *FortiSDKClient) CreateObjectFirewallSshLocalCa(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12608,9 +11275,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallSshLocalCa(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12648,75 +11314,6 @@ func (c *FortiSDKClient) ReadObjectFirewallSshLocalCa(globaladom, mkey string, p
 	return
 }
 
-// CreateObjectWirelessControllerRegion API operation for FortiManager creates a new Region.
-// Returns the index value of the Region and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - region chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectWirelessControllerRegion(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/region"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectWirelessControllerRegion API operation for FortiManager updates the specified Region.
-// Returns the index value of the Region and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - region chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectWirelessControllerRegion(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/region"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectWirelessControllerRegion API operation for FortiManager deletes the specified Region.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - region chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectWirelessControllerRegion(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/region"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectWirelessControllerRegion API operation for FortiManager gets the Region
-// with the specified index value.
-// Returns the requested Region value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - region chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectWirelessControllerRegion(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/region"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectDlpSensitivity API operation for FortiManager creates a new Sensitivity.
 // Returns the index value of the Sensitivity and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -12728,9 +11325,7 @@ func (c *FortiSDKClient) CreateObjectDlpSensitivity(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12746,9 +11341,8 @@ func (c *FortiSDKClient) UpdateObjectDlpSensitivity(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12797,9 +11391,7 @@ func (c *FortiSDKClient) CreateObjectEmailfilterBword(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12815,9 +11407,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterBword(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12866,9 +11457,7 @@ func (c *FortiSDKClient) CreateObjectEmailfilterBwl(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12884,9 +11473,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterBwl(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -12935,9 +11523,7 @@ func (c *FortiSDKClient) CreateObjectEmailfilterMheader(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -12953,9 +11539,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterMheader(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13004,9 +11589,7 @@ func (c *FortiSDKClient) CreateObjectEmailfilterDnsbl(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13022,9 +11605,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterDnsbl(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13073,9 +11655,7 @@ func (c *FortiSDKClient) CreateObjectEmailfilterIptrust(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13091,9 +11671,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterIptrust(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13142,9 +11721,7 @@ func (c *FortiSDKClient) CreateObjectEmailfilterProfile(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13160,9 +11737,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterProfile(params *map[string]inter
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13212,9 +11788,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterFortishield(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13256,9 +11831,8 @@ func (c *FortiSDKClient) UpdateObjectEmailfilterOptions(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13299,9 +11873,7 @@ func (c *FortiSDKClient) CreateObjectUserExchange(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13317,9 +11889,8 @@ func (c *FortiSDKClient) UpdateObjectUserExchange(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13368,9 +11939,7 @@ func (c *FortiSDKClient) CreateObjectFirewallInternetServiceAddition(params *map
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13386,9 +11955,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetServiceAddition(params *map
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13437,9 +12005,7 @@ func (c *FortiSDKClient) CreateObjectCifsProfile(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13455,9 +12021,8 @@ func (c *FortiSDKClient) UpdateObjectCifsProfile(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13506,9 +12071,7 @@ func (c *FortiSDKClient) CreateObjectUserSaml(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13524,9 +12087,8 @@ func (c *FortiSDKClient) UpdateObjectUserSaml(params *map[string]interface{}, gl
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13575,9 +12137,7 @@ func (c *FortiSDKClient) CreateObjectFirewallTrafficClass(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13593,9 +12153,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallTrafficClass(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13644,9 +12203,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerWagProfile(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13662,9 +12219,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerWagProfile(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13713,9 +12269,7 @@ func (c *FortiSDKClient) CreateObjectCredentialStoreDomainController(params *map
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13731,9 +12285,8 @@ func (c *FortiSDKClient) UpdateObjectCredentialStoreDomainController(params *map
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13771,75 +12324,6 @@ func (c *FortiSDKClient) ReadObjectCredentialStoreDomainController(globaladom, m
 	return
 }
 
-// CreateObjectWirelessControllerApcfgProfile API operation for FortiManager creates a new Apcfg Profile.
-// Returns the index value of the Apcfg Profile and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - apcfg-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectWirelessControllerApcfgProfile(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/apcfg-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectWirelessControllerApcfgProfile API operation for FortiManager updates the specified Apcfg Profile.
-// Returns the index value of the Apcfg Profile and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - apcfg-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectWirelessControllerApcfgProfile(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/apcfg-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectWirelessControllerApcfgProfile API operation for FortiManager deletes the specified Apcfg Profile.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - apcfg-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectWirelessControllerApcfgProfile(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/apcfg-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectWirelessControllerApcfgProfile API operation for FortiManager gets the Apcfg Profile
-// with the specified index value.
-// Returns the requested Apcfg Profile value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object wireless-controller - apcfg-profile chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectWirelessControllerApcfgProfile(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/wireless-controller/apcfg-profile"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectFirewallInternetServiceName API operation for FortiManager creates a new Internet Service Name.
 // Returns the index value of the Internet Service Name and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -13851,9 +12335,7 @@ func (c *FortiSDKClient) CreateObjectFirewallInternetServiceName(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13869,9 +12351,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetServiceName(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13920,9 +12401,7 @@ func (c *FortiSDKClient) CreateObjectFirewallDecryptedTrafficMirror(params *map[
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -13938,9 +12417,8 @@ func (c *FortiSDKClient) UpdateObjectFirewallDecryptedTrafficMirror(params *map[
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -13989,9 +12467,7 @@ func (c *FortiSDKClient) CreateObjectFileFilterProfile(params *map[string]interf
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14007,9 +12483,8 @@ func (c *FortiSDKClient) UpdateObjectFileFilterProfile(params *map[string]interf
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14058,9 +12533,7 @@ func (c *FortiSDKClient) CreateObjectExtenderControllerDataplan(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14076,9 +12549,8 @@ func (c *FortiSDKClient) UpdateObjectExtenderControllerDataplan(params *map[stri
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14127,9 +12599,7 @@ func (c *FortiSDKClient) CreateObjectWirelessControllerMpskProfile(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14145,9 +12615,8 @@ func (c *FortiSDKClient) UpdateObjectWirelessControllerMpskProfile(params *map[s
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14196,9 +12665,7 @@ func (c *FortiSDKClient) CreateObjectDynamicMulticastInterface(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14214,9 +12681,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicMulticastInterface(params *map[strin
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14265,9 +12731,7 @@ func (c *FortiSDKClient) CreateObjectDynamicInterface(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14283,9 +12747,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicInterface(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14334,9 +12797,7 @@ func (c *FortiSDKClient) CreateObjectDynamicAddress(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14352,9 +12813,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicAddress(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14392,75 +12852,6 @@ func (c *FortiSDKClient) ReadObjectDynamicAddress(globaladom, mkey string, paral
 	return
 }
 
-// CreateObjectVpnmgrVpntable API operation for FortiManager creates a new Vpntable.
-// Returns the index value of the Vpntable and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object vpnmgr - vpntable chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateObjectVpnmgrVpntable(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/vpnmgr/vpntable"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateObjectVpnmgrVpntable API operation for FortiManager updates the specified Vpntable.
-// Returns the index value of the Vpntable and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object vpnmgr - vpntable chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateObjectVpnmgrVpntable(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/vpnmgr/vpntable"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteObjectVpnmgrVpntable API operation for FortiManager deletes the specified Vpntable.
-// Returns error for service API and SDK errors.
-// See the object vpnmgr - vpntable chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteObjectVpnmgrVpntable(globaladom, mkey string, paralist []string) (err error) {
-	path := "/pm/config/[*]/obj/vpnmgr/vpntable"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadObjectVpnmgrVpntable API operation for FortiManager gets the Vpntable
-// with the specified index value.
-// Returns the requested Vpntable value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the object vpnmgr - vpntable chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadObjectVpnmgrVpntable(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/pm/config/[*]/obj/vpnmgr/vpntable"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateObjectVpnmgrNode API operation for FortiManager creates a new Node.
 // Returns the index value of the Node and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -14472,9 +12863,7 @@ func (c *FortiSDKClient) CreateObjectVpnmgrNode(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14490,9 +12879,8 @@ func (c *FortiSDKClient) UpdateObjectVpnmgrNode(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14541,9 +12929,7 @@ func (c *FortiSDKClient) CreateObjectSystemMeta(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14559,9 +12945,8 @@ func (c *FortiSDKClient) UpdateObjectSystemMeta(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14611,9 +12996,8 @@ func (c *FortiSDKClient) UpdateObjectAdomOptions(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14654,9 +13038,7 @@ func (c *FortiSDKClient) CreateObjectDynamicVip(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14672,9 +13054,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicVip(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14723,9 +13104,7 @@ func (c *FortiSDKClient) CreateObjectDynamicIppool(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14741,9 +13120,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicIppool(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14792,9 +13170,7 @@ func (c *FortiSDKClient) CreateObjectDynamicCertificateLocal(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14810,9 +13186,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicCertificateLocal(params *map[string]
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14861,9 +13236,7 @@ func (c *FortiSDKClient) CreateObjectDynamicVpntunnel(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14879,9 +13252,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicVpntunnel(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14930,9 +13302,7 @@ func (c *FortiSDKClient) CreateObjectCertificateTemplate(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -14948,9 +13318,8 @@ func (c *FortiSDKClient) UpdateObjectCertificateTemplate(params *map[string]inte
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -14999,9 +13368,7 @@ func (c *FortiSDKClient) CreateObjectDynamicVirtualWanLinkMembers(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15017,9 +13384,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicVirtualWanLinkMembers(params *map[st
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15068,9 +13434,7 @@ func (c *FortiSDKClient) CreateObjectDynamicVirtualWanLinkServer(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15086,9 +13450,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicVirtualWanLinkServer(params *map[str
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15137,9 +13500,7 @@ func (c *FortiSDKClient) CreateObjectDynamicVirtualWanLinkNeighbor(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15155,9 +13516,8 @@ func (c *FortiSDKClient) UpdateObjectDynamicVirtualWanLinkNeighbor(params *map[s
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15206,9 +13566,7 @@ func (c *FortiSDKClient) CreateObjectUserPxgrid(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15224,9 +13582,8 @@ func (c *FortiSDKClient) UpdateObjectUserPxgrid(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15275,9 +13632,7 @@ func (c *FortiSDKClient) CreateObjectUserClearpass(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15293,9 +13648,8 @@ func (c *FortiSDKClient) UpdateObjectUserClearpass(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15344,9 +13698,7 @@ func (c *FortiSDKClient) CreateObjectUserNsx(params *map[string]interface{}, glo
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15362,9 +13714,8 @@ func (c *FortiSDKClient) UpdateObjectUserNsx(params *map[string]interface{}, glo
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15413,9 +13764,7 @@ func (c *FortiSDKClient) CreateObjectUserVcenter(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15431,9 +13780,8 @@ func (c *FortiSDKClient) UpdateObjectUserVcenter(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15482,9 +13830,7 @@ func (c *FortiSDKClient) CreateObjectCliTemplate(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15500,9 +13846,8 @@ func (c *FortiSDKClient) UpdateObjectCliTemplate(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15551,9 +13896,7 @@ func (c *FortiSDKClient) CreateObjectCliTemplateGroup(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15569,9 +13912,8 @@ func (c *FortiSDKClient) UpdateObjectCliTemplateGroup(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15620,9 +13962,7 @@ func (c *FortiSDKClient) CreateObjectFspVlan(params *map[string]interface{}, glo
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15638,9 +13978,8 @@ func (c *FortiSDKClient) UpdateObjectFspVlan(params *map[string]interface{}, glo
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15690,9 +14029,8 @@ func (c *FortiSDKClient) UpdateSystemGlobal(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15722,75 +14060,6 @@ func (c *FortiSDKClient) ReadSystemGlobal(globaladom, mkey string, paralist []st
 	return
 }
 
-// CreateSystemGlobalMcPolicyDisabledAdoms API operation for FortiManager creates a new GlobalMc Policy Disabled Adoms.
-// Returns the index value of the GlobalMc Policy Disabled Adoms and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - global mc-policy-disabled-adoms chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateSystemGlobalMcPolicyDisabledAdoms(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/global/mc-policy-disabled-adoms"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateSystemGlobalMcPolicyDisabledAdoms API operation for FortiManager updates the specified GlobalMc Policy Disabled Adoms.
-// Returns the index value of the GlobalMc Policy Disabled Adoms and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - global mc-policy-disabled-adoms chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateSystemGlobalMcPolicyDisabledAdoms(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/global/mc-policy-disabled-adoms"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteSystemGlobalMcPolicyDisabledAdoms API operation for FortiManager deletes the specified GlobalMc Policy Disabled Adoms.
-// Returns error for service API and SDK errors.
-// See the system - global mc-policy-disabled-adoms chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteSystemGlobalMcPolicyDisabledAdoms(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/system/global/mc-policy-disabled-adoms"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadSystemGlobalMcPolicyDisabledAdoms API operation for FortiManager gets the GlobalMc Policy Disabled Adoms
-// with the specified index value.
-// Returns the requested GlobalMc Policy Disabled Adoms value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - global mc-policy-disabled-adoms chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadSystemGlobalMcPolicyDisabledAdoms(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/system/global/mc-policy-disabled-adoms"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateSystemInterface API operation for FortiManager creates a new Interface.
 // Returns the index value of the Interface and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -15802,9 +14071,7 @@ func (c *FortiSDKClient) CreateSystemInterface(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15820,9 +14087,8 @@ func (c *FortiSDKClient) UpdateSystemInterface(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15872,9 +14138,8 @@ func (c *FortiSDKClient) UpdateSystemSnmpSysinfo(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15915,9 +14180,7 @@ func (c *FortiSDKClient) CreateSystemSnmpCommunity(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -15933,9 +14196,8 @@ func (c *FortiSDKClient) UpdateSystemSnmpCommunity(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -15984,9 +14246,7 @@ func (c *FortiSDKClient) CreateSystemSnmpUser(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16002,9 +14262,8 @@ func (c *FortiSDKClient) UpdateSystemSnmpUser(params *map[string]interface{}, gl
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16053,9 +14312,7 @@ func (c *FortiSDKClient) CreateSystemRoute(params *map[string]interface{}, globa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16071,9 +14328,8 @@ func (c *FortiSDKClient) UpdateSystemRoute(params *map[string]interface{}, globa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16122,9 +14378,7 @@ func (c *FortiSDKClient) CreateSystemRoute6(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16140,9 +14394,8 @@ func (c *FortiSDKClient) UpdateSystemRoute6(params *map[string]interface{}, glob
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16192,9 +14445,8 @@ func (c *FortiSDKClient) UpdateSystemDns(params *map[string]interface{}, globala
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16236,9 +14488,8 @@ func (c *FortiSDKClient) UpdateSystemConnector(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16280,9 +14531,8 @@ func (c *FortiSDKClient) UpdateSystemHa(params *map[string]interface{}, globalad
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16323,9 +14573,7 @@ func (c *FortiSDKClient) CreateSystemHaPeer(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16341,9 +14589,8 @@ func (c *FortiSDKClient) UpdateSystemHaPeer(params *map[string]interface{}, glob
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16392,9 +14639,7 @@ func (c *FortiSDKClient) CreateSystemCertificateCa(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16410,9 +14655,8 @@ func (c *FortiSDKClient) UpdateSystemCertificateCa(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16461,9 +14705,7 @@ func (c *FortiSDKClient) CreateSystemCertificateLocal(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16479,9 +14721,8 @@ func (c *FortiSDKClient) UpdateSystemCertificateLocal(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16530,9 +14771,7 @@ func (c *FortiSDKClient) CreateSystemCertificateCrl(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16548,9 +14787,8 @@ func (c *FortiSDKClient) UpdateSystemCertificateCrl(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16599,9 +14837,7 @@ func (c *FortiSDKClient) CreateSystemCertificateRemote(params *map[string]interf
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16617,9 +14853,8 @@ func (c *FortiSDKClient) UpdateSystemCertificateRemote(params *map[string]interf
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16669,9 +14904,8 @@ func (c *FortiSDKClient) UpdateSystemCertificateOftp(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16712,9 +14946,7 @@ func (c *FortiSDKClient) CreateSystemCertificateSsh(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16730,9 +14962,8 @@ func (c *FortiSDKClient) UpdateSystemCertificateSsh(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16782,9 +15013,8 @@ func (c *FortiSDKClient) UpdateSystemSaml(params *map[string]interface{}, global
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16825,9 +15055,7 @@ func (c *FortiSDKClient) CreateSystemSamlFabricIdp(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16843,9 +15071,8 @@ func (c *FortiSDKClient) UpdateSystemSamlFabricIdp(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16894,9 +15121,7 @@ func (c *FortiSDKClient) CreateSystemSamlServiceProviders(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -16912,9 +15137,8 @@ func (c *FortiSDKClient) UpdateSystemSamlServiceProviders(params *map[string]int
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -16964,9 +15188,8 @@ func (c *FortiSDKClient) UpdateSystemNtp(params *map[string]interface{}, globala
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17007,9 +15230,7 @@ func (c *FortiSDKClient) CreateSystemNtpNtpserver(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17025,9 +15246,8 @@ func (c *FortiSDKClient) UpdateSystemNtpNtpserver(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17077,9 +15297,8 @@ func (c *FortiSDKClient) UpdateSystemBackupAllSettings(params *map[string]interf
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17121,9 +15340,8 @@ func (c *FortiSDKClient) UpdateSystemGuiact(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17164,9 +15382,7 @@ func (c *FortiSDKClient) CreateSystemMetadataAdmins(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17182,9 +15398,8 @@ func (c *FortiSDKClient) UpdateSystemMetadataAdmins(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17233,9 +15448,7 @@ func (c *FortiSDKClient) CreateSystemAdminProfile(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17251,9 +15464,8 @@ func (c *FortiSDKClient) UpdateSystemAdminProfile(params *map[string]interface{}
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17302,9 +15514,7 @@ func (c *FortiSDKClient) CreateSystemAdminRadius(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17320,9 +15530,8 @@ func (c *FortiSDKClient) UpdateSystemAdminRadius(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17371,9 +15580,7 @@ func (c *FortiSDKClient) CreateSystemAdminLdap(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17389,9 +15596,8 @@ func (c *FortiSDKClient) UpdateSystemAdminLdap(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17440,9 +15646,7 @@ func (c *FortiSDKClient) CreateSystemAdminTacacs(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17458,9 +15662,8 @@ func (c *FortiSDKClient) UpdateSystemAdminTacacs(params *map[string]interface{},
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17509,9 +15712,7 @@ func (c *FortiSDKClient) CreateSystemAdminGroup(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17527,9 +15728,8 @@ func (c *FortiSDKClient) UpdateSystemAdminGroup(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17578,9 +15778,7 @@ func (c *FortiSDKClient) CreateSystemAdminUser(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17596,9 +15794,8 @@ func (c *FortiSDKClient) UpdateSystemAdminUser(params *map[string]interface{}, g
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17648,9 +15845,8 @@ func (c *FortiSDKClient) UpdateSystemAdminSetting(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17692,9 +15888,8 @@ func (c *FortiSDKClient) UpdateSystemPasswordPolicy(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17736,9 +15931,8 @@ func (c *FortiSDKClient) UpdateSystemAlertemail(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17779,9 +15973,7 @@ func (c *FortiSDKClient) CreateSystemSyslog(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17797,9 +15989,8 @@ func (c *FortiSDKClient) UpdateSystemSyslog(params *map[string]interface{}, glob
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17848,9 +16039,7 @@ func (c *FortiSDKClient) CreateSystemMail(params *map[string]interface{}, global
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17866,9 +16055,8 @@ func (c *FortiSDKClient) UpdateSystemMail(params *map[string]interface{}, global
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17917,9 +16105,7 @@ func (c *FortiSDKClient) CreateSystemAlertEvent(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -17935,9 +16121,8 @@ func (c *FortiSDKClient) UpdateSystemAlertEvent(params *map[string]interface{}, 
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -17987,9 +16172,8 @@ func (c *FortiSDKClient) UpdateSystemAlertConsole(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18031,9 +16215,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogDiskSetting(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18075,9 +16258,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogDiskFilter(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18119,9 +16301,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogMemorySetting(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18163,9 +16344,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogMemoryFilter(params *map[string]int
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18207,9 +16387,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogFortianalyzerFilter(params *map[str
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18251,9 +16430,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogFortianalyzerSetting(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18295,9 +16473,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogFortianalyzer2Filter(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18339,9 +16516,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogFortianalyzer2Setting(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18383,9 +16559,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogFortianalyzer3Filter(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18427,9 +16602,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogFortianalyzer3Setting(params *map[s
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18471,9 +16645,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSyslogdSetting(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18515,9 +16688,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSyslogdFilter(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18559,9 +16731,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSyslogd2Setting(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18603,9 +16774,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSyslogd2Filter(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18647,9 +16817,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSyslogd3Setting(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18691,9 +16860,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSyslogd3Filter(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18735,9 +16903,8 @@ func (c *FortiSDKClient) UpdateSystemLocallogSetting(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18779,9 +16946,8 @@ func (c *FortiSDKClient) UpdateSystemFips(params *map[string]interface{}, global
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18822,9 +16988,7 @@ func (c *FortiSDKClient) CreateSystemWorkflowApprovalMatrix(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -18840,9 +17004,8 @@ func (c *FortiSDKClient) UpdateSystemWorkflowApprovalMatrix(params *map[string]i
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18892,9 +17055,8 @@ func (c *FortiSDKClient) UpdateSystemDocker(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -18935,9 +17097,7 @@ func (c *FortiSDKClient) CreateSystemSniffer(params *map[string]interface{}, glo
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -18953,9 +17113,8 @@ func (c *FortiSDKClient) UpdateSystemSniffer(params *map[string]interface{}, glo
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19005,9 +17164,8 @@ func (c *FortiSDKClient) UpdateSystemDm(params *map[string]interface{}, globalad
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19049,9 +17207,8 @@ func (c *FortiSDKClient) UpdateSystemLogAlert(params *map[string]interface{}, gl
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19093,9 +17250,8 @@ func (c *FortiSDKClient) UpdateSystemLogInterfaceStats(params *map[string]interf
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19137,9 +17293,8 @@ func (c *FortiSDKClient) UpdateSystemLogIoc(params *map[string]interface{}, glob
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19180,9 +17335,7 @@ func (c *FortiSDKClient) CreateSystemLogMailDomain(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -19198,9 +17351,8 @@ func (c *FortiSDKClient) UpdateSystemLogMailDomain(params *map[string]interface{
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19249,9 +17401,7 @@ func (c *FortiSDKClient) CreateSystemLogDeviceDisable(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -19267,9 +17417,8 @@ func (c *FortiSDKClient) UpdateSystemLogDeviceDisable(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19319,9 +17468,8 @@ func (c *FortiSDKClient) UpdateSystemLogSettings(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19363,9 +17511,8 @@ func (c *FortiSDKClient) UpdateSystemLogSettingsRollingAnalyzer(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19407,9 +17554,8 @@ func (c *FortiSDKClient) UpdateSystemLogSettingsRollingLocal(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19451,9 +17597,8 @@ func (c *FortiSDKClient) UpdateSystemLogSettingsRollingRegular(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19495,9 +17640,8 @@ func (c *FortiSDKClient) UpdateSystemLogFetchServerSettings(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19538,9 +17682,7 @@ func (c *FortiSDKClient) CreateSystemLogFetchClientProfile(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -19556,9 +17698,8 @@ func (c *FortiSDKClient) UpdateSystemLogFetchClientProfile(params *map[string]in
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19608,9 +17749,8 @@ func (c *FortiSDKClient) UpdateSystemSql(params *map[string]interface{}, globala
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19651,9 +17791,7 @@ func (c *FortiSDKClient) CreateSystemSqlTsIndexField(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -19669,9 +17807,8 @@ func (c *FortiSDKClient) UpdateSystemSqlTsIndexField(params *map[string]interfac
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19720,9 +17857,7 @@ func (c *FortiSDKClient) CreateSystemSqlCustomSkipidx(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -19738,9 +17873,8 @@ func (c *FortiSDKClient) UpdateSystemSqlCustomSkipidx(params *map[string]interfa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19789,9 +17923,7 @@ func (c *FortiSDKClient) CreateSystemSqlCustomIndex(params *map[string]interface
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -19807,9 +17939,8 @@ func (c *FortiSDKClient) UpdateSystemSqlCustomIndex(params *map[string]interface
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19859,9 +17990,8 @@ func (c *FortiSDKClient) UpdateSystemReportEstBrowseTime(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19903,9 +18033,8 @@ func (c *FortiSDKClient) UpdateSystemReportAutoCache(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19947,9 +18076,8 @@ func (c *FortiSDKClient) UpdateSystemReportSetting(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -19979,75 +18107,6 @@ func (c *FortiSDKClient) ReadSystemReportSetting(globaladom, mkey string, parali
 	return
 }
 
-// CreateSystemReportGroup API operation for FortiManager creates a new ReportGroup.
-// Returns the index value of the ReportGroup and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - report group chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateSystemReportGroup(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/report/group"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateSystemReportGroup API operation for FortiManager updates the specified ReportGroup.
-// Returns the index value of the ReportGroup and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - report group chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateSystemReportGroup(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/report/group"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteSystemReportGroup API operation for FortiManager deletes the specified ReportGroup.
-// Returns error for service API and SDK errors.
-// See the system - report group chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteSystemReportGroup(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/system/report/group"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadSystemReportGroup API operation for FortiManager gets the ReportGroup
-// with the specified index value.
-// Returns the requested ReportGroup value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - report group chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadSystemReportGroup(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/system/report/group"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 
 // UpdateSystemFortiviewSetting API operation for FortiManager updates the specified FortiviewSetting.
 // Returns the index value of the FortiviewSetting and execution result when the request executes successfully.
@@ -20060,9 +18119,8 @@ func (c *FortiSDKClient) UpdateSystemFortiviewSetting(params *map[string]interfa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20104,9 +18162,8 @@ func (c *FortiSDKClient) UpdateSystemFortiviewAutoCache(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20148,9 +18205,8 @@ func (c *FortiSDKClient) UpdateSystemAutoDelete(params *map[string]interface{}, 
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20192,9 +18248,8 @@ func (c *FortiSDKClient) UpdateSystemAutoDeleteQuarantineFilesAutoDeletion(param
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20236,9 +18291,8 @@ func (c *FortiSDKClient) UpdateSystemAutoDeleteDlpFilesAutoDeletion(params *map[
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20280,9 +18334,8 @@ func (c *FortiSDKClient) UpdateSystemAutoDeleteReportAutoDeletion(params *map[st
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20324,9 +18377,8 @@ func (c *FortiSDKClient) UpdateSystemAutoDeleteLogAutoDeletion(params *map[strin
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20368,9 +18420,8 @@ func (c *FortiSDKClient) UpdateFmupdateAvIpsWebProxy(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20412,9 +18463,8 @@ func (c *FortiSDKClient) UpdateFmupdateAvIpsAdvancedLog(params *map[string]inter
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20456,9 +18506,8 @@ func (c *FortiSDKClient) UpdateFmupdateWebSpamWebProxy(params *map[string]interf
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20500,9 +18549,8 @@ func (c *FortiSDKClient) UpdateFmupdateWebSpamFgdSetting(params *map[string]inte
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20533,119 +18581,6 @@ func (c *FortiSDKClient) ReadFmupdateWebSpamFgdSetting(globaladom, mkey string, 
 }
 
 
-// UpdateFmupdateWebSpamFgdSettingServerOverride API operation for FortiManager updates the specified Web SpamFgd SettingServer Override.
-// Returns the index value of the Web SpamFgd SettingServer Override and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateFmupdateWebSpamFgdSettingServerOverride(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/web-spam/fgd-setting/server-override"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteFmupdateWebSpamFgdSettingServerOverride API operation for FortiManager deletes the specified Web SpamFgd SettingServer Override.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteFmupdateWebSpamFgdSettingServerOverride(globaladom, mkey string, paralist []string) (err error) {
-
-	//No unset API for fmupdate - web-spam fgd-setting server-override
-	return
-}
-
-// ReadFmupdateWebSpamFgdSettingServerOverride API operation for FortiManager gets the Web SpamFgd SettingServer Override
-// with the specified index value.
-// Returns the requested Web SpamFgd SettingServer Override value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadFmupdateWebSpamFgdSettingServerOverride(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/web-spam/fgd-setting/server-override"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
-// CreateFmupdateWebSpamFgdSettingServerOverrideServlist API operation for FortiManager creates a new Web SpamFgd SettingServer OverrideServlist.
-// Returns the index value of the Web SpamFgd SettingServer OverrideServlist and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateFmupdateWebSpamFgdSettingServerOverrideServlist(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/web-spam/fgd-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateFmupdateWebSpamFgdSettingServerOverrideServlist API operation for FortiManager updates the specified Web SpamFgd SettingServer OverrideServlist.
-// Returns the index value of the Web SpamFgd SettingServer OverrideServlist and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateFmupdateWebSpamFgdSettingServerOverrideServlist(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/web-spam/fgd-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteFmupdateWebSpamFgdSettingServerOverrideServlist API operation for FortiManager deletes the specified Web SpamFgd SettingServer OverrideServlist.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteFmupdateWebSpamFgdSettingServerOverrideServlist(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/fmupdate/web-spam/fgd-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadFmupdateWebSpamFgdSettingServerOverrideServlist API operation for FortiManager gets the Web SpamFgd SettingServer OverrideServlist
-// with the specified index value.
-// Returns the requested Web SpamFgd SettingServer OverrideServlist value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - web-spam fgd-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadFmupdateWebSpamFgdSettingServerOverrideServlist(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/web-spam/fgd-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
-
 // UpdateFmupdateFctServices API operation for FortiManager updates the specified Fct Services.
 // Returns the index value of the Fct Services and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -20657,9 +18592,8 @@ func (c *FortiSDKClient) UpdateFmupdateFctServices(params *map[string]interface{
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20701,9 +18635,8 @@ func (c *FortiSDKClient) UpdateFmupdateAnalyzerVirusreport(params *map[string]in
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20745,9 +18678,8 @@ func (c *FortiSDKClient) UpdateFmupdateService(params *map[string]interface{}, g
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20789,9 +18721,8 @@ func (c *FortiSDKClient) UpdateFmupdatePublicnetwork(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20833,9 +18764,8 @@ func (c *FortiSDKClient) UpdateFmupdateDiskQuota(params *map[string]interface{},
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20877,9 +18807,8 @@ func (c *FortiSDKClient) UpdateFmupdateServerAccessPriorities(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -20909,75 +18838,6 @@ func (c *FortiSDKClient) ReadFmupdateServerAccessPriorities(globaladom, mkey str
 	return
 }
 
-// CreateFmupdateServerAccessPrioritiesPrivateServer API operation for FortiManager creates a new Server Access PrioritiesPrivate Server.
-// Returns the index value of the Server Access PrioritiesPrivate Server and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - server-access-priorities private-server chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateFmupdateServerAccessPrioritiesPrivateServer(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/server-access-priorities/private-server"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateFmupdateServerAccessPrioritiesPrivateServer API operation for FortiManager updates the specified Server Access PrioritiesPrivate Server.
-// Returns the index value of the Server Access PrioritiesPrivate Server and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - server-access-priorities private-server chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateFmupdateServerAccessPrioritiesPrivateServer(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/server-access-priorities/private-server"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteFmupdateServerAccessPrioritiesPrivateServer API operation for FortiManager deletes the specified Server Access PrioritiesPrivate Server.
-// Returns error for service API and SDK errors.
-// See the fmupdate - server-access-priorities private-server chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteFmupdateServerAccessPrioritiesPrivateServer(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/fmupdate/server-access-priorities/private-server"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadFmupdateServerAccessPrioritiesPrivateServer API operation for FortiManager gets the Server Access PrioritiesPrivate Server
-// with the specified index value.
-// Returns the requested Server Access PrioritiesPrivate Server value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - server-access-priorities private-server chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadFmupdateServerAccessPrioritiesPrivateServer(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/server-access-priorities/private-server"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 
 // UpdateFmupdateCustomUrlList API operation for FortiManager updates the specified Custom Url List.
 // Returns the index value of the Custom Url List and execution result when the request executes successfully.
@@ -20990,9 +18850,8 @@ func (c *FortiSDKClient) UpdateFmupdateCustomUrlList(params *map[string]interfac
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21034,9 +18893,8 @@ func (c *FortiSDKClient) UpdateFmupdateServerOverrideStatus(params *map[string]i
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21078,9 +18936,8 @@ func (c *FortiSDKClient) UpdateFmupdateMultilayer(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21122,9 +18979,8 @@ func (c *FortiSDKClient) UpdateFmupdateFdsSetting(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21166,9 +19022,8 @@ func (c *FortiSDKClient) UpdateFmupdateFdsSettingServerOverride(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21198,75 +19053,6 @@ func (c *FortiSDKClient) ReadFmupdateFdsSettingServerOverride(globaladom, mkey s
 	return
 }
 
-// CreateFmupdateFdsSettingServerOverrideServlist API operation for FortiManager creates a new Fds SettingServer OverrideServlist.
-// Returns the index value of the Fds SettingServer OverrideServlist and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateFmupdateFdsSettingServerOverrideServlist(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateFmupdateFdsSettingServerOverrideServlist API operation for FortiManager updates the specified Fds SettingServer OverrideServlist.
-// Returns the index value of the Fds SettingServer OverrideServlist and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateFmupdateFdsSettingServerOverrideServlist(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteFmupdateFdsSettingServerOverrideServlist API operation for FortiManager deletes the specified Fds SettingServer OverrideServlist.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteFmupdateFdsSettingServerOverrideServlist(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadFmupdateFdsSettingServerOverrideServlist API operation for FortiManager gets the Fds SettingServer OverrideServlist
-// with the specified index value.
-// Returns the requested Fds SettingServer OverrideServlist value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting server-override servlist chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadFmupdateFdsSettingServerOverrideServlist(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/server-override/servlist"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 
 // UpdateFmupdateFdsSettingUpdateSchedule API operation for FortiManager updates the specified Fds SettingUpdate Schedule.
 // Returns the index value of the Fds SettingUpdate Schedule and execution result when the request executes successfully.
@@ -21279,9 +19065,8 @@ func (c *FortiSDKClient) UpdateFmupdateFdsSettingUpdateSchedule(params *map[stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21323,9 +19108,8 @@ func (c *FortiSDKClient) UpdateFmupdateFdsSettingPushOverrideToClient(params *ma
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21355,75 +19139,6 @@ func (c *FortiSDKClient) ReadFmupdateFdsSettingPushOverrideToClient(globaladom, 
 	return
 }
 
-// CreateFmupdateFdsSettingPushOverrideToClientAnnounceIp API operation for FortiManager creates a new Fds SettingPush Override To ClientAnnounce Ip.
-// Returns the index value of the Fds SettingPush Override To ClientAnnounce Ip and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting push-override-to-client announce-ip chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateFmupdateFdsSettingPushOverrideToClientAnnounceIp(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/push-override-to-client/announce-ip"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateFmupdateFdsSettingPushOverrideToClientAnnounceIp API operation for FortiManager updates the specified Fds SettingPush Override To ClientAnnounce Ip.
-// Returns the index value of the Fds SettingPush Override To ClientAnnounce Ip and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting push-override-to-client announce-ip chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateFmupdateFdsSettingPushOverrideToClientAnnounceIp(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/push-override-to-client/announce-ip"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteFmupdateFdsSettingPushOverrideToClientAnnounceIp API operation for FortiManager deletes the specified Fds SettingPush Override To ClientAnnounce Ip.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting push-override-to-client announce-ip chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteFmupdateFdsSettingPushOverrideToClientAnnounceIp(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/push-override-to-client/announce-ip"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadFmupdateFdsSettingPushOverrideToClientAnnounceIp API operation for FortiManager gets the Fds SettingPush Override To ClientAnnounce Ip
-// with the specified index value.
-// Returns the requested Fds SettingPush Override To ClientAnnounce Ip value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the fmupdate - fds-setting push-override-to-client announce-ip chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadFmupdateFdsSettingPushOverrideToClientAnnounceIp(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/fmupdate/fds-setting/push-override-to-client/announce-ip"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 
 // UpdateFmupdateFdsSettingPushOverride API operation for FortiManager updates the specified Fds SettingPush Override.
 // Returns the index value of the Fds SettingPush Override and execution result when the request executes successfully.
@@ -21436,9 +19151,8 @@ func (c *FortiSDKClient) UpdateFmupdateFdsSettingPushOverride(params *map[string
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21480,9 +19194,8 @@ func (c *FortiSDKClient) UpdateFmupdateFwmSetting(params *map[string]interface{}
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21512,75 +19225,6 @@ func (c *FortiSDKClient) ReadFmupdateFwmSetting(globaladom, mkey string, paralis
 	return
 }
 
-// CreateDvmdbDevice API operation for FortiManager creates a new Device.
-// Returns the index value of the Device and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvmdb - device chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateDvmdbDevice(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvmdb/[*]/device"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateDvmdbDevice API operation for FortiManager updates the specified Device.
-// Returns the index value of the Device and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvmdb - device chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmdbDevice(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvmdb/[*]/device"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteDvmdbDevice API operation for FortiManager deletes the specified Device.
-// Returns error for service API and SDK errors.
-// See the dvmdb - device chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteDvmdbDevice(globaladom, mkey string, paralist []string) (err error) {
-	path := "/dvmdb/[*]/device"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadDvmdbDevice API operation for FortiManager gets the Device
-// with the specified index value.
-// Returns the requested Device value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvmdb - device chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadDvmdbDevice(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/dvmdb/[*]/device"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateDvmdbGroup API operation for FortiManager creates a new Group.
 // Returns the index value of the Group and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -21592,9 +19236,7 @@ func (c *FortiSDKClient) CreateDvmdbGroup(params *map[string]interface{}, global
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -21610,9 +19252,8 @@ func (c *FortiSDKClient) UpdateDvmdbGroup(params *map[string]interface{}, global
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21661,9 +19302,7 @@ func (c *FortiSDKClient) CreateDvmdbScript(params *map[string]interface{}, globa
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -21679,9 +19318,8 @@ func (c *FortiSDKClient) UpdateDvmdbScript(params *map[string]interface{}, globa
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21730,9 +19368,7 @@ func (c *FortiSDKClient) CreateDvmdbRevision(params *map[string]interface{}, glo
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -21748,9 +19384,8 @@ func (c *FortiSDKClient) UpdateDvmdbRevision(params *map[string]interface{}, glo
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 
@@ -21788,75 +19423,6 @@ func (c *FortiSDKClient) ReadDvmdbRevision(globaladom, mkey string, paralist []s
 	return
 }
 
-// CreateDvmdbFolder API operation for FortiManager creates a new Folder.
-// Returns the index value of the Folder and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvmdb - folder chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateDvmdbFolder(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvmdb/[*]/folder"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
-	return
-}
-
-// UpdateDvmdbFolder API operation for FortiManager updates the specified Folder.
-// Returns the index value of the Folder and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvmdb - folder chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateDvmdbFolder(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/dvmdb/[*]/folder"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
-	return
-}
-
-// DeleteDvmdbFolder API operation for FortiManager deletes the specified Folder.
-// Returns error for service API and SDK errors.
-// See the dvmdb - folder chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteDvmdbFolder(globaladom, mkey string, paralist []string) (err error) {
-	path := "/dvmdb/[*]/folder"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadDvmdbFolder API operation for FortiManager gets the Folder
-// with the specified index value.
-// Returns the requested Folder value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the dvmdb - folder chapter in the FortiManager Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadDvmdbFolder(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/dvmdb/[*]/folder"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateDvmdbAdom API operation for FortiManager creates a new Adom.
 // Returns the index value of the Adom and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -21868,9 +19434,7 @@ func (c *FortiSDKClient) CreateDvmdbAdom(params *map[string]interface{}, globala
 		return nil, fmt.Errorf("%v", err)
 	}
 
-	output = make(map[string]interface{})
-
-	err = createUpdate(c, globaladom, path, "add", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
 	return
 }
 
@@ -21886,9 +19450,8 @@ func (c *FortiSDKClient) UpdateDvmdbAdom(params *map[string]interface{}, globala
 	}
 
 	path += "/" + escapeURLString(mkey)
-	output = make(map[string]interface{})
 
-	err = createUpdate(c, globaladom, path, "set", params, output, false)
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
 }
 

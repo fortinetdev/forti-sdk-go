@@ -1,3 +1,4 @@
+
 package forticlient
 
 import (
@@ -8,15 +9,15 @@ import (
 	"strconv"
 )
 
-// CreateUpdateFirewallSecurityPolicySeq API operation for FortiOS alters the specified firewall policy sequence.
+// CreateUpdateFirewallCentralsnatmapMove API operation for FortiOS moves the specified item.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alterPos, vdomparam string) (err error) {
+func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapMove(srcId, dstId, mv, vdomparam string) (err error) {
 	HTTPMethod := "PUT"
-	path := "/api/v2/cmdb/firewall/policy"
+	path := "/api/v2/cmdb/firewall/central-snat-map"
 	path += "/" + srcId
 
 	specialparams := "action=move&"
-	specialparams += alterPos
+	specialparams += mv
 	specialparams += "="
 	specialparams += dstId
 
@@ -28,7 +29,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alt
 	}
 
 	body, err := ioutil.ReadAll(req.HTTPResponse.Body)
-	req.HTTPResponse.Body.Close() //#
+	req.HTTPResponse.Body.Close()
 
 	if err != nil || body == nil {
 		err = fmt.Errorf("cannot get response body %s", err)
@@ -44,34 +45,20 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alt
 	return
 }
 
-// Not suitable operation
-func (c *FortiSDKClient) ReadFirewallSecurityPolicySeq() (err error) {
-
-	return
+// JSONFirewallCentralsnatmapItem contains the necessary parameters for each item
+type JSONFirewallCentralsnatmapItem struct {
+	Policyid   string     `json:"policyid"`
 }
 
-// Not suitable operation
-func (c *FortiSDKClient) DelFirewallSecurityPolicySeq() (err error) {
-
-	return
-}
-
-// JSONSecurityPolicyItem contains the parameters for each Security Policy item
-type JSONSecurityPolicyItem struct {
-	PolicyID   string     `json:"policyid"`
-	Name       string     `json:"name"`
-	Action     string     `json:"action"`
-}
-
-// GetSecurityPolicyList API operation for FortiOS gets the Security Policy list
+// GetFirewallCentralsnatmapList API operation for FortiOS gets the list
 // Returns the requested API user value when the request executes successfully.
 // Returns error for service API and SDK errors.
-func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecurityPolicyItem, err error) {
+func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string) (out []JSONFirewallCentralsnatmapItem, err error) {
 
 	HTTPMethod := "GET"
-	path := "/api/v2/cmdb/firewall/policy/"
+	path := "/api/v2/cmdb/firewall/central-snat-map/"
 
-	specialparams := "format=policyid|action|name"
+	specialparams := "format=policyid"
 
 	req := c.NewRequest(HTTPMethod, path, nil, nil)
 	err = req.SendWithSpecialParams(specialparams, vdomparam)
@@ -81,7 +68,7 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 	}
 
 	body, err := ioutil.ReadAll(req.HTTPResponse.Body)
-	req.HTTPResponse.Body.Close() //#
+	req.HTTPResponse.Body.Close()
 
 	if err != nil || body == nil {
 		err = fmt.Errorf("cannot get response body %s", err)
@@ -106,15 +93,13 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 			return
 		}
 
-		var members []JSONSecurityPolicyItem
+		var members []JSONFirewallCentralsnatmapItem
 		for _, v := range mapTmp {
 			c := v.(map[string]interface{})
 
 			members = append(members,
-				JSONSecurityPolicyItem {
-					PolicyID: strconv.Itoa(int(c["policyid"].(float64))),
-					Name:     c["name"].(string),
-					Action:   c["action"].(string),
+				JSONFirewallCentralsnatmapItem {
+					Policyid: strconv.Itoa(int(c["policyid"].(float64))),
 				})
 			}
 
@@ -123,3 +108,5 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 
 	return
 }
+
+

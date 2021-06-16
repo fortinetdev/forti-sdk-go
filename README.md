@@ -4,3 +4,4 @@
 
 * FortiOS
 * FortiManager
+* FortiManager2
