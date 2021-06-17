@@ -11,11 +11,10 @@ import (
 type JSONSystemCertificateDownload struct {
 	Mkey string `json:"mkey"`
 	Type string `json:"type"`
-	Vdom string `json:"vdom"`
 }
 
 // Downloads certificate from Fortigate
-func (c *FortiSDKClient) ReadSystemCertificateDownload(params *JSONSystemCertificateDownload) (res string, err error) {
+func (c *FortiSDKClient) ReadSystemCertificateDownload(params *JSONSystemCertificateDownload, vdomparam string) (res string, err error) {
 	HTTPMethod := "GET"
 	path := "/api/v2/monitor/system/certificate/download"
 	mkey := params.Mkey
@@ -23,7 +22,7 @@ func (c *FortiSDKClient) ReadSystemCertificateDownload(params *JSONSystemCertifi
 	specialparams := "mkey=" + url.QueryEscape(mkey) + "&type=" + url.QueryEscape(cert_type)
 
 	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams)
+	err = req.SendWithSpecialParams(specialparams, url.QueryEscape(vdomparam))
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return

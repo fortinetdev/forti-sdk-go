@@ -19,7 +19,7 @@ type JSONSystemVpnCertificateLocalImport struct {
 }
 
 // Uploads certificate to Fortigate
-func (c *FortiSDKClient) CreateSystemVpnCertificateLocalImport(params *JSONSystemVpnCertificateLocalImport) (res string, err error) {
+func (c *FortiSDKClient) CreateSystemVpnCertificateLocalImport(params *JSONSystemVpnCertificateLocalImport, vdomparam string) (res string, err error) {
 	HTTPMethod := "POST"
 	path := "/api/v2/monitor/vpn-certificate/local/import"
 	params.Certificate = base64.StdEncoding.EncodeToString([]byte(params.Certificate))
@@ -34,7 +34,7 @@ func (c *FortiSDKClient) CreateSystemVpnCertificateLocalImport(params *JSONSyste
 
 	bytes := bytes.NewBuffer(locJSON)
 	req := c.NewRequest(HTTPMethod, path, nil, bytes)
-	err = req.Send()
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
