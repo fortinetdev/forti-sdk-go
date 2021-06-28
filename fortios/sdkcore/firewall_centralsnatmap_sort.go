@@ -1,4 +1,3 @@
-
 package forticlient
 
 import (
@@ -6,8 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"strconv"
 	"sort"
+	"strconv"
 )
 
 type policySortFirewallCentralsnatmap struct {
@@ -18,10 +17,11 @@ func getPolicyListFirewallCentralsnatmap(c *FortiSDKClient, vdomparam string) (i
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/central-snat-map"
 
-	specialparams := "format=policyid|name"
+	params := make(map[string][]string)
+	params["format"] = []string{"policyid|name"}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -67,14 +67,14 @@ func bPolicyListSortedFirewallCentralsnatmap(idlist []policySortFirewallCentrals
 	bsorted = true
 
 	if sortby == "policyid" {
-		for i := 0; i < len(idlist) - 1; i++ {
+		for i := 0; i < len(idlist)-1; i++ {
 			if sortdirection == "ascending" {
-				if (idlist[i].policyid > idlist[i + 1].policyid) {
+				if idlist[i].policyid > idlist[i+1].policyid {
 					bsorted = false
 					return
 				}
 			} else if sortdirection == "descending" {
-				if (idlist[i].policyid < idlist[i + 1].policyid) {
+				if idlist[i].policyid < idlist[i+1].policyid {
 					bsorted = false
 					return
 				}
@@ -93,11 +93,12 @@ func moveAfterFirewallCentralsnatmap(idbefore, idafter int, c *FortiSDKClient, v
 	path := "/api/v2/cmdb/firewall/central-snat-map/"
 	path += idbefores
 
-	specialparams := "action=move&after="
-	specialparams += idafters
+	params := make(map[string][]string)
+	params["action"] = []string{"move"}
+	params["after"] = []string{idafters}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -131,8 +132,8 @@ func sortPolicyListFirewallCentralsnatmap(idlist []policySortFirewallCentralsnat
 			})
 		}
 
-		for i := 0; i < len(idlist) - 1; i++ {
-			err = moveAfterFirewallCentralsnatmap(idlist[i + 1].policyid, idlist[i].policyid, c, vdomparam)
+		for i := 0; i < len(idlist)-1; i++ {
+			err = moveAfterFirewallCentralsnatmap(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam)
 			if err != nil {
 				err = fmt.Errorf("sort err %s", err)
 				return
@@ -158,7 +159,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapSort(sortby, sortdire
 		return
 	}
 
-	err = sortPolicyListFirewallCentralsnatmap(idlist, sortby, sortdirection, c, vdomparam);
+	err = sortPolicyListFirewallCentralsnatmap(idlist, sortby, sortdirection, c, vdomparam)
 	if err != nil {
 		err = fmt.Errorf("sort err %s", err)
 		return
@@ -166,7 +167,6 @@ func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapSort(sortby, sortdire
 
 	return
 }
-
 
 // ReadFirewallCentralsnatmapSort API operation for FortiOS to read the firewall policies sort results
 // Returns sort status
@@ -189,6 +189,3 @@ func (c *FortiSDKClient) ReadFirewallCentralsnatmapSort(sortby, sortdirection st
 
 	return
 }
-
-
-

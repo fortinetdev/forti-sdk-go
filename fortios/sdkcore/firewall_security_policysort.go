@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"strconv"
 	"sort"
+	"strconv"
 )
 
 type policySort struct {
@@ -18,10 +18,11 @@ func getPolicyList(c *FortiSDKClient, vdomparam string) (idlist []policySort, er
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/policy/"
 
-	specialparams := "format=policyid|name"
+	params := make(map[string][]string)
+	params["format"] = []string{"policy|name"}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -67,28 +68,28 @@ func bPolicyListSorted(idlist []policySort, sortby, sortdirection string) (bsort
 	bsorted = true
 
 	if sortby == "policyid" {
-		for i := 0; i < len(idlist) - 1; i++ {
+		for i := 0; i < len(idlist)-1; i++ {
 			if sortdirection == "ascending" {
-				if (idlist[i].policyid > idlist[i + 1].policyid) {
+				if idlist[i].policyid > idlist[i+1].policyid {
 					bsorted = false
 					return
 				}
 			} else if sortdirection == "descending" {
-				if (idlist[i].policyid < idlist[i + 1].policyid) {
+				if idlist[i].policyid < idlist[i+1].policyid {
 					bsorted = false
 					return
 				}
 			}
 		}
 	} else if sortby == "name" {
-		for i := 0; i < len(idlist) - 1; i++ {
+		for i := 0; i < len(idlist)-1; i++ {
 			if sortdirection == "ascending" {
-				if (idlist[i].name > idlist[i + 1].name) {
+				if idlist[i].name > idlist[i+1].name {
 					bsorted = false
 					return
 				}
 			} else if sortdirection == "descending" {
-				if (idlist[i].name < idlist[i + 1].name) {
+				if idlist[i].name < idlist[i+1].name {
 					bsorted = false
 					return
 				}
@@ -107,11 +108,12 @@ func moveAfter(idbefore, idafter int, c *FortiSDKClient, vdomparam string) (err 
 	path := "/api/v2/cmdb/firewall/policy/"
 	path += idbefores
 
-	specialparams := "action=move&after="
-	specialparams += idafters
+	params := make(map[string][]string)
+	params["action"] = []string{"move"}
+	params["after"] = []string{idafters}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -145,8 +147,8 @@ func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiS
 			})
 		}
 
-		for i := 0; i < len(idlist) - 1; i++ {
-			err = moveAfter(idlist[i + 1].policyid, idlist[i].policyid, c, vdomparam)
+		for i := 0; i < len(idlist)-1; i++ {
+			err = moveAfter(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam)
 			if err != nil {
 				err = fmt.Errorf("sort err %s", err)
 				return
@@ -163,8 +165,8 @@ func sortPolicyList(idlist []policySort, sortby, sortdirection string, c *FortiS
 			})
 		}
 
-		for i := 0; i < len(idlist) - 1; i++ {
-			err = moveAfter(idlist[i + 1].policyid, idlist[i].policyid, c, vdomparam)
+		for i := 0; i < len(idlist)-1; i++ {
+			err = moveAfter(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam)
 			if err != nil {
 				err = fmt.Errorf("sort err %s", err)
 				return
@@ -190,7 +192,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdire
 		return
 	}
 
-	err = sortPolicyList(idlist, sortby, sortdirection, c, vdomparam);
+	err = sortPolicyList(idlist, sortby, sortdirection, c, vdomparam)
 	if err != nil {
 		err = fmt.Errorf("sort err %s", err)
 		return
@@ -198,7 +200,6 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySort(sortby, sortdire
 
 	return
 }
-
 
 // ReadFirewallSecurityPolicySort API operation for FortiOS to read the firewall policies sort results
 // Returns sort status
@@ -221,4 +222,3 @@ func (c *FortiSDKClient) ReadFirewallSecurityPolicySort(sortby, sortdirection, v
 
 	return
 }
-

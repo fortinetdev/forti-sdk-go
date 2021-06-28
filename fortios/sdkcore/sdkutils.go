@@ -8,8 +8,8 @@ import (
 	"log"
 )
 
-func createUpdate(c *FortiSDKClient, method string, path string, params *map[string]interface{}, output map[string]interface{}, vdomparam string) (err error) {
-	locJSON, err := json.Marshal(params)
+func createUpdate(c *FortiSDKClient, method string, path string, data *map[string]interface{}, output map[string]interface{}, vdomparam string) (err error) {
+	locJSON, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
 		return

@@ -1,4 +1,3 @@
-
 package forticlient
 
 import (
@@ -16,13 +15,12 @@ func (c *FortiSDKClient) CreateUpdateFirewallProxypolicyMove(srcId, dstId, mv, v
 	path := "/api/v2/cmdb/firewall/proxy-policy"
 	path += "/" + srcId
 
-	specialparams := "action=move&"
-	specialparams += mv
-	specialparams += "="
-	specialparams += dstId
+	params := make(map[string][]string)
+	params["action"] = []string{"move"}
+	params[mv] = []string{dstId}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -47,7 +45,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallProxypolicyMove(srcId, dstId, mv, v
 
 // JSONFirewallProxypolicyItem contains the necessary parameters for each item
 type JSONFirewallProxypolicyItem struct {
-	Policyid   string     `json:"policyid"`
+	Policyid string `json:"policyid"`
 }
 
 // GetFirewallProxypolicyList API operation for FortiOS gets the list
@@ -58,10 +56,11 @@ func (c *FortiSDKClient) GetFirewallProxypolicyList(vdomparam string) (out []JSO
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/proxy-policy/"
 
-	specialparams := "format=policyid"
+	params := make(map[string][]string)
+	params["format"] = []string{"policyid"}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -98,15 +97,13 @@ func (c *FortiSDKClient) GetFirewallProxypolicyList(vdomparam string) (out []JSO
 			c := v.(map[string]interface{})
 
 			members = append(members,
-				JSONFirewallProxypolicyItem {
+				JSONFirewallProxypolicyItem{
 					Policyid: strconv.Itoa(int(c["policyid"].(float64))),
 				})
-			}
+		}
 
 		out = members
 	}
 
 	return
 }
-
-

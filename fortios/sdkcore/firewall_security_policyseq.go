@@ -15,13 +15,12 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alt
 	path := "/api/v2/cmdb/firewall/policy"
 	path += "/" + srcId
 
-	specialparams := "action=move&"
-	specialparams += alterPos
-	specialparams += "="
-	specialparams += dstId
+	params := make(map[string][]string)
+	params["action"] = []string{"move"}
+	params[alterPos] = []string{dstId}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -58,9 +57,9 @@ func (c *FortiSDKClient) DelFirewallSecurityPolicySeq() (err error) {
 
 // JSONSecurityPolicyItem contains the parameters for each Security Policy item
 type JSONSecurityPolicyItem struct {
-	PolicyID   string     `json:"policyid"`
-	Name       string     `json:"name"`
-	Action     string     `json:"action"`
+	PolicyID string `json:"policyid"`
+	Name     string `json:"name"`
+	Action   string `json:"action"`
 }
 
 // GetSecurityPolicyList API operation for FortiOS gets the Security Policy list
@@ -71,10 +70,11 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/policy/"
 
-	specialparams := "format=policyid|action|name"
+	params := make(map[string][]string)
+	params["format"] = []string{"policyid|action|name"}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -111,12 +111,12 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 			c := v.(map[string]interface{})
 
 			members = append(members,
-				JSONSecurityPolicyItem {
+				JSONSecurityPolicyItem{
 					PolicyID: strconv.Itoa(int(c["policyid"].(float64))),
 					Name:     c["name"].(string),
 					Action:   c["action"].(string),
 				})
-			}
+		}
 
 		out = members
 	}

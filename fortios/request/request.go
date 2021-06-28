@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"regexp"
 	"strings"
 	"time"
-	"regexp"
 
 	"github.com/fortinetdev/forti-sdk-go/fortios/config"
 )
@@ -16,10 +16,11 @@ import (
 // Request describes the request to FortiOS service
 type Request struct {
 	Config       config.Config
+	Headers      *map[string][]string
 	HTTPRequest  *http.Request
 	HTTPResponse *http.Response
 	Path         string
-	Params       interface{}
+	Params       *map[string][]string
 	Data         *bytes.Buffer
 }
 
@@ -27,7 +28,7 @@ type Request struct {
 // It will save the http request, path, etc. for the next operations
 // such as sending data, getting response, etc.
 // It returns the created request object to the gobal plugin client.
-func New(c config.Config, method string, path string, params interface{}, data *bytes.Buffer) *Request {
+func New(c config.Config, method string, path string, params *map[string][]string, data *bytes.Buffer) *Request {
 	var h *http.Request
 
 	if data == nil {
@@ -43,6 +44,10 @@ func New(c config.Config, method string, path string, params interface{}, data *
 		Params:      params,
 		Data:        data,
 	}
+
+	head := make(map[string][]string)
+	r = buildHeaders(r, &head)
+
 	return r
 }
 
@@ -64,13 +69,7 @@ func (r *Request) Send2(retries int, ignvdom bool) error {
 
 	//httpReq.URL, err = url.Parse(clientInfo.Endpoint + operation.HTTPPath)
 
-	r.HTTPRequest.Header.Set("Content-Type", "application/json")
-	u := ""
-	if ignvdom == true {
-		u = buildURLWithoutVdom(r)
-	} else {
-		u = buildURL(r)
-	}
+	u := r.buildURL(ignvdom, "").String()
 
 	var err error
 	r.HTTPRequest.URL, err = url.Parse(u)
@@ -90,7 +89,7 @@ func (r *Request) Send2(retries int, ignvdom bool) error {
 				break
 			}
 
-			if retry >  retries {
+			if retry > retries {
 				err = fmt.Errorf("lost connection to firewall with error: %v", filterapikey(errdo.Error()))
 				break
 			}
@@ -107,29 +106,33 @@ func (r *Request) Send2(retries int, ignvdom bool) error {
 	return err
 }
 
+func (r *Request) buildURL(ignvdom bool, vdomparam string) *url.URL {
+	u := *r.HTTPRequest.URL
+	u.Scheme = "https"
+	u.Host = r.Config.FwTarget
+	u.Path = r.Path
 
-func buildURL3(r *Request, vdomparam string) string {
-	u := "https://"
-	u += r.Config.FwTarget
-	u += r.Path
-	u += "?"
-
-	if vdomparam != "" {
-		u += "vdom="
-		u += vdomparam
-		u += "&"
-	} else {
-		if r.Config.Auth.Vdom != "" {
-			u += "vdom="
-			u += r.Config.Auth.Vdom
-			u += "&"
+	q := u.Query()
+	if r.Params != nil {
+		for k, v := range *r.Params {
+			for _, b := range v {
+				q.Add(k, b)
+			}
 		}
 	}
+	if vdomparam != "" {
+		q.Set("vdom", vdomparam)
+	} else {
+		q.Set("vdom", r.Config.Auth.Vdom)
+	}
 
-	u += "access_token="
-	u += r.Config.Auth.Token
+	if ignvdom {
+		q.Del("vdom")
+	}
 
-	return u
+	u.RawQuery = q.Encode()
+
+	return &u
 }
 
 // Send3 request data to FortiOS with custom vdom.
@@ -137,8 +140,7 @@ func buildURL3(r *Request, vdomparam string) string {
 func (r *Request) Send3(vdomparam string) error {
 	retries := 15
 
-	r.HTTPRequest.Header.Set("Content-Type", "application/json")
-	u :=  buildURL3(r, vdomparam)
+	u := r.buildURL(false, vdomparam).String()
 	var err error
 	r.HTTPRequest.URL, err = url.Parse(u)
 	if err != nil {
@@ -157,7 +159,7 @@ func (r *Request) Send3(vdomparam string) error {
 				break
 			}
 
-			if retry >  retries {
+			if retry > retries {
 				err = fmt.Errorf("lost connection to firewall with error: %v", filterapikey(errdo.Error()))
 				break
 			}
@@ -174,87 +176,68 @@ func (r *Request) Send3(vdomparam string) error {
 	return err
 }
 
-
-
 func filterapikey(v string) string {
-	re, _ := regexp.Compile("access_token=.*?\"");
-	res := re.ReplaceAllString(v, "access_token=***************\"");
+	re, _ := regexp.Compile("access_token=.*?\"")
+	res := re.ReplaceAllString(v, "access_token=***************\"")
 
 	return res
 }
 
-func buildURLWithoutVdom(r *Request) string {
-	u := "https://"
-	u += r.Config.FwTarget
-	u += r.Path
-	u += "?"
-
-	u += "access_token="
-	u += r.Config.Auth.Token
-
-	return u
-}
-
-func buildURL(r *Request) string {
-	u := "https://"
-	u += r.Config.FwTarget
-	u += r.Path
-	u += "?"
-
-	if r.Config.Auth.Vdom != "" {
-		u += "vdom="
-		u += r.Config.Auth.Vdom
-		u += "&"
+func buildHeaders(r *Request, h *map[string][]string) *Request {
+	rh := &r.HTTPRequest.Header
+	bearer := "Bearer " + r.Config.Auth.Token
+	rh.Set("Authorization", bearer)
+	rh.Set("Content-Type", "application/json")
+	for k, v := range *h {
+		for _, b := range v {
+			rh.Add(k, b)
+		}
 	}
 
-	u += "access_token="
-	u += r.Config.Auth.Token
-
-	return u
+	return r
 }
 
 // SendWithSpecialParams sends request data to FortiOS with special URL paramaters.
 // If errors are encountered, it returns the error.
-func (r *Request) SendWithSpecialParams(s, vdomparam string) error {
-	r.HTTPRequest.Header.Set("Content-Type", "application/json")
-	u := buildURL3(r, vdomparam)
+// func (r *Request) SendWithSpecialParams(s, vdomparam string) error {
+// 	r = buildURL(r, false, vdomparam)
 
-	if s != "" {
-		u += "&"
-		u += s
-	}
+// 	if s != "" {
+// 		u += "&"
+// 		u += s
+// 	}
 
-	var err error
-	r.HTTPRequest.URL, err = url.Parse(u)
-	if err != nil {
-		log.Fatal(err)
-		return err
-	}
+// 	var err error
+// 	r.HTTPRequest.URL, err = url.Parse(u)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 		return err
+// 	}
 
-	retry := 0
-	for {
-		//Send
-		rsp, errdo := r.Config.HTTPCon.Do(r.HTTPRequest)
-		r.HTTPResponse = rsp
-		if errdo != nil {
-			if strings.Contains(errdo.Error(), "x509: ") {
-				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
-				break
-			}
+// 	retry := 0
+// 	for {
+// 		//Send
+// 		rsp, errdo := r.Config.HTTPCon.Do(r.HTTPRequest)
+// 		r.HTTPResponse = rsp
+// 		if errdo != nil {
+// 			if strings.Contains(errdo.Error(), "x509: ") {
+// 				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
+// 				break
+// 			}
 
-			if retry > 15 {
-				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
-				break
-			}
-			time.Sleep(time.Duration(1) * time.Second)
-			log.Printf("Error found: %v, will resend again %s, %d", filterapikey(errdo.Error()), u, retry)
+// 			if retry > 15 {
+// 				err = fmt.Errorf("Error found: %v", filterapikey(errdo.Error()))
+// 				break
+// 			}
+// 			time.Sleep(time.Duration(1) * time.Second)
+// 			log.Printf("Error found: %v, will resend again %s, %d", filterapikey(errdo.Error()), u, retry)
 
-			retry++
+// 			retry++
 
-		} else {
-			break
-		}
-	}
+// 		} else {
+// 			break
+// 		}
+// 	}
 
-	return err
-}
+// 	return err
+// }

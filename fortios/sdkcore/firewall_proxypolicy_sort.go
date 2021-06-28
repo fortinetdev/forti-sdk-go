@@ -1,4 +1,3 @@
-
 package forticlient
 
 import (
@@ -6,8 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"strconv"
 	"sort"
+	"strconv"
 )
 
 type policySortFirewallProxypolicy struct {
@@ -18,10 +17,10 @@ func getPolicyListFirewallProxypolicy(c *FortiSDKClient, vdomparam string) (idli
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/proxy-policy"
 
-	specialparams := "format=policyid|name"
+	params := make(map[string][]string)
+	params["format"] = []string{"policy|name"}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -67,14 +66,14 @@ func bPolicyListSortedFirewallProxypolicy(idlist []policySortFirewallProxypolicy
 	bsorted = true
 
 	if sortby == "policyid" {
-		for i := 0; i < len(idlist) - 1; i++ {
+		for i := 0; i < len(idlist)-1; i++ {
 			if sortdirection == "ascending" {
-				if (idlist[i].policyid > idlist[i + 1].policyid) {
+				if idlist[i].policyid > idlist[i+1].policyid {
 					bsorted = false
 					return
 				}
 			} else if sortdirection == "descending" {
-				if (idlist[i].policyid < idlist[i + 1].policyid) {
+				if idlist[i].policyid < idlist[i+1].policyid {
 					bsorted = false
 					return
 				}
@@ -93,11 +92,12 @@ func moveAfterFirewallProxypolicy(idbefore, idafter int, c *FortiSDKClient, vdom
 	path := "/api/v2/cmdb/firewall/proxy-policy/"
 	path += idbefores
 
-	specialparams := "action=move&after="
-	specialparams += idafters
+	params := make(map[string][]string)
+	params["action"] = []string{"move"}
+	params["after"] = []string{idafters}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -131,8 +131,8 @@ func sortPolicyListFirewallProxypolicy(idlist []policySortFirewallProxypolicy, s
 			})
 		}
 
-		for i := 0; i < len(idlist) - 1; i++ {
-			err = moveAfterFirewallProxypolicy(idlist[i + 1].policyid, idlist[i].policyid, c, vdomparam)
+		for i := 0; i < len(idlist)-1; i++ {
+			err = moveAfterFirewallProxypolicy(idlist[i+1].policyid, idlist[i].policyid, c, vdomparam)
 			if err != nil {
 				err = fmt.Errorf("sort err %s", err)
 				return
@@ -158,7 +158,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallProxypolicySort(sortby, sortdirecti
 		return
 	}
 
-	err = sortPolicyListFirewallProxypolicy(idlist, sortby, sortdirection, c, vdomparam);
+	err = sortPolicyListFirewallProxypolicy(idlist, sortby, sortdirection, c, vdomparam)
 	if err != nil {
 		err = fmt.Errorf("sort err %s", err)
 		return
@@ -166,7 +166,6 @@ func (c *FortiSDKClient) CreateUpdateFirewallProxypolicySort(sortby, sortdirecti
 
 	return
 }
-
 
 // ReadFirewallProxypolicySort API operation for FortiOS to read the firewall policies sort results
 // Returns sort status
@@ -189,6 +188,3 @@ func (c *FortiSDKClient) ReadFirewallProxypolicySort(sortby, sortdirection strin
 
 	return
 }
-
-
-

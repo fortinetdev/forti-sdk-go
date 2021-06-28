@@ -1,4 +1,3 @@
-
 package forticlient
 
 import (
@@ -16,13 +15,12 @@ func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapMove(srcId, dstId, mv
 	path := "/api/v2/cmdb/firewall/central-snat-map"
 	path += "/" + srcId
 
-	specialparams := "action=move&"
-	specialparams += mv
-	specialparams += "="
-	specialparams += dstId
+	params := make(map[string][]string)
+	params["action"] = []string{"move"}
+	params[mv] = []string{dstId}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -47,7 +45,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallCentralsnatmapMove(srcId, dstId, mv
 
 // JSONFirewallCentralsnatmapItem contains the necessary parameters for each item
 type JSONFirewallCentralsnatmapItem struct {
-	Policyid   string     `json:"policyid"`
+	Policyid string `json:"policyid"`
 }
 
 // GetFirewallCentralsnatmapList API operation for FortiOS gets the list
@@ -58,10 +56,11 @@ func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string) (out []
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/central-snat-map/"
 
-	specialparams := "format=policyid"
+	params := make(map[string][]string)
+	params["format"] = []string{"policyid"}
 
-	req := c.NewRequest(HTTPMethod, path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	req := c.NewRequest(HTTPMethod, path, &params, nil)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %s", err)
 		return
@@ -98,15 +97,13 @@ func (c *FortiSDKClient) GetFirewallCentralsnatmapList(vdomparam string) (out []
 			c := v.(map[string]interface{})
 
 			members = append(members,
-				JSONFirewallCentralsnatmapItem {
+				JSONFirewallCentralsnatmapItem{
 					Policyid: strconv.Itoa(int(c["policyid"].(float64))),
 				})
-			}
+		}
 
 		out = members
 	}
 
 	return
 }
-
-

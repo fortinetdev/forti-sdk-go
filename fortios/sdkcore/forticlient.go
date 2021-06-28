@@ -13,7 +13,6 @@ import (
 	"github.com/fortinetdev/forti-sdk-go/fortios/auth"
 	"github.com/fortinetdev/forti-sdk-go/fortios/config"
 	"github.com/fortinetdev/forti-sdk-go/fortios/request"
-	// "strconv"
 )
 
 // MultValue describes the nested structure in the results
@@ -74,7 +73,7 @@ func NewClient(auth *auth.Auth, client *http.Client) (*FortiSDKClient, error) {
 
 // NewRequest creates the request to FortiOS for the client
 // and return it to the client
-func (c *FortiSDKClient) NewRequest(method string, path string, params interface{}, data *bytes.Buffer) *request.Request {
+func (c *FortiSDKClient) NewRequest(method string, path string, params *map[string][]string, data *bytes.Buffer) *request.Request {
 	return request.New(c.Config, method, path, params, data)
 }
 

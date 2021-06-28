@@ -24,7 +24,8 @@ type JSONJSONGenericAPI struct {
 func (c *FortiSDKClient) CreateJSONGenericAPI(params *JSONJSONGenericAPI, vdomparam string) (res string, err error) {
 	HTTPMethod := params.Method
 	path := params.Path
-	specialparams := params.Specialparams
+	path += "?"
+	path += params.Specialparams
 
 	var req *request.Request
 
@@ -45,7 +46,7 @@ func (c *FortiSDKClient) CreateJSONGenericAPI(params *JSONJSONGenericAPI, vdompa
 		req = c.NewRequest(HTTPMethod, path, nil, nil)
 	}
 
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
 		return
@@ -82,8 +83,9 @@ func (c *FortiSDKClient) ReadJSONGenericAPI(mkey string) (output *JSONJSONGeneri
 
 // GenericGroupRead API operation for FortiOS, Read Generic Group
 func (c *FortiSDKClient) GenericGroupRead(path, specialparams, vdomparam string) (mapTmp []interface{}, err error) {
+	path += specialparams
 	req := c.NewRequest("GET", path, nil, nil)
-	err = req.SendWithSpecialParams(specialparams, vdomparam)
+	err = req.Send3(vdomparam)
 	if err != nil || req.HTTPResponse == nil {
 		err = fmt.Errorf("cannot send request %v", err)
 		return
