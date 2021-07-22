@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"regexp"
 	"strings"
 	"time"
-	"regexp"
 
 	"github.com/fortinetdev/forti-sdk-go/fortios/config"
 )
@@ -90,7 +90,7 @@ func (r *Request) Send2(retries int, ignvdom bool) error {
 				break
 			}
 
-			if retry >  retries {
+			if retry > retries {
 				err = fmt.Errorf("lost connection to firewall with error: %v", filterapikey(errdo.Error()))
 				break
 			}
@@ -106,7 +106,6 @@ func (r *Request) Send2(retries int, ignvdom bool) error {
 
 	return err
 }
-
 
 func buildURL3(r *Request, vdomparam string) string {
 	u := "https://"
@@ -138,7 +137,7 @@ func (r *Request) Send3(vdomparam string) error {
 	retries := 15
 
 	r.HTTPRequest.Header.Set("Content-Type", "application/json")
-	u :=  buildURL3(r, vdomparam)
+	u := buildURL3(r, vdomparam)
 	var err error
 	r.HTTPRequest.URL, err = url.Parse(u)
 	if err != nil {
@@ -157,7 +156,7 @@ func (r *Request) Send3(vdomparam string) error {
 				break
 			}
 
-			if retry >  retries {
+			if retry > retries {
 				err = fmt.Errorf("lost connection to firewall with error: %v", filterapikey(errdo.Error()))
 				break
 			}
@@ -174,11 +173,9 @@ func (r *Request) Send3(vdomparam string) error {
 	return err
 }
 
-
-
 func filterapikey(v string) string {
-	re, _ := regexp.Compile("access_token=.*?\"");
-	res := re.ReplaceAllString(v, "access_token=***************\"");
+	re, _ := regexp.Compile("access_token=.*?\"")
+	res := re.ReplaceAllString(v, "access_token=***************\"")
 
 	return res
 }
@@ -199,7 +196,12 @@ func buildURL(r *Request) string {
 	u := "https://"
 	u += r.Config.FwTarget
 	u += r.Path
-	u += "?"
+	//u += "?"
+	if strings.Contains(r.Path, "&") {
+		u += "&"
+	} else {
+		u += "?"
+	}
 
 	if r.Config.Auth.Vdom != "" {
 		u += "vdom="
@@ -209,7 +211,7 @@ func buildURL(r *Request) string {
 
 	u += "access_token="
 	u += r.Config.Auth.Token
-
+	fmt.Println(u)
 	return u
 }
 
