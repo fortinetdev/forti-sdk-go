@@ -375,7 +375,7 @@ func (c *FortiSDKClient) ListFirewallObjectAddresses() (out []JSONFirewallObject
 		err = fmt.Errorf("cannot get response body %s", err)
 		return
 	}
-	log.Printf("FOS-fortios reading response: %s", string(body))
+	//log.Printf("FOS-fortios reading response: %s", string(body))
 
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)

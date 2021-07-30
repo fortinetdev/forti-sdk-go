@@ -234,7 +234,7 @@ func (c *FortiSDKClient) ReadFirewallSecurityPolicy1(mkey string) (output *JSONF
 		err = fmt.Errorf("cannot get response body %s", err)
 		return
 	}
-	log.Printf("FOS-fortios reading response: %s", string(body))
+	//log.Printf("FOS-fortios reading response: %s", string(body))
 
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)

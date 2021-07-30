@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"strconv"
 )
 
@@ -34,7 +33,7 @@ func (c *FortiSDKClient) CreateUpdateFirewallSecurityPolicySeq(srcId, dstId, alt
 		err = fmt.Errorf("cannot get response body %s", err)
 		return
 	}
-	log.Printf("FOS-fortios response: %s", string(body))
+	//log.Printf("FOS-fortios response: %s", string(body))
 
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
@@ -61,6 +60,16 @@ type JSONSecurityPolicyItem struct {
 	PolicyID   string     `json:"policyid"`
 	Name       string     `json:"name"`
 	Action     string     `json:"action"`
+	SourceInterfaces []SecurityPolicyObject `json:"srcintf"`
+	DestinationInterfaces []SecurityPolicyObject `json:"dstintf"`
+	SourceAddresses []SecurityPolicyObject `json:"srcaddr"`
+	DesitnationAddresses []SecurityPolicyObject `json:"destaddr"`
+	Services []SecurityPolicyObject `json:"service"`
+	Nat string `json:"nat"`
+}
+
+type SecurityPolicyObject struct {
+	Name string `json:"name"`
 }
 
 // GetSecurityPolicyList API operation for FortiOS gets the Security Policy list
@@ -71,8 +80,8 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 	HTTPMethod := "GET"
 	path := "/api/v2/cmdb/firewall/policy/"
 
-	specialparams := "format=policyid|action|name"
-
+	specialparams := "format=policyid|name|srcintf|dstintf|srcaddr|dstaddr|action|service|nat"
+	//output := []JSONSecurityPolicyItem{}
 	req := c.NewRequest(HTTPMethod, path, nil, nil)
 	err = req.SendWithSpecialParams(specialparams, vdomparam)
 	if err != nil || req.HTTPResponse == nil {
@@ -87,7 +96,7 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 		err = fmt.Errorf("cannot get response body %s", err)
 		return
 	}
-	log.Printf("FOS-fortios response: %s", string(body))
+	//log.Printf("FOS-fortios response: %s", string(body))
 
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
@@ -97,6 +106,8 @@ func (c *FortiSDKClient) GetSecurityPolicyList(vdomparam string) (out []JSONSecu
 	}
 
 	err = fortiAPIErrorFormat(result, string(body))
+
+	//err = json.Unmarshal(string(body),&output)
 
 	if err == nil {
 		mapTmp := result["results"].([]interface{}) //)[0].(map[string]interface{})
