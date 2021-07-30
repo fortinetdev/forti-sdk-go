@@ -65,6 +65,14 @@ type JSONUpdateFirewallObjectAddressOutput struct {
 	HTTPStatus float64 `json:"http_status"`
 }
 
+type JSONListFirewallObjectAddressOutput struct {
+	HTTPMethod string `json:"http_method"`
+	Revision string `json:"revision"`
+	Results []JSONFirewallObjectAddress `json:"results"`
+	Status     string  `json:"status"`
+	HTTPStatus float64 `json:"http_status"`
+}
+
 // CreateFirewallObjectAddress API operation for FortiOS creates a new firewall address for firewall policies.
 // Returns the index value of the firewall address and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -295,4 +303,95 @@ func (c *FortiSDKClient) ReadFirewallObjectAddress(mkey string) (output *JSONFir
 	}
 
 	return
+}
+
+func (c *FortiSDKClient) ParseFirewallObject(firewallObj *JSONFirewallObjectAddress, intputIntf map[string]interface{}) (err error) {
+	//mapTmp := (intputIntf["results"].([]interface{}))[0].(map[string]interface{})
+
+	if intputIntf == nil {
+		err = fmt.Errorf("cannot get the results from the response")
+		return err
+	}
+
+	if intputIntf["name"] != nil {
+		firewallObj.Name = intputIntf["name"].(string)
+	}
+	if intputIntf["type"] != nil {
+		firewallObj.Type = intputIntf["type"].(string)
+	} else {
+		err = fmt.Errorf("cannot get the right response, type doesn't exist.")
+		return err
+	}
+
+	if intputIntf["subnet"] != nil {
+		firewallObj.Subnet = intputIntf["subnet"].(string)
+	}
+	if intputIntf["start-ip"] != nil {
+		firewallObj.StartIP = intputIntf["start-ip"].(string)
+	}
+	if intputIntf["end-ip"] != nil {
+		firewallObj.EndIP = intputIntf["end-ip"].(string)
+	}
+	if intputIntf["fqdn"] != nil {
+		firewallObj.Fqdn = intputIntf["fqdn"].(string)
+	}
+	if intputIntf["country"] != nil {
+		firewallObj.Country = intputIntf["country"].(string)
+	}
+	if intputIntf["comment"] != nil {
+		firewallObj.Comment = intputIntf["comment"].(string)
+	}
+	if intputIntf["associated-interface"] != nil {
+		firewallObj.AssociatedIntf = intputIntf["associated-interface"].(string)
+	}
+	if intputIntf["visibility"] != nil {
+		firewallObj.ShowInAddressList = intputIntf["visibility"].(string)
+	}
+	if intputIntf["allow-routing"] != nil {
+		firewallObj.AllowRouting = intputIntf["allow-routing"].(string)
+	}
+
+	return nil
+}
+
+func (c *FortiSDKClient) ListFirewallObjectAddresses() (out []JSONFirewallObjectAddress, err error){
+
+	HTTPMethod := "GET"
+	path := "/api/v2/cmdb/firewall/address"
+
+	output := JSONListFirewallObjectAddressOutput{}
+
+	req := c.NewRequest(HTTPMethod, path, nil, nil)
+	err = req.Send()
+	if err != nil || req.HTTPResponse == nil {
+		err = fmt.Errorf("cannot send request %s", err)
+		return
+	}
+
+	body, err := ioutil.ReadAll(req.HTTPResponse.Body)
+	req.HTTPResponse.Body.Close() //#
+
+	if err != nil || body == nil {
+		err = fmt.Errorf("cannot get response body %s", err)
+		return
+	}
+	log.Printf("FOS-fortios reading response: %s", string(body))
+
+	var result map[string]interface{}
+	json.Unmarshal([]byte(string(body)), &result)
+
+	if fortiAPIHttpStatus404Checking(result) == true {
+		log.Fatalln("Problem! 404! %s", result)
+		return
+	}
+
+	err = fortiAPIErrorFormat(result, string(body))
+	if err != nil {
+		log.Fatalln("Problem! %v", err)
+	}
+	err = json.Unmarshal([]byte(string(body)), &output)
+	if err != nil {
+		log.Fatalln("Problem! %v", err)
+	}
+	return output.Results, nil
 }
