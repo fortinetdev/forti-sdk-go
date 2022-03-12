@@ -5,3 +5,4 @@
 * FortiOS
 * FortiManager
 * FortiManager2
+* FortiAnalyzer
