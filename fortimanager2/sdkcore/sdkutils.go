@@ -301,8 +301,6 @@ func replaceParaWithValue(path string, paralist []string) (string, error) {
 
 	for index, v := range paralist {
 		path = re.ReplaceAllString(path, "${1}" + v + "${3}")
-		fmt.Println(path)
-		fmt.Println(index, v)
 	}
 
 	return path, nil
