@@ -299,7 +299,7 @@ func replaceParaWithValue(path string, paralist []string) (string, error) {
 
 	re = regexp.MustCompile(`^(.*?)({.*?})(.*?)$`)
 
-	for index, v := range paralist {
+	for _, v := range paralist {
 		path = re.ReplaceAllString(path, "${1}" + v + "${3}")
 	}
 
