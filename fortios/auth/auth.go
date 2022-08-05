@@ -10,9 +10,11 @@ type Auth struct {
 	Hostname string
 	Token    string
 	CABundle string
+	CABundleContent string
 	Vdom     string
 	Insecure *bool
 	Refresh  bool
+	HTTPProxy string
 
 	PeerAuth string
 	CaCert string
@@ -21,12 +23,14 @@ type Auth struct {
 }
 
 // NewAuth inits Auth object with the given metadata
-func NewAuth(hostname, token, cabundle, peerauth, cacert, clientcert, clientkey, vdom string) *Auth {
+func NewAuth(hostname, token, cabundle, cabundlecontent, peerauth, cacert, clientcert, clientkey, vdom, httpproxy string) *Auth {
 	return &Auth{
 		Hostname: hostname,
 		Token:    token,
 		CABundle: cabundle,
+		CABundleContent: cabundlecontent,
 		Vdom:     vdom,
+		HTTPProxy: httpproxy,
 
 		PeerAuth:   peerauth,
 		CaCert:     cacert,
@@ -145,3 +149,20 @@ func (m *Auth) GetEnvClientKey() (string, error) {
 
 	return c, nil
 }
+
+// GetEnvHTTPProxy gets HTTP_PROXY or HTTPS_PROXY from OS environment
+// It returns the HTTP_PROXY or HTTPS_PROXY
+func (m *Auth) GetEnvHTTPProxy() (string, error) {
+	c := os.Getenv("HTTPS_PROXY")
+
+	if c == "" {
+		c = os.Getenv("HTTP_PROXY")
+	}
+
+	if c != "" {
+		m.HTTPProxy = c
+	}
+
+	return c, nil
+}
+
