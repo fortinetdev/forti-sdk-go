@@ -4071,6 +4071,110 @@ func (c *FortiSDKClient) ReadObjectFirewallAccessProxyVirtualHost(globaladom, mk
 	return
 }
 
+// CreateObjectFirewallAccessProxy6 API operation for FortiManager creates a new Access Proxy6.
+// Returns the index value of the Access Proxy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object firewall - access-proxy6 chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectFirewallAccessProxy6(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/firewall/access-proxy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectFirewallAccessProxy6 API operation for FortiManager updates the specified Access Proxy6.
+// Returns the index value of the Access Proxy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object firewall - access-proxy6 chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectFirewallAccessProxy6(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/firewall/access-proxy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectFirewallAccessProxy6 API operation for FortiManager deletes the specified Access Proxy6.
+// Returns error for service API and SDK errors.
+// See the object firewall - access-proxy6 chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectFirewallAccessProxy6(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/firewall/access-proxy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectFirewallAccessProxy6 API operation for FortiManager gets the Access Proxy6
+// with the specified index value.
+// Returns the requested Access Proxy6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object firewall - access-proxy6 chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectFirewallAccessProxy6(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/firewall/access-proxy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+
+// UpdateObjectFirewallAccessProxy6Move API operation for FortiManager updates the specified Access Proxy6Move.
+// Returns the index value of the Access Proxy6Move and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object firewall - access-proxy6 move chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectFirewallAccessProxy6Move(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/firewall/access-proxy6/{access-proxy6}"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
+	return
+}
+
+
+// ReadObjectFirewallAccessProxy6Move API operation for FortiManager gets the Access Proxy6Move
+// with the specified index value.
+// Returns the requested Access Proxy6Move value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object firewall - access-proxy6 move chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectFirewallAccessProxy6Move(globaladom, mkey string, paralist []string) (listTmp []interface{}, err error) {
+	path := "/pm/config/[*]/obj/firewall/access-proxy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	params := map[string]interface{}{
+		"fields": []string{"name"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
+	return
+}
+
 
 // UpdateObjectFirewallAccessProxyMove API operation for FortiManager updates the specified Access ProxyMove.
 // Returns the index value of the Access ProxyMove and execution result when the request executes successfully.
@@ -4102,7 +4206,10 @@ func (c *FortiSDKClient) ReadObjectFirewallAccessProxyMove(globaladom, mkey stri
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"name"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -4646,6 +4753,7 @@ func (c *FortiSDKClient) UpdateObjectFirewallInternetService(params *map[string]
 		return nil, fmt.Errorf("%v", err)
 	}
 
+	path += "/" + escapeURLString(mkey)
 
 	output, err = createUpdate(c, globaladom, path, "set", params, false)
 	return
@@ -4672,6 +4780,7 @@ func (c *FortiSDKClient) ReadObjectFirewallInternetService(globaladom, mkey stri
 		return nil, fmt.Errorf("%v", err)
 	}
 
+	path += "/" + escapeURLString(mkey)
 
 	mapTmp, err = read(c, globaladom, path, "get", false)
 	return
@@ -7251,6 +7360,72 @@ func (c *FortiSDKClient) ReadObjectFmgDeviceBlueprint(globaladom, mkey string, p
 	return
 }
 
+// CreateObjectFmgFabricAuthorizationTemplate API operation for FortiManager creates a new FabricAuthorizationTemplate.
+// Returns the index value of the FabricAuthorizationTemplate and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object fmg - fabric authorization template chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectFmgFabricAuthorizationTemplate(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/fmg/fabric/authorization/template"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectFmgFabricAuthorizationTemplate API operation for FortiManager updates the specified FabricAuthorizationTemplate.
+// Returns the index value of the FabricAuthorizationTemplate and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object fmg - fabric authorization template chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectFmgFabricAuthorizationTemplate(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/fmg/fabric/authorization/template"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectFmgFabricAuthorizationTemplate API operation for FortiManager deletes the specified FabricAuthorizationTemplate.
+// Returns error for service API and SDK errors.
+// See the object fmg - fabric authorization template chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectFmgFabricAuthorizationTemplate(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/fmg/fabric/authorization/template"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectFmgFabricAuthorizationTemplate API operation for FortiManager gets the FabricAuthorizationTemplate
+// with the specified index value.
+// Returns the requested FabricAuthorizationTemplate value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object fmg - fabric authorization template chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectFmgFabricAuthorizationTemplate(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/fmg/fabric/authorization/template"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
 // CreateObjectFmgVariable API operation for FortiManager creates a new Variable.
 // Returns the index value of the Variable and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -9010,6 +9185,138 @@ func (c *FortiSDKClient) ReadObjectSwitchControllerDslPolicy(globaladom, mkey st
 	return
 }
 
+// CreateObjectSwitchControllerDynamicPortPolicy API operation for FortiManager creates a new Dynamic Port Policy.
+// Returns the index value of the Dynamic Port Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - dynamic-port-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectSwitchControllerDynamicPortPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/dynamic-port-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectSwitchControllerDynamicPortPolicy API operation for FortiManager updates the specified Dynamic Port Policy.
+// Returns the index value of the Dynamic Port Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - dynamic-port-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectSwitchControllerDynamicPortPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/dynamic-port-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectSwitchControllerDynamicPortPolicy API operation for FortiManager deletes the specified Dynamic Port Policy.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - dynamic-port-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectSwitchControllerDynamicPortPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/switch-controller/dynamic-port-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectSwitchControllerDynamicPortPolicy API operation for FortiManager gets the Dynamic Port Policy
+// with the specified index value.
+// Returns the requested Dynamic Port Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - dynamic-port-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectSwitchControllerDynamicPortPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/dynamic-port-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectSwitchControllerFortilinkSettings API operation for FortiManager creates a new Fortilink Settings.
+// Returns the index value of the Fortilink Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - fortilink-settings chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectSwitchControllerFortilinkSettings(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/fortilink-settings"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectSwitchControllerFortilinkSettings API operation for FortiManager updates the specified Fortilink Settings.
+// Returns the index value of the Fortilink Settings and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - fortilink-settings chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectSwitchControllerFortilinkSettings(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/fortilink-settings"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectSwitchControllerFortilinkSettings API operation for FortiManager deletes the specified Fortilink Settings.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - fortilink-settings chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectSwitchControllerFortilinkSettings(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/switch-controller/fortilink-settings"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectSwitchControllerFortilinkSettings API operation for FortiManager gets the Fortilink Settings
+// with the specified index value.
+// Returns the requested Fortilink Settings value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - fortilink-settings chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectSwitchControllerFortilinkSettings(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/fortilink-settings"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
 // CreateObjectSwitchControllerLldpProfile API operation for FortiManager creates a new Lldp Profile.
 // Returns the index value of the Lldp Profile and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -9065,6 +9372,72 @@ func (c *FortiSDKClient) DeleteObjectSwitchControllerLldpProfile(globaladom, mke
 // See the object switch-controller - lldp-profile chapter in the FortiManager Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadObjectSwitchControllerLldpProfile(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
 	path := "/pm/config/[*]/obj/switch-controller/lldp-profile"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectSwitchControllerMacPolicy API operation for FortiManager creates a new Mac Policy.
+// Returns the index value of the Mac Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - mac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectSwitchControllerMacPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/mac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectSwitchControllerMacPolicy API operation for FortiManager updates the specified Mac Policy.
+// Returns the index value of the Mac Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - mac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectSwitchControllerMacPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/mac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectSwitchControllerMacPolicy API operation for FortiManager deletes the specified Mac Policy.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - mac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectSwitchControllerMacPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/switch-controller/mac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectSwitchControllerMacPolicy API operation for FortiManager gets the Mac Policy
+// with the specified index value.
+// Returns the requested Mac Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - mac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectSwitchControllerMacPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/mac-policy"
 	path, err = replaceParaWithValue(path, paralist)
 	if err != nil {
 		return nil, fmt.Errorf("%v", err)
@@ -9395,6 +9768,204 @@ func (c *FortiSDKClient) DeleteObjectSwitchControllerSecurityPolicy8021X(globala
 // See the object switch-controller - security-policy 802-1X chapter in the FortiManager Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadObjectSwitchControllerSecurityPolicy8021X(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
 	path := "/pm/config/[*]/obj/switch-controller/security-policy/802-1X"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectSwitchControllerSwitchInterfaceTag API operation for FortiManager creates a new Switch Interface Tag.
+// Returns the index value of the Switch Interface Tag and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - switch-interface-tag chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectSwitchControllerSwitchInterfaceTag(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/switch-interface-tag"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectSwitchControllerSwitchInterfaceTag API operation for FortiManager updates the specified Switch Interface Tag.
+// Returns the index value of the Switch Interface Tag and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - switch-interface-tag chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectSwitchControllerSwitchInterfaceTag(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/switch-interface-tag"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectSwitchControllerSwitchInterfaceTag API operation for FortiManager deletes the specified Switch Interface Tag.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - switch-interface-tag chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectSwitchControllerSwitchInterfaceTag(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/switch-controller/switch-interface-tag"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectSwitchControllerSwitchInterfaceTag API operation for FortiManager gets the Switch Interface Tag
+// with the specified index value.
+// Returns the requested Switch Interface Tag value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - switch-interface-tag chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectSwitchControllerSwitchInterfaceTag(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/switch-interface-tag"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectSwitchControllerTrafficPolicy API operation for FortiManager creates a new Traffic Policy.
+// Returns the index value of the Traffic Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - traffic-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectSwitchControllerTrafficPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/traffic-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectSwitchControllerTrafficPolicy API operation for FortiManager updates the specified Traffic Policy.
+// Returns the index value of the Traffic Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - traffic-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectSwitchControllerTrafficPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/traffic-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectSwitchControllerTrafficPolicy API operation for FortiManager deletes the specified Traffic Policy.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - traffic-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectSwitchControllerTrafficPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/switch-controller/traffic-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectSwitchControllerTrafficPolicy API operation for FortiManager gets the Traffic Policy
+// with the specified index value.
+// Returns the requested Traffic Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - traffic-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectSwitchControllerTrafficPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/traffic-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectSwitchControllerVlanPolicy API operation for FortiManager creates a new Vlan Policy.
+// Returns the index value of the Vlan Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - vlan-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectSwitchControllerVlanPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/vlan-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectSwitchControllerVlanPolicy API operation for FortiManager updates the specified Vlan Policy.
+// Returns the index value of the Vlan Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - vlan-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectSwitchControllerVlanPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/vlan-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectSwitchControllerVlanPolicy API operation for FortiManager deletes the specified Vlan Policy.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - vlan-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectSwitchControllerVlanPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/switch-controller/vlan-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectSwitchControllerVlanPolicy API operation for FortiManager gets the Vlan Policy
+// with the specified index value.
+// Returns the requested Vlan Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object switch-controller - vlan-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectSwitchControllerVlanPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/switch-controller/vlan-policy"
 	path, err = replaceParaWithValue(path, paralist)
 	if err != nil {
 		return nil, fmt.Errorf("%v", err)
@@ -12077,6 +12648,72 @@ func (c *FortiSDKClient) ReadObjectUserExchange(globaladom, mkey string, paralis
 	return
 }
 
+// CreateObjectUserFlexvm API operation for FortiManager creates a new Flexvm.
+// Returns the index value of the Flexvm and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object user - flexvm chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectUserFlexvm(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/user/flexvm"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectUserFlexvm API operation for FortiManager updates the specified Flexvm.
+// Returns the index value of the Flexvm and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object user - flexvm chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectUserFlexvm(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/user/flexvm"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectUserFlexvm API operation for FortiManager deletes the specified Flexvm.
+// Returns error for service API and SDK errors.
+// See the object user - flexvm chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectUserFlexvm(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/user/flexvm"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectUserFlexvm API operation for FortiManager gets the Flexvm
+// with the specified index value.
+// Returns the requested Flexvm value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object user - flexvm chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectUserFlexvm(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/user/flexvm"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
 // CreateObjectUserFortitoken API operation for FortiManager creates a new Fortitoken.
 // Returns the index value of the Fortitoken and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -12330,6 +12967,72 @@ func (c *FortiSDKClient) DeleteObjectUserGroup(globaladom, mkey string, paralist
 // See the object user - group chapter in the FortiManager Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadObjectUserGroup(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
 	path := "/pm/config/[*]/obj/user/group"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectUserJson API operation for FortiManager creates a new Json.
+// Returns the index value of the Json and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object user - json chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectUserJson(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/user/json"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectUserJson API operation for FortiManager updates the specified Json.
+// Returns the index value of the Json and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object user - json chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectUserJson(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/user/json"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectUserJson API operation for FortiManager deletes the specified Json.
+// Returns error for service API and SDK errors.
+// See the object user - json chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectUserJson(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/user/json"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectUserJson API operation for FortiManager gets the Json
+// with the specified index value.
+// Returns the requested Json value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object user - json chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectUserJson(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/user/json"
 	path, err = replaceParaWithValue(path, paralist)
 	if err != nil {
 		return nil, fmt.Errorf("%v", err)
@@ -15179,6 +15882,72 @@ func (c *FortiSDKClient) ReadObjectWebfilterUrlfilter(globaladom, mkey string, p
 	return
 }
 
+// CreateObjectWirelessControllerAccessControlList API operation for FortiManager creates a new Access Control List.
+// Returns the index value of the Access Control List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - access-control-list chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectWirelessControllerAccessControlList(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/access-control-list"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectWirelessControllerAccessControlList API operation for FortiManager updates the specified Access Control List.
+// Returns the index value of the Access Control List and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - access-control-list chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectWirelessControllerAccessControlList(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/access-control-list"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectWirelessControllerAccessControlList API operation for FortiManager deletes the specified Access Control List.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - access-control-list chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectWirelessControllerAccessControlList(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/access-control-list"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectWirelessControllerAccessControlList API operation for FortiManager gets the Access Control List
+// with the specified index value.
+// Returns the requested Access Control List value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - access-control-list chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectWirelessControllerAccessControlList(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/access-control-list"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
 // CreateObjectWirelessControllerAddress API operation for FortiManager creates a new Address.
 // Returns the index value of the Address and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -16763,6 +17532,138 @@ func (c *FortiSDKClient) ReadObjectWirelessControllerQosProfile(globaladom, mkey
 	return
 }
 
+// CreateObjectWirelessControllerSsidPolicy API operation for FortiManager creates a new Ssid Policy.
+// Returns the index value of the Ssid Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - ssid-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectWirelessControllerSsidPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/ssid-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectWirelessControllerSsidPolicy API operation for FortiManager updates the specified Ssid Policy.
+// Returns the index value of the Ssid Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - ssid-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectWirelessControllerSsidPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/ssid-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectWirelessControllerSsidPolicy API operation for FortiManager deletes the specified Ssid Policy.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - ssid-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectWirelessControllerSsidPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/ssid-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectWirelessControllerSsidPolicy API operation for FortiManager gets the Ssid Policy
+// with the specified index value.
+// Returns the requested Ssid Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - ssid-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectWirelessControllerSsidPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/ssid-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateObjectWirelessControllerSyslogProfile API operation for FortiManager creates a new Syslog Profile.
+// Returns the index value of the Syslog Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - syslog-profile chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateObjectWirelessControllerSyslogProfile(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/syslog-profile"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateObjectWirelessControllerSyslogProfile API operation for FortiManager updates the specified Syslog Profile.
+// Returns the index value of the Syslog Profile and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - syslog-profile chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateObjectWirelessControllerSyslogProfile(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/syslog-profile"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteObjectWirelessControllerSyslogProfile API operation for FortiManager deletes the specified Syslog Profile.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - syslog-profile chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteObjectWirelessControllerSyslogProfile(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/syslog-profile"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadObjectWirelessControllerSyslogProfile API operation for FortiManager gets the Syslog Profile
+// with the specified index value.
+// Returns the requested Syslog Profile value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the object wireless-controller - syslog-profile chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadObjectWirelessControllerSyslogProfile(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/obj/wireless-controller/syslog-profile"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
 // CreateObjectWirelessControllerUtmProfile API operation for FortiManager creates a new Utm Profile.
 // Returns the index value of the Utm Profile and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -17431,7 +18332,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallDosPolicy6Move(globaladom, mkey str
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -17466,7 +18370,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallDosPolicyMove(globaladom, mkey stri
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -17633,7 +18540,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallAcl6Move(globaladom, mkey string, p
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -17668,7 +18578,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallAclMove(globaladom, mkey string, pa
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -17769,7 +18682,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallCentralSnatMapMove(globaladom, mkey
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -17870,7 +18786,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallConsolidatedPolicyMove(globaladom, 
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18301,7 +19220,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallInterfacePolicy6Move(globaladom, mk
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18336,7 +19258,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallInterfacePolicyMove(globaladom, mke
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18503,7 +19428,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallLocalInPolicy6Move(globaladom, mkey
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18538,7 +19466,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallLocalInPolicyMove(globaladom, mkey 
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18705,7 +19636,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallMulticastPolicy6Move(globaladom, mk
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"id"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18740,7 +19674,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallMulticastPolicyMove(globaladom, mke
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"id"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -18907,7 +19844,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallPolicy46Move(globaladom, mkey strin
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -19074,7 +20014,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallPolicy64Move(globaladom, mkey strin
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -19109,7 +20052,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallPolicy6Move(globaladom, mkey string
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -19144,7 +20090,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallPolicyMove(globaladom, mkey string,
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -19245,7 +20194,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallProxyPolicyMove(globaladom, mkey st
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -19346,7 +20298,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallSecurityPolicyMove(globaladom, mkey
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"policyid"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -19447,7 +20402,10 @@ func (c *FortiSDKClient) ReadPackagesFirewallShapingPolicyMove(globaladom, mkey 
 	}
 
 
-	listTmp, err = readMove(c, globaladom, path, "get", false)
+	params := map[string]interface{}{
+		"fields": []string{"id"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
@@ -20042,6 +21000,110 @@ func (c *FortiSDKClient) ReadPackagesPkg(globaladom, mkey string, paralist []str
 	path += "/" + escapeURLString(mkey)
 
 	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreatePackagesUserNacPolicy API operation for FortiManager creates a new UserNac Policy.
+// Returns the index value of the UserNac Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - user nac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreatePackagesUserNacPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pkg/{pkg}/user/nac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdatePackagesUserNacPolicy API operation for FortiManager updates the specified UserNac Policy.
+// Returns the index value of the UserNac Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - user nac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdatePackagesUserNacPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pkg/{pkg}/user/nac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeletePackagesUserNacPolicy API operation for FortiManager deletes the specified UserNac Policy.
+// Returns error for service API and SDK errors.
+// See the packages - user nac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeletePackagesUserNacPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/pm/config/[*]/pkg/{pkg}/user/nac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadPackagesUserNacPolicy API operation for FortiManager gets the UserNac Policy
+// with the specified index value.
+// Returns the requested UserNac Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - user nac-policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadPackagesUserNacPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pkg/{pkg}/user/nac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+
+// UpdatePackagesUserNacPolicyMove API operation for FortiManager updates the specified UserNac PolicyMove.
+// Returns the index value of the UserNac PolicyMove and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - user nac-policy move chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdatePackagesUserNacPolicyMove(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pkg/{pkg}/user/nac-policy/{nac-policy}"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	output, err = createUpdate(c, globaladom, path, "move", params, true)
+	return
+}
+
+
+// ReadPackagesUserNacPolicyMove API operation for FortiManager gets the UserNac PolicyMove
+// with the specified index value.
+// Returns the requested UserNac PolicyMove value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - user nac-policy move chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadPackagesUserNacPolicyMove(globaladom, mkey string, paralist []string) (listTmp []interface{}, err error) {
+	path := "/pm/config/[*]/pkg/{pkg}/user/nac-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	params := map[string]interface{}{
+		"fields": []string{"name"},
+	}
+	listTmp, err = readMove(c, globaladom, path, "get", &params, true)
 	return
 }
 
