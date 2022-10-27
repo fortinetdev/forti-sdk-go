@@ -20,10 +20,14 @@ type Auth struct {
 	CaCert string
 	ClientCert string
 	ClientKey string
+
+	PassAuth string
+	Username string
+	Passwd   string
 }
 
 // NewAuth inits Auth object with the given metadata
-func NewAuth(hostname, token, cabundle, cabundlecontent, peerauth, cacert, clientcert, clientkey, vdom, httpproxy string) *Auth {
+func NewAuth(hostname, token, cabundle, cabundlecontent, peerauth, cacert, clientcert, clientkey, vdom, httpproxy string, passauth string, username string, passwd string) *Auth {
 	return &Auth{
 		Hostname: hostname,
 		Token:    token,
@@ -36,6 +40,10 @@ func NewAuth(hostname, token, cabundle, cabundlecontent, peerauth, cacert, clien
 		CaCert:     cacert,
 		ClientCert: clientcert,
 		ClientKey:  clientkey,
+
+		PassAuth: passauth,
+		Username: username,
+		Passwd:   passwd,
 	}
 }
 
@@ -44,7 +52,7 @@ func NewAuth(hostname, token, cabundle, cabundlecontent, peerauth, cacert, clien
 func (m *Auth) GetEnvToken() (string, error) {
 	token := os.Getenv("FORTIOS_ACCESS_TOKEN")
 
-	if token == "" {
+	if token == "" && m.PassAuth != "enable" && os.Getenv("FORTIOS_PASSAUTH") != "enable" {
 		return token, fmt.Errorf("GetEnvToken error")
 	}
 
@@ -166,3 +174,44 @@ func (m *Auth) GetEnvHTTPProxy() (string, error) {
 	return c, nil
 }
 
+// GetEnvPassAuth gets the legacy PassAuth setting from OS environment
+// It returns the PassAuth value
+func (m *Auth) GetEnvPassAuth() (string, error) {
+	c := os.Getenv("FORTIOS_PASSAUTH")
+
+	if c == "" {
+		return c, nil
+	}
+
+	m.PassAuth = c
+
+	return c, nil
+}
+
+// GetEnvUserName gets the legacy username from OS environment
+// It returns the legacy auth username
+func (m *Auth) GetEnvUsername() (string, error) {
+	c := os.Getenv("FORTIOS_USERNAME")
+
+	if c == "" {
+		return c, nil
+	}
+
+	m.Username = c
+
+	return c, nil
+}
+
+// GetEnvUserName gets the legacy password from OS environment
+// It returns the legacy auth password
+func (m *Auth) GetEnvPasswd() (string, error) {
+	c := os.Getenv("FORTIOS_PASSWORD")
+
+	if c == "" {
+		return c, nil
+	}
+
+	m.Passwd = c
+
+	return c, nil
+}

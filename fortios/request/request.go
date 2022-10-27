@@ -189,8 +189,10 @@ func buildURLWithoutVdom(r *Request) string {
 	u += r.Path
 	u += "?"
 
-	u += "access_token="
-	u += r.Config.Auth.Token
+	if r.Config.Auth.PassAuth != "enable" {
+		u += "access_token="
+		u += r.Config.Auth.Token
+	}
 
 	return u
 }
@@ -207,8 +209,10 @@ func buildURL(r *Request) string {
 		u += "&"
 	}
 
-	u += "access_token="
-	u += r.Config.Auth.Token
+	if r.Config.Auth.PassAuth != "enable" {
+		u += "access_token="
+		u += r.Config.Auth.Token
+	}
 
 	return u
 }
