@@ -700,6 +700,49 @@ func (c *FortiSDKClient) ReadFmupdateFwmSetting(globaladom, mkey string, paralis
 }
 
 
+// UpdateFmupdateFwmSettingUpgradeTimeout API operation for FortiAnalyzer updates the specified Fwm SettingUpgrade Timeout.
+// Returns the index value of the Fwm SettingUpgrade Timeout and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the fmupdate - fwm-setting upgrade-timeout chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateFmupdateFwmSettingUpgradeTimeout(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/fmupdate/fwm-setting/upgrade-timeout"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteFmupdateFwmSettingUpgradeTimeout API operation for FortiAnalyzer deletes the specified Fwm SettingUpgrade Timeout.
+// Returns error for service API and SDK errors.
+// See the fmupdate - fwm-setting upgrade-timeout chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteFmupdateFwmSettingUpgradeTimeout(globaladom, mkey string, paralist []string) (err error) {
+
+	//No unset API for fmupdate - fwm-setting upgrade-timeout
+	return
+}
+
+// ReadFmupdateFwmSettingUpgradeTimeout API operation for FortiAnalyzer gets the Fwm SettingUpgrade Timeout
+// with the specified index value.
+// Returns the requested Fwm SettingUpgrade Timeout value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the fmupdate - fwm-setting upgrade-timeout chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadFmupdateFwmSettingUpgradeTimeout(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/cli/[*]/fmupdate/fwm-setting/upgrade-timeout"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+
 // UpdateFmupdateMultilayer API operation for FortiAnalyzer updates the specified Multilayer.
 // Returns the index value of the Multilayer and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -2850,6 +2893,72 @@ func (c *FortiSDKClient) ReadSystemHaPrivatePeer(globaladom, mkey string, parali
 	return
 }
 
+// CreateSystemHaVip API operation for FortiAnalyzer creates a new HaVip.
+// Returns the index value of the HaVip and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ha vip chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemHaVip(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/ha/vip"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateSystemHaVip API operation for FortiAnalyzer updates the specified HaVip.
+// Returns the index value of the HaVip and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ha vip chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemHaVip(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/ha/vip"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteSystemHaVip API operation for FortiAnalyzer deletes the specified HaVip.
+// Returns error for service API and SDK errors.
+// See the system - ha vip chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemHaVip(globaladom, mkey string, paralist []string) (err error) {
+	path := "/cli/[*]/system/ha/vip"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadSystemHaVip API operation for FortiAnalyzer gets the HaVip
+// with the specified index value.
+// Returns the requested HaVip value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - ha vip chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemHaVip(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/cli/[*]/system/ha/vip"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
 // CreateSystemInterface API operation for FortiAnalyzer creates a new Interface.
 // Returns the index value of the Interface and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -2905,6 +3014,138 @@ func (c *FortiSDKClient) DeleteSystemInterface(globaladom, mkey string, paralist
 // See the system - interface chapter in the FortiAnalyzer Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadSystemInterface(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
 	path := "/cli/[*]/system/interface"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateSystemLocalInPolicy API operation for FortiAnalyzer creates a new Local In Policy.
+// Returns the index value of the Local In Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemLocalInPolicy(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/local-in-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateSystemLocalInPolicy API operation for FortiAnalyzer updates the specified Local In Policy.
+// Returns the index value of the Local In Policy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemLocalInPolicy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/local-in-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteSystemLocalInPolicy API operation for FortiAnalyzer deletes the specified Local In Policy.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemLocalInPolicy(globaladom, mkey string, paralist []string) (err error) {
+	path := "/cli/[*]/system/local-in-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadSystemLocalInPolicy API operation for FortiAnalyzer gets the Local In Policy
+// with the specified index value.
+// Returns the requested Local In Policy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemLocalInPolicy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/cli/[*]/system/local-in-policy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateSystemLocalInPolicy6 API operation for FortiAnalyzer creates a new Local In Policy6.
+// Returns the index value of the Local In Policy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy6 chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemLocalInPolicy6(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/local-in-policy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateSystemLocalInPolicy6 API operation for FortiAnalyzer updates the specified Local In Policy6.
+// Returns the index value of the Local In Policy6 and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy6 chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemLocalInPolicy6(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/local-in-policy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteSystemLocalInPolicy6 API operation for FortiAnalyzer deletes the specified Local In Policy6.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy6 chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemLocalInPolicy6(globaladom, mkey string, paralist []string) (err error) {
+	path := "/cli/[*]/system/local-in-policy6"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadSystemLocalInPolicy6 API operation for FortiAnalyzer gets the Local In Policy6
+// with the specified index value.
+// Returns the requested Local In Policy6 value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - local-in-policy6 chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemLocalInPolicy6(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/cli/[*]/system/local-in-policy6"
 	path, err = replaceParaWithValue(path, paralist)
 	if err != nil {
 		return nil, fmt.Errorf("%v", err)
@@ -4103,72 +4344,6 @@ func (c *FortiSDKClient) ReadSystemLogIoc(globaladom, mkey string, paralist []st
 	return
 }
 
-// CreateSystemLogRatelimitRatelimits API operation for FortiAnalyzer creates a new LogRatelimitRatelimits.
-// Returns the index value of the LogRatelimitRatelimits and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) CreateSystemLogRatelimitRatelimits(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/log/ratelimit/ratelimits"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	output, err = createUpdate(c, globaladom, path, "add", params, false)
-	return
-}
-
-// UpdateSystemLogRatelimitRatelimits API operation for FortiAnalyzer updates the specified LogRatelimitRatelimits.
-// Returns the index value of the LogRatelimitRatelimits and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateSystemLogRatelimitRatelimits(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/log/ratelimit/ratelimits"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	output, err = createUpdate(c, globaladom, path, "set", params, false)
-	return
-}
-
-// DeleteSystemLogRatelimitRatelimits API operation for FortiAnalyzer deletes the specified LogRatelimitRatelimits.
-// Returns error for service API and SDK errors.
-// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteSystemLogRatelimitRatelimits(globaladom, mkey string, paralist []string) (err error) {
-	path := "/cli/[*]/system/log/ratelimit/ratelimits"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	err = delete(c, globaladom, path, "delete", false)
-	return
-}
-
-// ReadSystemLogRatelimitRatelimits API operation for FortiAnalyzer gets the LogRatelimitRatelimits
-// with the specified index value.
-// Returns the requested LogRatelimitRatelimits value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadSystemLogRatelimitRatelimits(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/system/log/ratelimit/ratelimits"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-	path += "/" + escapeURLString(mkey)
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateSystemLogMailDomain API operation for FortiAnalyzer creates a new LogMail Domain.
 // Returns the index value of the LogMail Domain and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -4333,6 +4508,72 @@ func (c *FortiSDKClient) DeleteSystemLogRatelimitDevice(globaladom, mkey string,
 // See the system - log ratelimit device chapter in the FortiAnalyzer Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadSystemLogRatelimitDevice(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
 	path := "/cli/[*]/system/log/ratelimit/device"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+// CreateSystemLogRatelimitRatelimits API operation for FortiAnalyzer creates a new LogRatelimitRatelimits.
+// Returns the index value of the LogRatelimitRatelimits and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) CreateSystemLogRatelimitRatelimits(params *map[string]interface{}, globaladom string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/log/ratelimit/ratelimits"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, globaladom, path, "add", params, false)
+	return
+}
+
+// UpdateSystemLogRatelimitRatelimits API operation for FortiAnalyzer updates the specified LogRatelimitRatelimits.
+// Returns the index value of the LogRatelimitRatelimits and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemLogRatelimitRatelimits(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/log/ratelimit/ratelimits"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteSystemLogRatelimitRatelimits API operation for FortiAnalyzer deletes the specified LogRatelimitRatelimits.
+// Returns error for service API and SDK errors.
+// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemLogRatelimitRatelimits(globaladom, mkey string, paralist []string) (err error) {
+	path := "/cli/[*]/system/log/ratelimit/ratelimits"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, globaladom, path, "delete", false)
+	return
+}
+
+// ReadSystemLogRatelimitRatelimits API operation for FortiAnalyzer gets the LogRatelimitRatelimits
+// with the specified index value.
+// Returns the requested LogRatelimitRatelimits value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - log ratelimit ratelimits chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemLogRatelimitRatelimits(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/cli/[*]/system/log/ratelimit/ratelimits"
 	path, err = replaceParaWithValue(path, paralist)
 	if err != nil {
 		return nil, fmt.Errorf("%v", err)
@@ -5738,49 +5979,6 @@ func (c *FortiSDKClient) ReadSystemSqlCustomSkipidx(globaladom, mkey string, par
 	return
 }
 
-
-// UpdateSystemWebProxy API operation for FortiAnalyzer updates the specified Web Proxy.
-// Returns the index value of the Web Proxy and execution result when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - web-proxy chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) UpdateSystemWebProxy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
-	path := "/cli/[*]/system/web-proxy"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-
-	output, err = createUpdate(c, globaladom, path, "set", params, false)
-	return
-}
-
-// DeleteSystemWebProxy API operation for FortiAnalyzer deletes the specified Web Proxy.
-// Returns error for service API and SDK errors.
-// See the system - web-proxy chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) DeleteSystemWebProxy(globaladom, mkey string, paralist []string) (err error) {
-
-	//No unset API for system - web-proxy
-	return
-}
-
-// ReadSystemWebProxy API operation for FortiAnalyzer gets the Web Proxy
-// with the specified index value.
-// Returns the requested Web Proxy value when the request executes successfully.
-// Returns error for service API and SDK errors.
-// See the system - web-proxy chapter in the FortiAnalyzer Handbook - CLI Reference.
-func (c *FortiSDKClient) ReadSystemWebProxy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
-	path := "/cli/[*]/system/web-proxy"
-	path, err = replaceParaWithValue(path, paralist)
-	if err != nil {
-		return nil, fmt.Errorf("%v", err)
-	}
-
-
-	mapTmp, err = read(c, globaladom, path, "get", false)
-	return
-}
-
 // CreateSystemSqlTsIndexField API operation for FortiAnalyzer creates a new SqlTs Index Field.
 // Returns the index value of the SqlTs Index Field and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -5908,6 +6106,49 @@ func (c *FortiSDKClient) ReadSystemSyslog(globaladom, mkey string, paralist []st
 	}
 
 	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, globaladom, path, "get", false)
+	return
+}
+
+
+// UpdateSystemWebProxy API operation for FortiAnalyzer updates the specified Web Proxy.
+// Returns the index value of the Web Proxy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - web-proxy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdateSystemWebProxy(params *map[string]interface{}, globaladom, mkey string, paralist []string) (output map[string]interface{}, err error) {
+	path := "/cli/[*]/system/web-proxy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+
+	output, err = createUpdate(c, globaladom, path, "set", params, false)
+	return
+}
+
+// DeleteSystemWebProxy API operation for FortiAnalyzer deletes the specified Web Proxy.
+// Returns error for service API and SDK errors.
+// See the system - web-proxy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) DeleteSystemWebProxy(globaladom, mkey string, paralist []string) (err error) {
+
+	//No unset API for system - web-proxy
+	return
+}
+
+// ReadSystemWebProxy API operation for FortiAnalyzer gets the Web Proxy
+// with the specified index value.
+// Returns the requested Web Proxy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the system - web-proxy chapter in the FortiAnalyzer Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadSystemWebProxy(globaladom, mkey string, paralist []string) (mapTmp map[string]interface{}, err error) {
+	path := "/cli/[*]/system/web-proxy"
+	path, err = replaceParaWithValue(path, paralist)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
 
 	mapTmp, err = read(c, globaladom, path, "get", false)
 	return
