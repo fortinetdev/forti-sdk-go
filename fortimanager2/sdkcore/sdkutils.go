@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"strings"
+	"regexp"
 )
 
 ////////////////////////////////////////////////////////////////////////
@@ -288,11 +289,28 @@ func replaceParaWithValue(path string, paradict map[string]string) (string, erro
 		rstPath = strings.ReplaceAll(rstPath, "[*]", adomv)
 	}
 
+	re := regexp.MustCompile(`{.*?}`)
+
+	argUrl := re.FindAllString(path, -1)
+	argUrlMap := make(map[string]string)
+	for _, argName := range argUrl {
+		re = regexp.MustCompile(`[.()+/ ]`)
+		curTfName := re.ReplaceAllString(argName, "")
+		curTfName = strings.ReplaceAll(curTfName, "-", "_")
+		curTfName = strings.ToLower(curTfName)
+		argUrlMap[curTfName] = argName
+	}
+
 	for argName, argVal := range paradict {
 		if argName == "adom" {
 			argVal = strings.Replace(argVal, "adom/", "", 1)
 		}
-		rstPath = strings.ReplaceAll(rstPath, "{" + argName + "}", argVal)
+		curArgName := "{" + argName + "}"
+		if curTfName, ok := argUrlMap[curArgName]; ok {
+			rstPath = strings.ReplaceAll(rstPath, curTfName, argVal)
+		} else {
+			log.Printf("[Warning] argument map: %v do not contain argument: %v", argUrlMap, curArgName)
+		}
 	}
 
 	if strings.ContainsAny(rstPath, "[ | {") {
