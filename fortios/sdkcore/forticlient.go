@@ -3,9 +3,11 @@ package forticlient
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/http/cookiejar"
 	"net/url"
 	"strings"
 	"time"
@@ -59,6 +61,13 @@ func NewClient(auth *auth.Auth, client *http.Client) (*FortiSDKClient, error) {
 	c.Config.Auth = auth
 	c.Config.HTTPCon = client
 	c.Config.FwTarget = auth.Hostname
+
+	if auth.PassAuth == "enable" {
+		err := c.LoginWithPasswd()
+		if err != nil {
+			return nil, fmt.Errorf("%s", err)
+		}
+	}
 
 	vsave := client.Timeout
 	client.Timeout = time.Second * 30
@@ -123,6 +132,70 @@ func (c *FortiSDKClient) GetDeviceVersion() (version string, err error) {
 	}
 
 	return "", err
+}
+
+func (c *FortiSDKClient) LoginWithPasswd() error {
+	jar, err := cookiejar.New(nil)
+	if err != nil {
+		return fmt.Errorf("Error creating passwd cookie jar: %w", err)
+	}
+	c.Config.HTTPCon.Jar = jar
+
+	params := url.Values{}
+	params.Add("username", c.Config.Auth.Username)
+	params.Add("secretkey", c.Config.Auth.Passwd)
+	params.Add("ajax", `1`)
+	body := strings.NewReader(params.Encode())
+
+	req, err := http.NewRequest("POST", "https://"+c.Config.FwTarget+"/logincheck", body)
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+	resp, err := c.Config.HTTPCon.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	bodyText, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	responsebody := string(bodyText)
+
+	// config system global
+	//   set post-login-banner enable
+	// end
+	if strings.HasPrefix(responsebody[0:1], "1") && strings.Contains(responsebody, "logindisclaimer") {
+		params := url.Values{}
+		params.Add("confirm", `1`)
+		body := strings.NewReader(params.Encode())
+
+		req, err := http.NewRequest("POST", "https://"+c.Config.FwTarget+"/logindisclaimer", body)
+		if err != nil {
+			return err
+		}
+		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+		resp, err := c.Config.HTTPCon.Do(req)
+		if err != nil {
+			return err
+		}
+		defer resp.Body.Close()
+		bodyText, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			return err
+		}
+		responsebody := string(bodyText)
+
+		if !strings.Contains(responsebody, "document.location") {
+			return errors.New("Unable to accept Login Disclaimer. Please check")
+		}
+
+	} else if !strings.HasPrefix(responsebody[0:1], "1") {
+		return errors.New("Wrong password credentials. Please check")
+	}
+
+	return nil
 }
 
 func fortiAPIHttpStatus404Checking(result map[string]interface{}) (b404 bool) {
