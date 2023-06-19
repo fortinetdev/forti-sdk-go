@@ -12,8 +12,6 @@ import (
 	"fmt"
 )
 
-
-
 // UpdateDvmCmdAddDevice API operation for FortiManager updates the specified CmdAddDevice.
 // Returns the index value of the CmdAddDevice and execution result when the request executes successfully.
 // Returns error for service API and SDK errors.
@@ -20109,6 +20107,73 @@ func (c *FortiSDKClient) DeletePackagesFirewallPolicy(mkey string, paradict map[
 // See the packages - firewall policy chapter in the FortiManager Handbook - CLI Reference.
 func (c *FortiSDKClient) ReadPackagesFirewallPolicy(mkey string, paradict map[string]string) (mapTmp map[string]interface{}, err error) {
 	path := "/pm/config/[*]/pkg/{pkg}/firewall/policy"
+	path, err = replaceParaWithValue(path, paradict)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	mapTmp, err = read(c, path, "get", false)
+	return
+}
+
+
+// CreatePackagesFirewallPolicy API operation for FortiManager creates a new FirewallPolicy.
+// Returns the index value of the FirewallPolicy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - firewall policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) CreatePackagesFirewallPolicyBlock(params *map[string]interface{}, paradict map[string]string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pblock/{pblock}/firewall/policy"
+	path, err = replaceParaWithValue(path, paradict)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	output, err = createUpdate(c, path, "add", params, false)
+	return
+}
+
+// UpdatePackagesFirewallPolicy API operation for FortiManager updates the specified FirewallPolicy.
+// Returns the index value of the FirewallPolicy and execution result when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - firewall policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) UpdatePackagesFirewallPolicyBlock(params *map[string]interface{}, mkey string, paradict map[string]string) (output map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pblock/{pblock}/firewall/policy"
+	path, err = replaceParaWithValue(path, paradict)
+	if err != nil {
+		return nil, fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	output, err = createUpdate(c, path, "set", params, false)
+	return
+}
+
+// DeletePackagesFirewallPolicy API operation for FortiManager deletes the specified FirewallPolicy.
+// Returns error for service API and SDK errors.
+// See the packages - firewall policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) DeletePackagesFirewallPolicyBlock(mkey string, paradict map[string]string) (err error) {
+	path := "/pm/config/[*]/pblock/{pblock}/firewall/policy"
+	path, err = replaceParaWithValue(path, paradict)
+	if err != nil {
+		return fmt.Errorf("%v", err)
+	}
+
+	path += "/" + escapeURLString(mkey)
+
+	err = delete(c, path, "delete", false)
+	return
+}
+
+// ReadPackagesFirewallPolicy API operation for FortiManager gets the FirewallPolicy
+// with the specified index value.
+// Returns the requested FirewallPolicy value when the request executes successfully.
+// Returns error for service API and SDK errors.
+// See the packages - firewall policy chapter in the FortiManager Handbook - CLI Reference.
+func (c *FortiSDKClient) ReadPackagesFirewallPolicyBlock(mkey string, paradict map[string]string) (mapTmp map[string]interface{}, err error) {
+	path := "/pm/config/[*]/pblock/{pblock}/firewall/policy"
 	path, err = replaceParaWithValue(path, paradict)
 	if err != nil {
 		return nil, fmt.Errorf("%v", err)
