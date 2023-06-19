@@ -6,15 +6,15 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"os"
 	"net/http"
 	"net/url"
-	"strings"
+	"os"
 	"regexp"
+	"strings"
 
-	"github.com/fortinetdev/forti-sdk-go/fortimanager2/auth"
 	"github.com/fortinetdev/forti-sdk-go/fortimanager2/config"
 	"github.com/fortinetdev/forti-sdk-go/fortimanager2/request"
+	"github.com/romanromanovv/forti-sdk-go/fortimanager2/auth"
 	// "strconv"
 )
 
@@ -114,7 +114,6 @@ func login(auth *auth.Auth, c *FortiSDKClient) {
 	v2 = append(v2, paramItem)
 	data["params"] = v2
 
-
 	locJSON, err := json.Marshal(data)
 	if err != nil {
 		log.Fatal(err)
@@ -136,7 +135,6 @@ func login(auth *auth.Auth, c *FortiSDKClient) {
 		err = fmt.Errorf("cannot get response body %v", err)
 		return
 	}
-
 
 	var result map[string]interface{}
 	json.Unmarshal([]byte(string(body)), &result)
@@ -208,7 +206,7 @@ func (c *FortiSDKClient) GetDeviceVersion() (version string, err error) {
 	if err != nil {
 		return "", err
 	}
-	
+
 	if version, ok := result["result"].([]interface{})[0].(map[string]interface{})["data"].(map[string]interface{})["Version"].(string); ok {
 		regexp, err := regexp.Compile(`v([\d.]+)`)
 		match := regexp.FindStringSubmatch(version)
